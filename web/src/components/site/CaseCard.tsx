@@ -1,0 +1,47 @@
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+import type { CaseStudy } from "@/content";
+
+import { resolveImage } from "./image-size";
+import { renderText } from "./Placeholder";
+import { linkArrow } from "./styles";
+
+/** White card: 232px cover image, mono client · location, h3, body, link. */
+export function CaseCard({ study }: { study: CaseStudy }) {
+  const img = resolveImage(study.heroImage.src, study.heroImage);
+
+  return (
+    <article className="flex flex-col overflow-hidden rounded-lg border border-line bg-surface">
+      <Image
+        src={img.src}
+        alt={study.heroImage.alt}
+        width={img.width}
+        height={img.height}
+        unoptimized={img.unoptimized}
+        loading="lazy"
+        sizes="(min-width: 1024px) 588px, 100vw"
+        className="h-[190px] w-full object-cover lg:h-[232px]"
+      />
+      <div className="flex flex-1 flex-col p-5 lg:px-7 lg:pt-6.5 lg:pb-7">
+        <p className="font-mono text-eyebrow font-medium tracking-[0.09em] text-subtle uppercase">
+          {renderText(study.eyebrow)}
+        </p>
+        <h3 className="mt-3 font-display text-lg leading-[1.28] font-semibold lg:text-[1.375rem]">
+          {renderText(study.title)}
+        </h3>
+        <p className="mt-3 text-sm leading-[1.58] lg:text-[0.9375rem]">
+          {renderText(study.summary)}
+        </p>
+        <Link
+          href={`/work/${study.slug}`}
+          className={`${linkArrow} mt-4.5 self-start`}
+        >
+          Read the case
+          <ArrowRight size={16} strokeWidth={1.6} aria-hidden="true" />
+        </Link>
+      </div>
+    </article>
+  );
+}

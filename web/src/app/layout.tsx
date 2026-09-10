@@ -1,6 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, IBM_Plex_Mono, Inter } from "next/font/google";
 
+import {
+  SiteFooter,
+  SiteHeader,
+  SkipLink,
+  WhatsAppButton,
+} from "@/components/site";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -55,7 +61,15 @@ export default function RootLayout({
       lang="en-IN"
       className={`${archivo.variable} ${inter.variable} ${plexMono.variable}`}
     >
-      <body className="min-h-dvh flex flex-col">{children}</body>
+      <body className="min-h-dvh flex flex-col">
+        <SkipLink />
+        <SiteHeader />
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <SiteFooter />
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }

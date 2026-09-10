@@ -1,69 +1,113 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+
+import {
+  CaseFeature,
+  CredentialStrip,
+  CTABand,
+  Hero,
+  LogoRow,
+  PersonCard,
+  Reveal,
+  SectionHeading,
+  ServiceCard,
+  CaseCard,
+} from "@/components/site";
+import { getCaseStudy, getPerson, services, site } from "@/content";
+
+export const metadata: Metadata = {
+  title: `${site.name} — Aviation & airport consulting, New Delhi`,
+  description: site.description,
+  alternates: { canonical: "/" },
+};
+
+const HERO_IMAGE = {
+  src: "/images/hero-runway.jpg",
+  alt: "Approach lighting on final into Indira Gandhi International, Delhi",
+  width: 1080,
+  height: 720,
+};
 
 export default function Home() {
+  const principal = getPerson("ashwani-khanna");
+  const taxibot = getCaseStudy("taxibot-india");
+  const proof = ["delhi-t3-orat", "stelia-aerospace"]
+    .map((slug) => getCaseStudy(slug))
+    .filter((study): study is NonNullable<typeof study> => Boolean(study));
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Hero
+        eyebrow="Aviation & airport consulting · New Delhi"
+        title={site.tagline}
+        body="Thirty years of Indian aviation operations, compliance and ORAT. We delivered the world's first TaxiBot operations with both Airbus and Boeing."
+        image={HERO_IMAGE}
+        primary={{ label: "Book a consultation", href: "/contact#book" }}
+        secondary={{ label: "See our work", href: "/work" }}
+      />
+
+      <CredentialStrip credentials={site.credentials} label="Credentials" />
+
+      <LogoRow />
+
+      <section aria-labelledby="services" className="py-12 lg:py-24">
+        <div className="container-site">
+          <SectionHeading
+            eyebrow="What we do"
+            title="Five practices, one operating discipline"
+            id="services"
+            link={{ label: "All services", href: "/services" }}
+          />
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, i) => (
+              <li key={service.slug}>
+                <Reveal delay={Math.min(i, 3) * 0.06} className="h-full">
+                  <ServiceCard
+                    service={service}
+                    variant={
+                      service.isTool
+                        ? "tool"
+                        : service.slug === "india-market-entry"
+                          ? "featured"
+                          : "default"
+                    }
+                  />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {taxibot && <CaseFeature study={taxibot} />}
+
+      {principal && <PersonCard person={principal} />}
+
+      <section aria-labelledby="selected-work" className="py-12 lg:py-24">
+        <div className="container-site">
+          <SectionHeading
+            eyebrow="Selected work"
+            title="Proof, not positioning"
+            id="selected-work"
+            link={{ label: "All work", href: "/work" }}
+          />
+          <ul className="grid gap-6 lg:grid-cols-2">
+            {proof.map((study, i) => (
+              <li key={study.slug}>
+                <Reveal delay={i * 0.06} className="h-full">
+                  <CaseCard study={study} />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <CTABand
+        id="book"
+        title="Talk to us about your project"
+        body="Thirty minutes with the person who would run the engagement. Bring a terminal opening date, an audit scope, or an approval you cannot get through."
+        form
+      />
+    </>
   );
 }

@@ -7,10 +7,16 @@ import { cn } from "cn";
  */
 export { cn };
 
-/** Canonical origin. Overridable per-environment; falls back to production. */
-export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aerotechss.com"
-).replace(/\/+$/, "");
+import { site } from "@/content/site";
+
+/**
+ * Canonical origin. `NEXT_PUBLIC_SITE_URL` overrides per environment;
+ * otherwise the single source of truth is `site.url` in the content layer.
+ */
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? site.url).replace(
+  /\/+$/,
+  "",
+);
 
 /**
  * Turn a site-relative path into an absolute URL.

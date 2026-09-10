@@ -1,0 +1,107 @@
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+import type { Person } from "@/content";
+
+import { resolveImage } from "./image-size";
+import { PhotoCaption } from "./PhotoCaption";
+import { isPlaceholder, Placeholder, renderText } from "./Placeholder";
+import { linkArrow } from "./styles";
+
+const FACTS = [
+  { label: "Lead auditor", value: "ISO 9001 · ISO 45001 · ISO 14064" },
+  { label: "Aerospace", value: "AS9100D certified auditor" },
+  { label: "ICAO", value: "CORSIA verification & validation" },
+  { label: "Based", value: "Aerocity, adjacent to Delhi IGI" },
+];
+
+/**
+ * 440px captioned portrait beside the principal's credentials — the
+ * "who you actually work with" band.
+ */
+export function PersonCard({
+  person,
+  eyebrow = "Who you actually work with",
+  caption = "Lead auditor briefing · New Delhi",
+}: {
+  person: Person;
+  eyebrow?: string;
+  caption?: string;
+}) {
+  const img = resolveImage(person.photo.src, person.photo);
+  const headingId = `person-${person.slug}`;
+
+  return (
+    <section
+      aria-labelledby={headingId}
+      className="border-y border-line bg-surface py-12 lg:py-23"
+    >
+      <div className="container-site grid gap-8 lg:grid-cols-[440px_1fr] lg:items-start lg:gap-16">
+        <figure className="max-w-[280px] lg:max-w-none">
+          <Image
+            src={img.src}
+            alt={person.photo.alt}
+            width={img.width}
+            height={img.height}
+            unoptimized={img.unoptimized}
+            loading="lazy"
+            sizes="(min-width: 1024px) 440px, 280px"
+            className="h-auto w-full rounded-lg object-cover"
+          />
+          <PhotoCaption>{caption}</PhotoCaption>
+        </figure>
+
+        <div>
+          <p className="eyebrow">{eyebrow}</p>
+          <h2
+            id={headingId}
+            className="mt-3 font-display text-[1.75rem] leading-[1.14] font-semibold lg:text-[2.375rem]"
+          >
+            {person.name}
+          </h2>
+          <p className="mt-2 font-mono text-[0.8125rem] tracking-[0.06em] text-orange-500 uppercase">
+            {person.role}
+          </p>
+          <p className="mt-5 max-w-[58ch] text-[1.0625rem] leading-[1.56] text-ink-soft lg:text-[1.1875rem]">
+            {renderText(person.shortBio)}
+          </p>
+
+          <dl className="mt-8 grid gap-x-10 sm:grid-cols-2 lg:mt-8.5">
+            {FACTS.map((fact) => (
+              <div key={fact.label} className="border-t border-line py-4">
+                <dt className="font-mono text-eyebrow font-medium tracking-[0.09em] text-subtle uppercase">
+                  {fact.label}
+                </dt>
+                <dd className="mt-1.5 text-[0.9375rem] font-medium text-ink">
+                  {fact.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+
+          <div className="mt-7 flex flex-wrap items-center gap-5">
+            <Link href={`/about/${person.slug}`} className={linkArrow}>
+              Full profile
+              <ArrowRight size={16} strokeWidth={1.6} aria-hidden="true" />
+            </Link>
+            {person.linkedin &&
+              (isPlaceholder(person.linkedin) ? (
+                <Placeholder>{person.linkedin}</Placeholder>
+              ) : (
+                <a
+                  href={person.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkArrow}
+                >
+                  LinkedIn
+                  <ArrowRight size={16} strokeWidth={1.6} aria-hidden="true" />
+                </a>
+              ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
