@@ -10,14 +10,12 @@ import {
   resolveImage,
   resolveTopic,
 } from "@/components/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbGraph, webPageGraph } from "@/lib/jsonld";
+import { metaFor } from "@/lib/seo";
 import { site } from "@/content";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Tell us what you are trying to get through — a terminal opening date, an audit scope, an approval that has stalled. Thirty minutes with the person who would run the engagement.",
-  alternates: { canonical: "/contact" },
-};
+export const metadata: Metadata = metaFor.contact();
 
 const OFFICE_PHOTO = {
   src: "/images/delhi-apron.jpg",
@@ -37,6 +35,20 @@ export default async function ContactPage({
 
   return (
     <div className="py-10 lg:py-18">
+      <JsonLd
+        data={[
+          breadcrumbGraph([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+          webPageGraph({
+            title: "Contact",
+            description:
+              "Tell us what you are trying to get through — a terminal opening date, an audit scope, an approval that has stalled. Thirty minutes with the person who would run the engagement.",
+            path: "/contact",
+          }),
+        ]}
+      />
       <div className="container-site">
         <Breadcrumb
           items={[{ label: "Home", href: "/" }, { label: "Contact" }]}

@@ -12,13 +12,12 @@ import {
   ServiceCard,
   CaseCard,
 } from "@/components/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { webPageGraph } from "@/lib/jsonld";
+import { metaFor } from "@/lib/seo";
 import { getCaseStudy, getPerson, services, site } from "@/content";
 
-export const metadata: Metadata = {
-  title: `${site.name} — Aviation & airport consulting, New Delhi`,
-  description: site.description,
-  alternates: { canonical: "/" },
-};
+export const metadata: Metadata = metaFor.home();
 
 const HERO_IMAGE = {
   src: "/images/hero-runway.jpg",
@@ -36,6 +35,13 @@ export default function Home() {
 
   return (
     <>
+      <JsonLd
+        data={webPageGraph({
+          title: `${site.name} — Aviation & airport consulting, New Delhi`,
+          description: site.description,
+          path: "/",
+        })}
+      />
       <Hero
         eyebrow="Aviation & airport consulting · New Delhi"
         title={site.tagline}

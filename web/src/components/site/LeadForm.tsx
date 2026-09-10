@@ -1,6 +1,7 @@
 "use client";
 
 import { CalendarDays, Check, Lock } from "lucide-react";
+import Script from "next/script";
 import { useEffect, useId, useRef, useState } from "react";
 
 import { submitLead } from "@/app/actions/lead";
@@ -59,6 +60,7 @@ export function LeadForm({
   const [formError, setFormError] = useState<string | null>(null);
   const mountedAt = useRef(0);
   const errorRef = useRef<HTMLParagraphElement | null>(null);
+  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
   // Recorded after mount so the server can reject bot-speed submissions
   // without reading a clock during render.
@@ -76,13 +78,6 @@ export function LeadForm({
       email: String(data.get("email") ?? ""),
       topic: String(data.get("topic") ?? ""),
     };
-
-    // Honeypot: accept in the UI, submit nothing.
-    if (String(data.get("website") ?? "").length > 0) {
-      setErrors({});
-      setStatus("sent");
-      return;
-    }
 
     const nextErrors = validate(values);
     if (Object.keys(nextErrors).length > 0) {
@@ -121,6 +116,7 @@ export function LeadForm({
   if (status === "sent") {
     return (
       <div
+        role="status"
         className={cn(
           "rounded-lg border border-line bg-surface p-7 lg:px-9 lg:py-9",
           className,
@@ -293,7 +289,7 @@ export function LeadForm({
         />
       </div>
 
-      {/* Honeypot. Never shown, never announced, never submitted. */}
+      {/* Honeypot. Never shown, never announced, never submitted by a human. */}
       <div aria-hidden="true" className="sr-only">
         <label htmlFor={`${formId}-website`}>Website</label>
         <input
@@ -305,6 +301,18 @@ export function LeadForm({
           defaultValue=""
         />
       </div>
+
+      {turnstileSiteKey && (
+        <div className="mt-6 min-h-16">
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            strategy="lazyOnload"
+            async
+            defer
+          />
+          <div className="cf-turnstile" data-sitekey={turnstileSiteKey} />
+        </div>
+      )}
 
       <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-5">
         <button

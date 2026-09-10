@@ -12,14 +12,12 @@ import {
   SectionHeading,
   StatBand,
 } from "@/components/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbGraph, webPageGraph } from "@/lib/jsonld";
+import { metaFor } from "@/lib/seo";
 import { getPerson, site } from "@/content";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Aerotech Support Services advises airlines, airports and aerospace suppliers on planning, operations management and technical compliance — deliberately small, led by director Ashwani Khanna.",
-  alternates: { canonical: "/about" },
-};
+export const metadata: Metadata = metaFor.about();
 
 const RECORD = [
   {
@@ -60,6 +58,20 @@ export default function AboutPage() {
 
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbGraph([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+          ]),
+          webPageGraph({
+            title: "About",
+            description:
+              "Aerotech Support Services advises airlines, airports and aerospace suppliers on planning, operations management and technical compliance — deliberately small, led by director Ashwani Khanna.",
+            path: "/about",
+          }),
+        ]}
+      />
       <section
         aria-labelledby="page-title"
         className="border-b border-line bg-surface py-10 lg:py-21"

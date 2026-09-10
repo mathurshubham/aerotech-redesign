@@ -7,6 +7,8 @@ import {
   SkipLink,
   WhatsAppButton,
 } from "@/components/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { organizationGraph } from "@/lib/jsonld";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -62,6 +64,7 @@ export default function RootLayout({
       className={`${archivo.variable} ${inter.variable} ${plexMono.variable}`}
     >
       <body className="min-h-dvh flex flex-col">
+        <JsonLd data={organizationGraph()} />
         <SkipLink />
         <SiteHeader />
         <main id="main" className="flex-1">

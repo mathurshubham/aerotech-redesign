@@ -2,9 +2,14 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { CTABand, PageHead, PersonProfile } from "@/components/site";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbGraph, personGraph } from "@/lib/jsonld";
+import { metaFor } from "@/lib/seo";
 import { getPerson, peopleSlugs } from "@/content";
 
 type Params = { slug: string };
+
+export const dynamicParams = false;
 
 export function generateStaticParams(): Params[] {
   return peopleSlugs.map((slug) => ({ slug }));
@@ -16,14 +21,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const person = getPerson(slug);
-  if (!person) return { title: "Not found" };
-
-  return {
-    title: person.seo.title,
-    description: person.seo.description,
-    alternates: { canonical: `/about/${person.slug}` },
-  };
+  return metaFor.person(slug);
 }
 
 export default async function PersonPage({
@@ -37,6 +35,16 @@ export default async function PersonPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          personGraph(person),
+          breadcrumbGraph([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+            { name: person.name, path: `/about/${person.slug}` },
+          ]),
+        ]}
+      />
       <PageHead
         crumbs={[
           { label: "Home", href: "/" },

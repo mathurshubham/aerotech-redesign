@@ -51,6 +51,16 @@ function readFormValue(formData: FormData, key: string): string | undefined {
 }
 
 export async function submitLead(formData: FormData): Promise<SubmitLeadResult> {
+  // Honeypot check comes first, before any Zod parsing: a bot that fills the
+  // hidden `website` field must get a silent fake success, never a
+  // validation error that would tip it off. Nothing is logged to storage or
+  // email, just a server-side note for our own visibility.
+  const honeypot = readFormValue(formData, "website");
+  if (honeypot) {
+    console.log("[lead] honeypot");
+    return { ok: true };
+  }
+
   let parsed: LeadInput;
 
   try {
@@ -62,9 +72,8 @@ export async function submitLead(formData: FormData): Promise<SubmitLeadResult> 
       targetDate: readFormValue(formData, "targetDate"),
       where: readFormValue(formData, "where"),
       message: readFormValue(formData, "message"),
-      website: readFormValue(formData, "website") ?? "",
       ts: typeof tsRaw === "string" ? Number(tsRaw) : Number.NaN,
-      turnstileToken: readFormValue(formData, "turnstileToken"),
+      turnstileToken: readFormValue(formData, "cf-turnstile-response") ?? readFormValue(formData, "turnstileToken"),
     };
 
     const result = LeadInputSchema.safeParse(input);
@@ -79,11 +88,6 @@ export async function submitLead(formData: FormData): Promise<SubmitLeadResult> 
   } catch (error) {
     console.error("[lead] failed to parse submission", error);
     return { ok: false, error: "Something went wrong. Please try again." };
-  }
-
-  // Honeypot tripped: pretend success, do nothing else. Don't tip off bots.
-  if (parsed.website) {
-    return { ok: true };
   }
 
   let headerList: Headers;

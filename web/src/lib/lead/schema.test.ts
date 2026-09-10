@@ -6,7 +6,6 @@ const base = {
   name: "Jane Doe",
   email: "Jane@Example.com",
   topic: LEAD_TOPICS[0],
-  website: "",
   ts: Date.now() - 5000,
 };
 
@@ -18,14 +17,18 @@ test("accepts a valid lead and lowercases the email", () => {
   }
 });
 
-test("rejects when the honeypot field is filled", () => {
-  const result = LeadInputSchema.safeParse({ ...base, website: "http://spam.example" });
-  assert.equal(result.success, false);
+test("the schema has no honeypot field — that check happens in the server action before parsing", () => {
+  assert.equal("website" in LeadInputSchema.shape, false);
 });
 
 test("rejects a submission faster than 3 seconds", () => {
   const result = LeadInputSchema.safeParse({ ...base, ts: Date.now() });
   assert.equal(result.success, false);
+});
+
+test("accepts a submission exactly at the 3 second timing gate", () => {
+  const result = LeadInputSchema.safeParse({ ...base, ts: Date.now() - 3000 });
+  assert.equal(result.success, true);
 });
 
 test("rejects a topic outside the known enum", () => {
