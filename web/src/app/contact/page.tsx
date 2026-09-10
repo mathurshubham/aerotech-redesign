@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import {
+  BookingMock,
   Breadcrumb,
   LeadForm,
   leadTopics,
-  Placeholder,
   resolveImage,
   resolveTopic,
 } from "@/components/site";
@@ -105,16 +105,6 @@ export default async function ContactPage({
                   </dd>
                 </div>
               </dl>
-              <div className="mt-5 border-t border-band-line pt-5">
-                <p className="font-mono text-eyebrow text-band-muted">
-                  Pick a slot — calendar
-                </p>
-                <p className="mt-2.5">
-                  <Placeholder>
-                    {`[PLACEHOLDER: Cal.com embed — username ${site.calcom?.username ?? "TBC"}, event "${site.calcom?.event ?? "consultation"}"]`}
-                  </Placeholder>
-                </p>
-              </div>
             </section>
 
             <section
@@ -172,6 +162,20 @@ export default async function ContactPage({
             </section>
           </div>
         </div>
+
+        <section aria-labelledby="book-a-slot" className="mt-8 lg:mt-10">
+          <h2 id="book-a-slot" className="eyebrow">
+            Pick a slot — calendar
+          </h2>
+          <div className="mt-4">
+            <BookingMock
+              name="Ashwani Khanna"
+              eventTitle="Consultation — 30 min"
+              durationMin={30}
+              timezone="Asia/Kolkata (GMT+5:30)"
+            />
+          </div>
+        </section>
       </div>
     </div>
   );

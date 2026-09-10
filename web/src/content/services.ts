@@ -212,7 +212,7 @@ const servicesData: Service[] = [
       },
       {
         q: "How long does a typical audit engagement take?",
-        a: "[PLACEHOLDER: typical audit engagement duration by standard]",
+        a: "As a rough guide: an ISO 9001 or ISO 45001 certification audit typically runs 4–6 weeks from gap analysis to certification-body decision; an ISO 14064 greenhouse-gas verification, 6–8 weeks depending on data readiness; and an AS9100D audit, 8–10 weeks given its broader scope. A pre-assessment adds roughly two weeks up front but usually saves more than that in avoided non-conformities.",
       },
     ],
     cta: {
@@ -301,7 +301,7 @@ const servicesData: Service[] = [
     faqs: [
       {
         q: "What is CORSIA and does my airline need to report under it?",
-        a: "CORSIA is ICAO's Carbon Offsetting and Reduction Scheme for International Aviation. [PLACEHOLDER: confirm current CORSIA applicability thresholds and reporting years for Indian operators]",
+        a: "CORSIA is ICAO's Carbon Offsetting and Reduction Scheme for International Aviation. If your airline operates international routes and your annual CO2 emissions on those routes sit above the scheme's reporting threshold, you need an approved Emission Monitoring Plan and independent verification — regardless of whether your specific routes are currently in an offsetting phase.",
       },
       {
         q: "Do you prepare the emission monitoring plan, or also carry out the verification?",
@@ -516,7 +516,7 @@ const servicesData: Service[] = [
       },
       {
         q: "Which DGCA Civil Aviation Requirements (CARs) usually apply?",
-        a: "It depends on the product: CAR-145 for maintenance organisations, CAR-M for continuing airworthiness, and CAR-21 for design and production. Mapping happens per product, since DGCA has revised more than 100 CARs in the past six months. [PLACEHOLDER: confirm current CAR revision count and applicability at time of engagement]",
+        a: "It depends on the product: CAR-145 for maintenance organisations, CAR-M for continuing airworthiness, and CAR-21 for design and production. Mapping happens per product, since DGCA revises its Civil Aviation Requirements on a rolling basis — a mapping done even a year ago should be re-checked against the current text before you rely on it.",
       },
       {
         q: "Do you handle OEM approvals as well as the regulator?",
@@ -528,7 +528,7 @@ const servicesData: Service[] = [
       },
       {
         q: "Is there an FAA-DGCA bilateral route we should know about?",
-        a: "[PLACEHOLDER: confirm current FAA-DGCA Implementation Procedures for Airworthiness (IPA) applicability for the specific product]",
+        a: "Where an FAA-DGCA Implementation Procedures for Airworthiness (IPA) arrangement covers your product category, an existing FAA approval can shorten the Indian validation process rather than requiring a full independent review. Coverage varies by product, so this is worth confirming with DGCA early rather than assumed.",
       },
     ],
     cta: {

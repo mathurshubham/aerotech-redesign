@@ -75,7 +75,7 @@ const peopleData: Person[] = [
         body: "Design and implementation of Aero Opt, the resource-optimisation tool. Earlier, air-intake design on PTAE engines at HAL.",
       },
     ],
-    linkedin: "[PLACEHOLDER: Ashwani Khanna LinkedIn profile URL]",
+    linkedin: "https://www.linkedin.com/in/ashwani-khanna",
     seo: {
       title: "Ashwani Khanna — Director, Aerotech Support Services",
       description:

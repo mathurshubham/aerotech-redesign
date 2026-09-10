@@ -1,3 +1,4 @@
+export { BookingMock } from "./BookingMock";
 export { Breadcrumb, type Crumb } from "./Breadcrumb";
 export { CaseCard } from "./CaseCard";
 export { CaseFeature } from "./CaseFeature";

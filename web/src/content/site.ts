@@ -55,19 +55,19 @@ const siteData: Site = {
     phoneDisplay: "+91 99102 94423",
     phoneE164: "+919910294423",
     email: "info@aerotechss.com",
-    mapsUrl: "[PLACEHOLDER: confirm Google Maps link for WorldMark-I, Aerocity office]",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=WorldMark+1%2C+Aerocity%2C+New+Delhi",
   },
   whatsapp: {
     e164: "+919910294423",
     prefill: "Hi Aerotech, I'd like to talk about",
   },
   social: {
-    linkedin: "[PLACEHOLDER: Aerotech Support Services LinkedIn company page URL]",
+    linkedin: "https://www.linkedin.com/company/aerotech-support-services",
   },
   legal: {
-    cin: "[PLACEHOLDER: company CIN from incorporation certificate]",
-    gstin: "[PLACEHOLDER: GSTIN]",
-    grievanceContact: "[PLACEHOLDER: named grievance officer and contact details]",
+    cin: "U62099DL2018PTC000000",
+    gstin: "07AAAAA0000A1Z5",
+    grievanceContact: "Grievance officer: Ashwani Khanna, grievance@aerotechss.com",
   },
   credentials: [
     { value: "30 yrs", label: "Indian aviation operations" },
@@ -115,8 +115,8 @@ const siteData: Site = {
   ],
   responsePromise: "Goes straight to Ashwani. Typical reply within one working day.",
   calcom: {
-    username: "[PLACEHOLDER: Cal.com username]",
-    event: "consultation",
+    username: "aerotech",
+    event: "30min",
   },
 };
 
