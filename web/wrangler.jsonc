@@ -1,0 +1,41 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "aerotech-web",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-09-11",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+
+  // ── Uncomment when the lead pipeline lands (§0.1 of docs/BUILD-PLAN.md) ──
+  //
+  // D1 for the `leads` table. Create with:
+  //   wrangler d1 create aerotech-leads
+  // then paste the returned database_id and run `pnpm cf-typegen`.
+  //
+  // "d1_databases": [
+  //   {
+  //     "binding": "DB",
+  //     "database_name": "aerotech-leads",
+  //     "database_id": "00000000-0000-0000-0000-000000000000",
+  //     "migrations_dir": "migrations"
+  //   }
+  // ],
+  //
+  // Secrets — do NOT put real values here. Locally they live in `.dev.vars`
+  // (see `.dev.vars.example`); in production use:
+  //   wrangler secret put RESEND_API_KEY
+  //   wrangler secret put TURNSTILE_SECRET_KEY
+  //   wrangler secret put LEAD_TO_EMAIL
+  //
+  // "vars": {
+  //   "RESEND_API_KEY": "",
+  //   "TURNSTILE_SECRET_KEY": "",
+  //   "LEAD_TO_EMAIL": "info@aerotechss.com"
+  // }
+}

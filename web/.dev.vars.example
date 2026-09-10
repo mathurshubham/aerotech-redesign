@@ -1,0 +1,6 @@
+# Copy to `.dev.vars` for local `next dev` / `opennextjs-cloudflare preview`.
+# In production set these as Worker secrets:
+#   wrangler secret put RESEND_API_KEY
+RESEND_API_KEY=""
+TURNSTILE_SECRET_KEY=""
+LEAD_TO_EMAIL="info@aerotechss.com"

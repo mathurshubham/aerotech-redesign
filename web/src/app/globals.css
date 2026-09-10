@@ -1,0 +1,197 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ */
+/*  Aerotech design tokens — see web/DESIGN.md and docs/REDESIGN-BRIEF  */
+/* ------------------------------------------------------------------ */
+
+:root {
+  /* brand */
+  --navy-900: #16203a;
+  --navy-800: #1e2846;
+  --navy-700: #343c5c;
+  --navy-600: #4b5570;
+  --navy-500: #6e7896;
+  --navy-400: #9aa4c0;
+  --navy-300: #c3cadd;
+  --navy-200: #dde2ec;
+  --navy-100: #eef1f6;
+  --navy-50: #f7f8fa;
+  --ink-950: #0f1729;
+
+  --orange-600: #c4470d;
+  --orange-500: #fb722e;
+  --orange-100: #fff3ec;
+
+  /* semantic (light only — single-theme brand site) */
+  --paper: var(--navy-50);
+  --surface: #ffffff;
+  --surface-2: var(--navy-100);
+  --line: var(--navy-200);
+  --line-soft: #e8ebf2;
+  --ink: var(--navy-900);
+  --ink-soft: var(--navy-700);
+  --body: var(--navy-600);
+  --muted: var(--navy-500);
+  --accent: var(--orange-500);
+  --accent-ink: var(--orange-600);
+  --band: var(--navy-900);
+  --band-deep: var(--ink-950);
+  --band-ink: #e9ecf4;
+  --band-muted: var(--navy-400);
+  --band-line: #2c365a;
+
+  /* shadcn mapping */
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --popover: var(--surface);
+  --popover-foreground: var(--ink);
+  --primary: var(--orange-500);
+  --primary-foreground: #ffffff;
+  --secondary: var(--navy-100);
+  --secondary-foreground: var(--ink);
+  --muted: var(--navy-100);
+  --muted-foreground: var(--navy-500);
+  --accent: var(--navy-100);
+  --accent-foreground: var(--ink);
+  --destructive: #c0392b;
+  --border: var(--navy-200);
+  --input: var(--navy-200);
+  --ring: var(--orange-500);
+  --radius: 0.5rem;
+
+  /* motifs */
+  --runway: repeating-linear-gradient(90deg, var(--orange-500) 0 28px, transparent 28px 52px);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-navy-50: var(--navy-50);
+  --color-navy-100: var(--navy-100);
+  --color-navy-200: var(--navy-200);
+  --color-navy-300: var(--navy-300);
+  --color-navy-400: var(--navy-400);
+  --color-navy-500: var(--navy-500);
+  --color-navy-600: var(--navy-600);
+  --color-navy-700: var(--navy-700);
+  --color-navy-800: var(--navy-800);
+  --color-navy-900: var(--navy-900);
+  --color-ink-950: var(--ink-950);
+  --color-orange-100: var(--orange-100);
+  --color-orange-500: var(--orange-500);
+  --color-orange-600: var(--orange-600);
+
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-body: var(--body);
+  --color-subtle: var(--navy-500);
+  --color-band: var(--band);
+  --color-band-deep: var(--band-deep);
+  --color-band-ink: var(--band-ink);
+  --color-band-muted: var(--band-muted);
+  --color-band-line: var(--band-line);
+
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, Menlo, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: 0.11em;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper text-body font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.62;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-ink;
+    letter-spacing: -0.018em;
+    text-wrap: balance;
+  }
+  ::selection {
+    background: var(--orange-100);
+    color: var(--ink);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-[1200px] px-6;
+  }
+  .eyebrow {
+    @apply font-mono text-eyebrow font-medium uppercase text-subtle;
+  }
+  .eyebrow-accent {
+    @apply font-mono text-eyebrow font-medium uppercase text-orange-500;
+  }
+  .runway {
+    height: 4px;
+    background: var(--runway);
+  }
+  .band {
+    @apply bg-band text-band-ink;
+  }
+  .band .eyebrow {
+    @apply text-band-muted;
+  }
+  .measure {
+    max-width: 68ch;
+  }
+  .prose-site {
+    @apply prose prose-neutral max-w-none prose-headings:font-display prose-headings:text-ink prose-headings:tracking-tight prose-p:text-body prose-a:text-orange-600 prose-a:no-underline hover:prose-a:text-orange-500 prose-strong:text-ink prose-li:text-body prose-blockquote:border-orange-500 prose-blockquote:font-display prose-blockquote:not-italic prose-blockquote:text-ink;
+  }
+  .prose-site p, .prose-site li {
+    font-size: 1.0625rem;
+    line-height: 1.68;
+  }
+}

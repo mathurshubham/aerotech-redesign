@@ -1,0 +1,306 @@
+{
+  "aerowash-1": {
+    "width": 3840,
+    "height": 2592,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768,
+      1080,
+      1440,
+      1920
+    ]
+  },
+  "aerowash-2": {
+    "width": 1052,
+    "height": 598,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768
+    ]
+  },
+  "aerowash-3": {
+    "width": 1024,
+    "height": 682,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768
+    ]
+  },
+  "aircraft-approach": {
+    "width": 2560,
+    "height": 1655,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768,
+      1080,
+      1440,
+      1920
+    ]
+  },
+  "airline-strategy-diagram": {
+    "width": 1023,
+    "height": 561,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768
+    ]
+  },
+  "airport-strategy-diagram": {
+    "width": 663,
+    "height": 482,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480
+    ]
+  },
+  "apron-indigo-spicejet": {
+    "width": 500,
+    "height": 500,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480
+    ]
+  },
+  "ashwani-khanna": {
+    "width": 500,
+    "height": 500,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480
+    ]
+  },
+  "delhi-apron": {
+    "width": 1200,
+    "height": 800,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768,
+      1080
+    ]
+  },
+  "hero-runway": {
+    "width": 1080,
+    "height": 720,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768,
+      1080
+    ]
+  },
+  "logo-aerowash": {
+    "width": 264,
+    "height": 44,
+    "formats": [
+      "png"
+    ],
+    "widths": []
+  },
+  "logo-global": {
+    "width": 293,
+    "height": 89,
+    "formats": [
+      "png"
+    ],
+    "widths": []
+  },
+  "logo-spicejet": {
+    "width": 138,
+    "height": 69,
+    "formats": [
+      "png"
+    ],
+    "widths": []
+  },
+  "logo-stelia": {
+    "width": 253,
+    "height": 78,
+    "formats": [
+      "png"
+    ],
+    "widths": []
+  },
+  "logo-taxibot": {
+    "width": 1257,
+    "height": 515,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768,
+      1080
+    ]
+  },
+  "logo-upes": {
+    "width": 196,
+    "height": 81,
+    "formats": [
+      "png"
+    ],
+    "widths": []
+  },
+  "stelia-seat-1": {
+    "width": 890,
+    "height": 506,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768
+    ]
+  },
+  "stelia-seat-2": {
+    "width": 792,
+    "height": 498,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768
+    ]
+  },
+  "stelia-seat-3": {
+    "width": 843,
+    "height": 648,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768
+    ]
+  },
+  "taxibot-airindia": {
+    "width": 760,
+    "height": 427,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480
+    ]
+  },
+  "taxibot-goair": {
+    "width": 909,
+    "height": 410,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768
+    ]
+  },
+  "taxibot-hangar": {
+    "width": 593,
+    "height": 360,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480
+    ]
+  },
+  "taxibot-indigo": {
+    "width": 877,
+    "height": 480,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768
+    ]
+  },
+  "upes-1": {
+    "width": 842,
+    "height": 635,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768
+    ]
+  },
+  "upes-2": {
+    "width": 960,
+    "height": 640,
+    "formats": [
+      "jpg",
+      "webp",
+      "avif"
+    ],
+    "widths": [
+      480,
+      768
+    ]
+  }
+}
