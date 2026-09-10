@@ -102,7 +102,7 @@ export default async function CaseStudyPage({
           <p className="eyebrow-accent">{renderText(study.eyebrow)}</p>
           <h1
             id="case-title"
-            className="mt-4 max-w-[21ch] font-display text-[2.125rem] leading-[1.05] font-bold text-white lg:text-[3.625rem]"
+            className="h1-hero mt-4 max-w-[21ch] font-display font-bold text-white"
           >
             {renderText(study.title)}
           </h1>
@@ -134,9 +134,9 @@ export default async function CaseStudyPage({
       {/* Challenge */}
       <section aria-labelledby="challenge-heading" className="py-14 lg:py-21">
         <div className="container-site grid gap-8 lg:grid-cols-[200px_1fr] lg:gap-14">
-          <p id="challenge-heading" className="eyebrow pt-1">
+          <h2 id="challenge-heading" className="eyebrow pt-1">
             Challenge
-          </p>
+          </h2>
           <Prose>
             {study.challenge.map((paragraph, i) => (
               <p key={i}>{renderText(paragraph)}</p>
@@ -174,9 +174,9 @@ export default async function CaseStudyPage({
       {/* Approach */}
       <section aria-labelledby="approach-heading" className="py-14 lg:py-18">
         <div className="container-site grid gap-8 lg:grid-cols-[200px_1fr] lg:gap-14">
-          <p id="approach-heading" className="eyebrow pt-1">
+          <h2 id="approach-heading" className="eyebrow pt-1">
             Approach
-          </p>
+          </h2>
           <ol className="measure">
             {study.approach.map((step, i) => (
               <li
@@ -203,9 +203,9 @@ export default async function CaseStudyPage({
       {/* Outcome — dark band */}
       <section aria-labelledby="outcome-heading" className="bg-band py-14 lg:py-21">
         <div className="container-site grid gap-8 lg:grid-cols-[200px_1fr] lg:gap-14">
-          <p id="outcome-heading" className="eyebrow-accent pt-1">
+          <h2 id="outcome-heading" className="eyebrow-accent pt-1">
             Outcome
-          </p>
+          </h2>
           <div>
             <p className="max-w-[30ch] border-l-[3px] border-orange-500 pl-6 font-display text-2xl leading-[1.28] font-medium text-white">
               {renderText(study.outcome.quote)}

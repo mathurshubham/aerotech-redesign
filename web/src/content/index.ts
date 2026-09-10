@@ -18,6 +18,7 @@ export function getAllRoutes(): string[] {
     "/",
     "/services",
     ...serviceSlugs.map((slug) => (slug === "aero-opt" ? "/tools/aero-opt" : `/services/${slug}`)),
+    "/services/india-market-entry/dgca-guide",
     "/work",
     ...workSlugs.map((slug) => `/work/${slug}`),
     "/about",

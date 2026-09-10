@@ -20,6 +20,7 @@ Rev 1 · 2026-09-11 · Binding for every component agent. Sources: `src/app/glob
 | `line` | `#DDE2EC` | 1px rules and card edges |
 | `orange-500` | `#FB722E` | Accent — CTAs, icons, eyebrow accent, rules |
 | `orange-600` | `#C4470D` | Link text on light (contrast-safe) |
+| `orange-100` | `#FFF3EC` | Tint — selected-chip fill (e.g. `LeadForm` topic chips), hover/selection backgrounds only. Never a section fill, never under body text |
 | `band` / `band-deep` | `#16203A` / `#0F1729` | Navy section / footer |
 | `band-ink` / `band-muted` / `band-line` | `#E9ECF4` / `#9AA4C0` / `#2C365A` | Text, secondary text, dividers inside a navy band |
 

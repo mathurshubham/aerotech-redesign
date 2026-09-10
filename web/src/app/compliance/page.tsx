@@ -21,7 +21,10 @@ export default function CompliancePage() {
           { name: page.title, path: "/compliance" },
         ])}
       />
-      <BlockRenderer blocks={page.blocks} />
+      <BlockRenderer
+        blocks={page.blocks}
+        crumbs={[{ label: "Home", href: "/" }, { label: page.title }]}
+      />
     </>
   );
 }

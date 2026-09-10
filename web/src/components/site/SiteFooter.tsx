@@ -44,9 +44,9 @@ export function SiteFooter() {
 
           {site.footerNav.map((group) => (
             <div key={group.title}>
-              <h2 className="font-mono text-[0.625rem] font-medium tracking-[0.11em] text-orange-500 uppercase">
+              <p className="font-mono text-[0.625rem] font-medium tracking-[0.11em] text-orange-500 uppercase">
                 {group.title}
-              </h2>
+              </p>
               <ul className="mt-4 flex flex-col gap-2.5">
                 {group.items.map((item) => (
                   <li key={item.href}>
@@ -65,7 +65,7 @@ export function SiteFooter() {
         </div>
 
         <div className="border-t border-navy-800 py-6">
-          <p className="flex flex-col gap-2 font-mono text-eyebrow leading-relaxed tracking-[0.06em] text-subtle sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-3">
+          <p className="flex flex-col gap-2 font-mono text-eyebrow leading-relaxed tracking-[0.06em] text-navy-300 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-3">
             <span>
               &copy; {year} {site.legalName}
             </span>
@@ -82,7 +82,7 @@ export function SiteFooter() {
             </span>
             <span>Grievance contact: {renderText(legal.grievanceContact)}</span>
           </p>
-          <p className="mt-3 flex gap-3 font-mono text-eyebrow tracking-[0.06em] text-subtle">
+          <p className="mt-3 flex gap-3 font-mono text-eyebrow tracking-[0.06em] text-navy-300">
             <Link href="/privacy" className={`${focusRing} hover:text-white`}>
               Privacy
             </Link>

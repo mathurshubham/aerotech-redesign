@@ -21,7 +21,10 @@ export default function PrivacyPage() {
           { name: page.title, path: "/privacy" },
         ])}
       />
-      <BlockRenderer blocks={page.blocks} />
+      <BlockRenderer
+        blocks={page.blocks}
+        crumbs={[{ label: "Home", href: "/" }, { label: page.title }]}
+      />
     </>
   );
 }

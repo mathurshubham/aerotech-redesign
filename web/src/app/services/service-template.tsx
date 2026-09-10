@@ -157,8 +157,12 @@ export function ServicePage({
         className="border-b border-line bg-surface py-12 lg:py-21"
       >
         <div className="container-site">
-          <h2 id="who-for" className="eyebrow">
-            Who this is for
+          <p className="eyebrow">Who this is for</p>
+          <h2
+            id="who-for"
+            className="mt-3 font-display text-[1.75rem] leading-[1.14] font-semibold lg:text-[2.125rem]"
+          >
+            {numberWord(service.forWhom.length)} teams, one handover
           </h2>
           <ul className="mt-6 grid gap-6 lg:mt-7 lg:grid-cols-3">
             {service.forWhom.map((group) => (

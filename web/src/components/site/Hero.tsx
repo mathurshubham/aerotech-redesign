@@ -52,7 +52,7 @@ export function Hero({
         <p className="eyebrow-accent">{eyebrow}</p>
         <h1
           id="hero-title"
-          className="mt-4 max-w-[17ch] font-display text-[2.125rem] leading-[1.06] font-bold text-white lg:mt-5.5 lg:text-[3.875rem] lg:leading-[1.04]"
+          className="h1-hero mt-4 max-w-[17ch] font-display font-bold text-white lg:mt-5.5"
         >
           {renderText(title)}
         </h1>
@@ -119,7 +119,7 @@ export function PageHead({
             {eyebrow && !crumbs && <p className="eyebrow-accent mb-5">{eyebrow}</p>}
             <h1
               id="page-title"
-              className="max-w-[22ch] font-display text-[2.125rem] leading-[1.07] font-bold text-white lg:text-[3.125rem]"
+              className="h1-hero max-w-[22ch] font-display font-bold text-white"
             >
               {renderText(title)}
             </h1>

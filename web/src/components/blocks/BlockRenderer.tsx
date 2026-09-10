@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import {
+  Breadcrumb,
   CaseFeature,
   CTABand,
   DeliverablesGrid,
@@ -17,6 +18,7 @@ import {
   resolveImage,
   SectionHeading,
   StatBand,
+  type Crumb,
 } from "@/components/site";
 import { getCaseStudy, getPerson, site, type Block } from "@/content";
 import { cn } from "@/lib/utils";
@@ -61,13 +63,24 @@ function Band({
 }
 
 /** Renders one `Page.blocks` entry. Every Block variant is handled. */
-function BlockView({ block, index }: { block: Block; index: number }) {
+function BlockView({
+  block,
+  index,
+  crumbs,
+}: {
+  block: Block;
+  index: number;
+  crumbs?: Crumb[];
+}) {
   switch (block.type) {
     case "hero": {
       const image = block.image ? resolveImage(block.image.src, block.image) : null;
       return (
         <section aria-labelledby="page-title" className="relative bg-band">
           <div className="container-site py-12 lg:py-20">
+            {crumbs && (
+              <Breadcrumb items={crumbs} onBand className="mb-5" />
+            )}
             {block.eyebrow && <p className="eyebrow-accent mb-5">{block.eyebrow}</p>}
             <h1
               id="page-title"
@@ -337,12 +350,24 @@ function BlockView({ block, index }: { block: Block; index: number }) {
   }
 }
 
-/** Renders a whole `Page.blocks` array. */
-export function BlockRenderer({ blocks }: { blocks: Block[] }) {
+/** Renders a whole `Page.blocks` array. `crumbs`, if given, renders a visible
+ * `Breadcrumb` inside the page's `hero` block, above the h1. */
+export function BlockRenderer({
+  blocks,
+  crumbs,
+}: {
+  blocks: Block[];
+  crumbs?: Crumb[];
+}) {
   return (
     <>
       {blocks.map((block, index) => (
-        <BlockView key={`${block.type}-${index}`} block={block} index={index} />
+        <BlockView
+          key={`${block.type}-${index}`}
+          block={block}
+          index={index}
+          crumbs={block.type === "hero" ? crumbs : undefined}
+        />
       ))}
     </>
   );

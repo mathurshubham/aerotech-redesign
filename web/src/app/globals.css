@@ -178,6 +178,11 @@
     height: 4px;
     background: var(--runway);
   }
+  /* Hero/case/page-head h1 — one scale, ceiling 56px at any desktop width. */
+  .h1-hero {
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    line-height: 1.05;
+  }
   .band {
     @apply bg-band text-band-ink;
   }
