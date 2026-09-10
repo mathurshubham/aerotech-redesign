@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; background: #F7F8FA; color: #4B5570;
+           font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+           font-size: 17px; line-height: 1.62; -webkit-font-smoothing: antialiased; }
+    a { color: #C4470D; text-decoration: none; } a:hover { color: #FB722E; }
+    h1, h2, h3, h4 { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+                     margin: 0; color: #16203A; letter-spacing: -0.018em; }
+    .mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; }
+    .wrap { width: 1200px; margin: 0 auto; }
+    .eyebrow { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+               font-size: 11px; font-weight: 500; letter-spacing: 0.11em;
+               text-transform: uppercase; color: #6E7896; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; height: 52px;
+           padding: 0 26px; border-radius: 8px; font-weight: 600; font-size: 16px;
+           font-family: "Inter", Arial, sans-serif; }
+    .btn-primary { background: #FB722E; color: #FFFFFF; }
+    .btn-ghost { border: 1px solid rgba(255,255,255,0.34); color: #FFFFFF; }
+    .card { background: #FFFFFF; border: 1px solid #DDE2EC; border-radius: 8px; }
+    .lede { font-size: 19px; color: #343C5C; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; background: #F7F8FA">
+
+  <!-- ══ NAV ══ -->
+  <div style="background: #FFFFFF; border-bottom: 1px solid #DDE2EC">
+    <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 84px">
+      <div style="display: flex; flex-direction: column; gap: 2px">
+        <div style="font-family: Archivo, Arial, sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 0.02em; color: #16203A">AEROTECH</div>
+        <div class="mono" style="font-size: 9px; letter-spacing: 0.19em; color: #6E7896">SUPPORT SERVICES</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 34px">
+        <div style="display: flex; gap: 30px; font-size: 15px; font-weight: 500; color: #343C5C">
+          <div>Services</div>
+          <div>Work</div>
+          <div>About</div>
+          <div>Insights</div>
+        </div>
+        <div class="btn btn-primary" style="height: 44px; padding: 0 20px; font-size: 15px">Book a consultation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 01 HERO ══ -->
+  <div style="position: relative; height: 620px; overflow: hidden; background: #16203A">
+    <img src="hero-runway.jpg" alt="Approach lighting, Delhi" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5">
+    <div style="position: absolute; inset: 0; background: linear-gradient(96deg, #16203A 8%, rgba(22,32,58,0.86) 46%, rgba(22,32,58,0.34) 100%)"></div>
+    <div class="wrap" style="position: relative; padding-top: 132px">
+      <div class="eyebrow" style="color: #FB722E">Aviation &amp; airport consulting &middot; New Delhi</div>
+      <h1 style="font-weight: 700; font-size: 62px; line-height: 1.04; color: #FFFFFF; max-width: 17ch; margin-top: 22px">From regulatory approval to day&#8209;one operations.</h1>
+      <p style="font-size: 19px; line-height: 1.55; color: #C3CADD; max-width: 54ch; margin: 26px 0 0">Thirty years of Indian aviation operations, compliance and ORAT. We delivered the world&rsquo;s first TaxiBot operations with both Airbus and Boeing.</p>
+      <div style="display: flex; gap: 14px; margin-top: 40px">
+        <div class="btn btn-primary">Book a consultation</div>
+        <div class="btn btn-ghost">See our work</div>
+      </div>
+    </div>
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: repeating-linear-gradient(90deg, #FB722E 0 30px, transparent 30px 56px)"></div>
+  </div>
+
+  <!-- ══ 02 CREDENTIAL STRIP ══ -->
+  <div style="background: #16203A">
+    <div class="wrap" style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; background: #2C365A; border-left: 1px solid #2C365A; border-right: 1px solid #2C365A">
+      <div style="background: #16203A; padding: 30px 24px">
+        <div class="mono" style="font-size: 25px; font-weight: 500; color: #FB722E; line-height: 1">30 yrs</div>
+        <div style="font-size: 13px; color: #9AA4C0; margin-top: 11px; line-height: 1.45">Indian aviation operations</div>
+      </div>
+      <div style="background: #16203A; padding: 30px 24px">
+        <div class="mono" style="font-size: 25px; font-weight: 500; color: #FB722E; line-height: 1">World 1st</div>
+        <div style="font-size: 13px; color: #9AA4C0; margin-top: 11px; line-height: 1.45">TaxiBot ops &mdash; A321 family &amp; B737&#8209;NG</div>
+      </div>
+      <div style="background: #16203A; padding: 30px 24px">
+        <div class="mono" style="font-size: 25px; font-weight: 500; color: #FB722E; line-height: 1">3 &times; ISO</div>
+        <div style="font-size: 13px; color: #9AA4C0; margin-top: 11px; line-height: 1.45">Lead auditor &mdash; 9001, 45001, 14064</div>
+      </div>
+      <div style="background: #16203A; padding: 30px 24px">
+        <div class="mono" style="font-size: 25px; font-weight: 500; color: #FB722E; line-height: 1">AS9100D</div>
+        <div style="font-size: 13px; color: #9AA4C0; margin-top: 11px; line-height: 1.45">Certified aerospace auditor</div>
+      </div>
+      <div style="background: #16203A; padding: 30px 24px">
+        <div class="mono" style="font-size: 25px; font-weight: 500; color: #FB722E; line-height: 1">CORSIA</div>
+        <div style="font-size: 13px; color: #9AA4C0; margin-top: 11px; line-height: 1.45">ICAO&#8209;certified verification</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 03 CLIENT LOGOS ══ -->
+  <div style="background: #FFFFFF; border-bottom: 1px solid #DDE2EC; padding: 44px 0">
+    <div class="wrap" style="display: flex; align-items: center; gap: 56px">
+      <div class="eyebrow" style="white-space: nowrap">Selected clients</div>
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-grow: 1; filter: grayscale(1); opacity: 0.62">
+        <img src="logo-taxibot.png" alt="TaxiBot India, KSU Aviation" style="height: 40px">
+        <img src="logo-stelia.png" alt="Stelia Aerospace" style="height: 22px">
+        <img src="logo-spicejet.png" alt="SpiceJet" style="height: 30px">
+        <img src="logo-upes.png" alt="UPES" style="height: 28px">
+        <img src="logo-aerowash.png" alt="Aerowash" style="height: 17px">
+        <img src="logo-global.png" alt="Global" style="height: 26px">
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 04 SERVICES ══ -->
+  <div style="padding: 96px 0 100px">
+    <div class="wrap">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 44px">
+        <div>
+          <div class="eyebrow">What we do</div>
+          <h2 style="font-weight: 600; font-size: 38px; line-height: 1.14; margin-top: 12px; max-width: 24ch">Five practices, one operating discipline</h2>
+        </div>
+        <div style="font-size: 15px; font-weight: 600; color: #C4470D; padding-bottom: 8px">All services &rarr;</div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+
+        <div class="card" style="padding: 30px 28px 28px; display: flex; flex-direction: column; gap: 14px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FB722E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"></path><path d="M6 20V9l6-5 6 5v11"></path><path d="M10 20v-5h4v5"></path><path d="M12 4v-2"></path></svg>
+          <h3 style="font-weight: 600; font-size: 20px">Operational Readiness &amp; Transfer</h3>
+          <p style="font-size: 15px; line-height: 1.58; margin: 0">Trials, orientation and familiarisation that get a new terminal to day one without a first-week incident.</p>
+          <div style="font-size: 14px; font-weight: 600; color: #C4470D; margin-top: 4px">ORAT &rarr;</div>
+        </div>
+
+        <div class="card" style="padding: 30px 28px 28px; display: flex; flex-direction: column; gap: 14px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FB722E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="17" rx="2"></rect><path d="M9 4V2.6h6V4"></path><path d="M8.5 12.6l2.4 2.4 4.6-5"></path></svg>
+          <h3 style="font-weight: 600; font-size: 20px">Audits &amp; Compliance</h3>
+          <p style="font-size: 15px; line-height: 1.58; margin: 0">ISO 9001, 45001 and 14064 lead-auditor work plus AS9100D aerospace audits, run by the auditor himself.</p>
+          <div style="font-size: 14px; font-weight: 600; color: #C4470D; margin-top: 4px">Audits &amp; compliance &rarr;</div>
+        </div>
+
+        <div class="card" style="padding: 30px 28px 28px; display: flex; flex-direction: column; gap: 14px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FB722E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c0-6.5 3.2-11 8-12 .6 5.4-2.2 11.3-8 12z"></path><path d="M12 21C8 17.5 4.6 16.4 3 17c.4 2.8 3.4 4.6 9 4z"></path><path d="M12 21v-4"></path></svg>
+          <h3 style="font-weight: 600; font-size: 20px">Sustainable Aviation</h3>
+          <p style="font-size: 15px; line-height: 1.58; margin: 0">CORSIA verification, ISO 14064 greenhouse-gas accounting and emission monitoring plans for airlines and airports.</p>
+          <div style="font-size: 14px; font-weight: 600; color: #C4470D; margin-top: 4px">Sustainable aviation &rarr;</div>
+        </div>
+
+        <div class="card" style="padding: 30px 28px 28px; display: flex; flex-direction: column; gap: 14px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FB722E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 14.5l19-5.6"></path><path d="M9 12.9L6.6 8.3l1.8-.5 3.4 3.7"></path><path d="M14.4 11.3l-1.1-5.6 1.9-.6 2.4 5.1"></path><path d="M5 19h14"></path></svg>
+          <h3 style="font-weight: 600; font-size: 20px">Aircraft Recovery</h3>
+          <p style="font-size: 15px; line-height: 1.58; margin: 0">Recovery plans, internal team preparation and drills, so a disabled aircraft is off the runway on a clock you set.</p>
+          <div style="font-size: 14px; font-weight: 600; color: #C4470D; margin-top: 4px">Aircraft recovery &rarr;</div>
+        </div>
+
+        <div class="card" style="padding: 30px 28px 28px; display: flex; flex-direction: column; gap: 14px; border-color: #FB722E">
+          <div style="display: flex; align-items: center; justify-content: space-between">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FB722E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+            <div class="mono" style="font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #FB722E; border: 1px solid #FB722E; border-radius: 999px; padding: 4px 9px">New</div>
+          </div>
+          <h3 style="font-weight: 600; font-size: 20px">India Market Entry</h3>
+          <p style="font-size: 15px; line-height: 1.58; margin: 0">DGCA approvals, OEM sign-off and field representation for foreign suppliers entering Indian aviation. We have done it for TaxiBot and Stelia.</p>
+          <div style="font-size: 14px; font-weight: 600; color: #C4470D; margin-top: 4px">India market entry &rarr;</div>
+        </div>
+
+        <div style="background: #EEF1F6; border: 1px solid #DDE2EC; border-radius: 8px; padding: 30px 28px 28px; display: flex; flex-direction: column; gap: 14px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#343C5C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 18.5V13"></path><path d="M9 18.5V7.5"></path><path d="M14.5 18.5v-8"></path><path d="M20 18.5V4.5"></path><path d="M2 21h20"></path></svg>
+          <h3 style="font-weight: 600; font-size: 20px">Aero&nbsp;Opt</h3>
+          <p style="font-size: 15px; line-height: 1.58; margin: 0">Our resource-optimisation tool. Forecasts passenger flow against a Level of Service target and sizes staffing to it.</p>
+          <div style="font-size: 14px; font-weight: 600; color: #343C5C; margin-top: 4px">The tool &rarr;</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 05 FLAGSHIP CASE ══ -->
+  <div style="background: #16203A; padding: 88px 0">
+    <div class="wrap">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center">
+        <div>
+          <div class="eyebrow" style="color: #FB722E">Case study &middot; TaxiBot India &middot; 2019&ndash;2024</div>
+          <h2 style="font-weight: 600; font-size: 40px; line-height: 1.12; color: #FFFFFF; margin-top: 16px; max-width: 20ch">The world&rsquo;s first TaxiBot operation</h2>
+          <p style="font-size: 17px; line-height: 1.6; color: #9AA4C0; margin: 22px 0 0">Aerotech developed the Indian market for TaxiBot, obtained the regulatory compliances, secured operational approvals from both Airbus and Boeing, and ran the operational evaluation through to delivery.</p>
+          <div style="border-left: 3px solid #FB722E; padding-left: 20px; margin: 30px 0 0">
+            <p style="font-family: Archivo, Arial, sans-serif; font-weight: 500; font-size: 20px; line-height: 1.42; color: #FFFFFF; margin: 0">World&rsquo;s first TaxiBot operations with Airbus (A321 family) and Boeing (B737&#8209;NG).</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: #2C365A; margin-top: 34px; border: 1px solid #2C365A">
+            <div style="background: #16203A; padding: 18px 16px">
+              <div class="mono" style="font-size: 20px; color: #FFFFFF">2</div>
+              <div style="font-size: 12px; color: #9AA4C0; margin-top: 6px">OEM approvals &mdash; Airbus, Boeing</div>
+            </div>
+            <div style="background: #16203A; padding: 18px 16px">
+              <div class="mono" style="font-size: 20px; color: #FFFFFF">3</div>
+              <div style="font-size: 12px; color: #9AA4C0; margin-top: 6px">Airports &mdash; DEL, BLR, HYD</div>
+            </div>
+            <div style="background: #16203A; padding: 18px 16px">
+              <div class="mono" style="font-size: 20px; color: #FFFFFF">4</div>
+              <div style="font-size: 12px; color: #9AA4C0; margin-top: 6px">Carriers in revenue service</div>
+            </div>
+          </div>
+          <div style="font-size: 15px; font-weight: 600; color: #FB722E; margin-top: 30px">Read the full case &rarr;</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <div>
+            <img src="taxibot-indigo.jpg" alt="TaxiBot coupled to an IndiGo A320 at Delhi" style="width: 100%; display: block; border-radius: 8px">
+            <div class="mono" style="font-size: 11px; color: #9AA4C0; margin-top: 9px">IndiGo A320 &middot; Indira Gandhi International, Delhi &middot; 2023</div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
+            <div>
+              <img src="taxibot-airindia.jpg" alt="TaxiBot with an Air India A321" style="width: 100%; display: block; border-radius: 8px">
+              <div class="mono" style="font-size: 11px; color: #9AA4C0; margin-top: 9px">Air India A321 &middot; DEL</div>
+            </div>
+            <div>
+              <img src="taxibot-goair.jpg" alt="TaxiBot night operation with a GoAir A320" style="width: 100%; display: block; border-radius: 8px">
+              <div class="mono" style="font-size: 11px; color: #9AA4C0; margin-top: 9px">GoAir A320 &middot; night ops</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 06 PRINCIPAL ══ -->
+  <div style="background: #FFFFFF; padding: 92px 0">
+    <div class="wrap" style="display: grid; grid-template-columns: 440px 1fr; gap: 64px; align-items: start">
+      <div>
+        <img src="ashwani-khanna.jpg" alt="Ashwani Khanna, Director" style="width: 100%; display: block; border-radius: 8px">
+        <div class="mono" style="font-size: 11px; color: #6E7896; margin-top: 10px">Lead auditor briefing &middot; New Delhi</div>
+      </div>
+      <div>
+        <div class="eyebrow">Who you actually work with</div>
+        <h2 style="font-weight: 600; font-size: 38px; line-height: 1.14; margin-top: 12px">Ashwani Khanna</h2>
+        <div class="mono" style="font-size: 13px; letter-spacing: 0.06em; color: #FB722E; margin-top: 8px">DIRECTOR</div>
+        <p class="lede" style="margin: 22px 0 0; max-width: 58ch">A subject-matter expert with almost thirty years across aircraft manufacturing, maintenance and airport service delivery &mdash; and the person who runs your engagement, not a partner who hands it off.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; margin-top: 34px">
+          <div style="border-top: 1px solid #DDE2EC; padding: 16px 0">
+            <div class="mono" style="font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #6E7896">Lead auditor</div>
+            <div style="font-size: 15px; color: #16203A; font-weight: 500; margin-top: 5px">ISO 9001 &middot; ISO 45001 &middot; ISO 14064</div>
+          </div>
+          <div style="border-top: 1px solid #DDE2EC; padding: 16px 0">
+            <div class="mono" style="font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #6E7896">Aerospace</div>
+            <div style="font-size: 15px; color: #16203A; font-weight: 500; margin-top: 5px">AS9100D certified auditor</div>
+          </div>
+          <div style="border-top: 1px solid #DDE2EC; padding: 16px 0">
+            <div class="mono" style="font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #6E7896">ICAO</div>
+            <div style="font-size: 15px; color: #16203A; font-weight: 500; margin-top: 5px">CORSIA verification &amp; validation</div>
+          </div>
+          <div style="border-top: 1px solid #DDE2EC; padding: 16px 0">
+            <div class="mono" style="font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #6E7896">Based</div>
+            <div style="font-size: 15px; color: #16203A; font-weight: 500; margin-top: 5px">Aerocity, adjacent to Delhi IGI</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 22px; margin-top: 30px; font-size: 15px; font-weight: 600">
+          <div style="color: #C4470D">Full profile &rarr;</div>
+          <div style="color: #C4470D">LinkedIn &rarr;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 07 SECOND PROOF ROW ══ -->
+  <div style="padding: 92px 0 100px">
+    <div class="wrap">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px">
+        <div>
+          <div class="eyebrow">Selected work</div>
+          <h2 style="font-weight: 600; font-size: 38px; line-height: 1.14; margin-top: 12px">Proof, not positioning</h2>
+        </div>
+        <div style="font-size: 15px; font-weight: 600; color: #C4470D; padding-bottom: 8px">All work &rarr;</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px">
+        <div class="card" style="overflow: hidden">
+          <img src="delhi-apron.jpg" alt="Apron at Delhi" style="width: 100%; height: 232px; object-fit: cover; display: block">
+          <div style="padding: 26px 28px 28px">
+            <div class="mono" style="font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #6E7896">Stelia Aerospace &middot; New Delhi</div>
+            <h3 style="font-weight: 600; font-size: 22px; margin-top: 12px">Field representation in India for a business-class seat manufacturer</h3>
+            <p style="font-size: 15px; line-height: 1.58; margin: 12px 0 0">Selected to serve as field representative to Stelia Aerospace&rsquo;s Indian clientele, covering airline programmes across the region.</p>
+            <div style="font-size: 14px; font-weight: 600; color: #C4470D; margin-top: 18px">Read the case &rarr;</div>
+          </div>
+        </div>
+        <div class="card" style="overflow: hidden">
+          <img src="taxibot-goair.jpg" alt="Night ground operation" style="width: 100%; height: 232px; object-fit: cover; display: block">
+          <div style="padding: 26px 28px 28px">
+            <div class="mono" style="font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #6E7896">Aerowash &middot; Multi-airport</div>
+            <h3 style="font-weight: 600; font-size: 22px; margin-top: 12px">Automated exterior aircraft wash, brought into Indian service</h3>
+            <p style="font-size: 15px; line-height: 1.58; margin: 12px 0 0">Market development and operational evaluation for robotic aircraft washing, including water-use and turnaround assessment.</p>
+            <div style="font-size: 14px; font-weight: 600; color: #C4470D; margin-top: 18px">Read the case &rarr;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 08 CONTACT BAND ══ -->
+  <div style="background: #16203A; padding: 84px 0">
+    <div class="wrap" style="display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: start">
+      <div>
+        <h2 style="font-weight: 600; font-size: 40px; line-height: 1.12; color: #FFFFFF; max-width: 22ch">Talk to us about your project</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #9AA4C0; margin: 20px 0 0; max-width: 50ch">Thirty minutes with the person who would run the engagement. Bring a terminal opening date, an audit scope, or an approval you cannot get through.</p>
+        <div style="display: flex; flex-direction: column; gap: 18px; margin-top: 38px">
+          <div style="display: flex; gap: 14px; align-items: flex-start">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FB722E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px; flex-shrink: 0"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"></path><circle cx="12" cy="10" r="2.6"></circle></svg>
+            <div style="font-size: 16px; color: #C3CADD; line-height: 1.5">Ground &amp; First Floor, Coworks, WorldMark&#8209;I<br>Aerocity, New Delhi 110037 &mdash; adjacent to Delhi IGI</div>
+          </div>
+          <div style="display: flex; gap: 14px; align-items: center">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FB722E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><path d="M5 3.5h3.2l1.6 4-2 1.4a11.5 11.5 0 0 0 5.8 5.8l1.4-2 4 1.6V19a1.5 1.5 0 0 1-1.6 1.5A16.5 16.5 0 0 1 3.5 5.1 1.5 1.5 0 0 1 5 3.5z"></path></svg>
+            <div class="mono" style="font-size: 16px; color: #FFFFFF">+91 99102 94423</div>
+          </div>
+          <div style="display: flex; gap: 14px; align-items: center">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FB722E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3.5 6.5L12 13l8.5-6.5"></path></svg>
+            <div class="mono" style="font-size: 16px; color: #FFFFFF">info@aerotechss.com</div>
+          </div>
+        </div>
+      </div>
+      <div style="background: #FFFFFF; border-radius: 8px; padding: 30px 28px 32px">
+        <div class="eyebrow" style="color: #6E7896">Book a consultation</div>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 20px">
+          <div>
+            <div style="font-size: 13px; font-weight: 600; color: #16203A; margin-bottom: 6px">Name</div>
+            <div style="height: 46px; border: 1px solid #DDE2EC; border-radius: 8px; background: #F7F8FA"></div>
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 600; color: #16203A; margin-bottom: 6px">Work email</div>
+            <div style="height: 46px; border: 1px solid #DDE2EC; border-radius: 8px; background: #F7F8FA"></div>
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 600; color: #16203A; margin-bottom: 6px">What do you need?</div>
+            <div style="height: 46px; border: 1px solid #DDE2EC; border-radius: 8px; background: #F7F8FA; display: flex; align-items: center; padding: 0 14px; justify-content: space-between">
+              <span style="font-size: 15px; color: #6E7896">ORAT for a new terminal</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6E7896" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 13px; font-weight: 600; color: #16203A; margin-bottom: 6px">Anything we should read first?</div>
+            <div style="height: 86px; border: 1px solid #DDE2EC; border-radius: 8px; background: #F7F8FA"></div>
+          </div>
+          <div class="btn btn-primary" style="justify-content: center; margin-top: 4px">Request a call</div>
+          <div style="font-size: 12px; color: #6E7896; text-align: center">Or pick a slot directly &mdash; calendar embed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <div style="background: #0F1729; padding: 56px 0 0">
+    <div class="wrap">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 44px">
+        <div>
+          <div style="font-family: Archivo, Arial, sans-serif; font-weight: 700; font-size: 19px; letter-spacing: 0.02em; color: #FFFFFF">AEROTECH</div>
+          <div class="mono" style="font-size: 9px; letter-spacing: 0.19em; color: #6E7896; margin-top: 3px">SUPPORT SERVICES</div>
+          <p style="font-size: 14px; line-height: 1.6; color: #8C95B0; margin: 18px 0 0; max-width: 34ch">Aviation and airport consulting from Aerocity, New Delhi. Planning, operations management and technical advisory.</p>
+        </div>
+        <div>
+          <div class="mono" style="font-size: 10px; letter-spacing: 0.11em; text-transform: uppercase; color: #FB722E">Services</div>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px; font-size: 14px; color: #8C95B0">
+            <div>ORAT</div><div>Audits &amp; compliance</div><div>Sustainable aviation</div><div>Aircraft recovery</div><div>India market entry</div>
+          </div>
+        </div>
+        <div>
+          <div class="mono" style="font-size: 10px; letter-spacing: 0.11em; text-transform: uppercase; color: #FB722E">Work</div>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px; font-size: 14px; color: #8C95B0">
+            <div>TaxiBot India</div><div>Stelia Aerospace</div><div>Aerowash</div><div>UPES</div><div>Aero Opt</div>
+          </div>
+        </div>
+        <div>
+          <div class="mono" style="font-size: 10px; letter-spacing: 0.11em; text-transform: uppercase; color: #FB722E">Contact</div>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 16px; font-size: 14px; color: #8C95B0">
+            <div>WorldMark&#8209;I, Aerocity<br>New Delhi 110037</div>
+            <div class="mono">+91 99102 94423</div>
+            <div class="mono">info@aerotechss.com</div>
+          </div>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #232A3D; padding: 22px 0 26px; display: flex; justify-content: space-between">
+        <div class="mono" style="font-size: 11px; letter-spacing: 0.06em; color: #6E7896">&copy; 2026 Aerotech Support Services</div>
+        <div class="mono" style="font-size: 11px; letter-spacing: 0.06em; color: #6E7896">Privacy &middot; Terms</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

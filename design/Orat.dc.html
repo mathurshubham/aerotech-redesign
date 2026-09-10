@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; background: #F7F8FA; color: #4B5570;
+           font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+           font-size: 17px; line-height: 1.62; -webkit-font-smoothing: antialiased; }
+    a { color: #C4470D; text-decoration: none; } a:hover { color: #FB722E; }
+    h1, h2, h3, h4 { font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+                     margin: 0; color: #16203A; letter-spacing: -0.018em; }
+    .mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; }
+    .wrap { width: 1200px; margin: 0 auto; }
+    .eyebrow { font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+               font-size: 11px; font-weight: 500; letter-spacing: 0.11em;
+               text-transform: uppercase; color: #6E7896; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; height: 52px;
+           padding: 0 26px; border-radius: 8px; font-weight: 600; font-size: 16px; }
+    .btn-primary { background: #FB722E; color: #FFFFFF; }
+    .card { background: #FFFFFF; border: 1px solid #DDE2EC; border-radius: 8px; }
+    .lede { font-size: 20px; line-height: 1.56; color: #343C5C; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; background: #F7F8FA">
+
+  <!-- nav -->
+  <div style="background: #FFFFFF; border-bottom: 1px solid #DDE2EC">
+    <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; height: 84px">
+      <div style="display: flex; flex-direction: column; gap: 2px">
+        <div style="font-family: Archivo, Arial, sans-serif; font-weight: 700; font-size: 21px; letter-spacing: 0.02em; color: #16203A">AEROTECH</div>
+        <div class="mono" style="font-size: 9px; letter-spacing: 0.19em; color: #6E7896">SUPPORT SERVICES</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 34px">
+        <div style="display: flex; gap: 30px; font-size: 15px; font-weight: 500; color: #343C5C">
+          <div style="color: #16203A; font-weight: 600; box-shadow: inset 0 -2px 0 #FB722E; padding-bottom: 4px">Services</div>
+          <div>Work</div>
+          <div>About</div>
+          <div>Insights</div>
+        </div>
+        <div class="btn btn-primary" style="height: 44px; padding: 0 20px; font-size: 15px">Book a consultation</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- page head -->
+  <div style="background: #16203A; padding: 64px 0 68px">
+    <div class="wrap">
+      <div class="mono" style="font-size: 11px; letter-spacing: 0.09em; color: #6E7896">SERVICES / ORAT</div>
+      <div style="display: grid; grid-template-columns: 1fr 400px; gap: 72px; align-items: end; margin-top: 26px">
+        <div>
+          <h1 style="font-weight: 700; font-size: 54px; line-height: 1.05; color: #FFFFFF; max-width: 20ch">Operational Readiness &amp; Transfer</h1>
+          <p class="lede" style="color: #C3CADD; margin: 24px 0 0; max-width: 56ch">A new terminal has one opening day and no rehearsal. ORAT is how you make the first flight look like the thousandth.</p>
+        </div>
+        <div style="border-left: 1px solid #2C365A; padding-left: 28px">
+          <div class="eyebrow" style="color: #6E7896">Engagement shape</div>
+          <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 16px">
+            <div style="display: flex; justify-content: space-between; gap: 16px; font-size: 14px">
+              <span style="color: #8C95B0">Typical duration</span><span class="mono" style="color: #FFFFFF">12&ndash;24 months</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; font-size: 14px">
+              <span style="color: #8C95B0">Engaged from</span><span class="mono" style="color: #FFFFFF">T&minus;18 months</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 16px; font-size: 14px">
+              <span style="color: #8C95B0">Led by</span><span class="mono" style="color: #FFFFFF">A. Khanna</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height: 4px; background: repeating-linear-gradient(90deg, #FB722E 0 30px, transparent 30px 56px); margin-top: 60px"></div>
+  </div>
+
+  <!-- who it's for -->
+  <div style="background: #FFFFFF; padding: 80px 0">
+    <div class="wrap">
+      <div class="eyebrow">Who this is for</div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 28px">
+        <div style="border-top: 2px solid #16203A; padding-top: 20px">
+          <h3 style="font-weight: 600; font-size: 21px">Airport operators</h3>
+          <p style="font-size: 15px; line-height: 1.58; margin: 10px 0 0">Opening a new terminal, a new runway, or a satellite concourse, with a fixed public opening date.</p>
+        </div>
+        <div style="border-top: 2px solid #16203A; padding-top: 20px">
+          <h3 style="font-weight: 600; font-size: 21px">Airlines relocating</h3>
+          <p style="font-size: 15px; line-height: 1.58; margin: 10px 0 0">Moving a base or a hub operation between terminals without dropping an on-time performance target.</p>
+        </div>
+        <div style="border-top: 2px solid #16203A; padding-top: 20px">
+          <h3 style="font-weight: 600; font-size: 21px">Ground handlers &amp; fuellers</h3>
+          <p style="font-size: 15px; line-height: 1.58; margin: 10px 0 0">Standing up new equipment, new stands or new procedures alongside an operator&rsquo;s transfer programme.</p>
+        </div>
+      </div>
+      <div style="background: #EEF1F6; border-radius: 8px; padding: 26px 30px; margin-top: 40px; display: flex; gap: 20px; align-items: flex-start">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB722E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 3px; flex-shrink: 0"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v.01"></path><path d="M12 11.5v5"></path></svg>
+        <p style="font-size: 16px; line-height: 1.58; margin: 0"><strong style="color: #16203A; font-weight: 600">If your opening date is inside twelve months</strong>, the scope changes &mdash; there is no longer room for a full trials programme, and the work becomes risk triage. Say so on the call and we will scope it that way.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- deliverables -->
+  <div style="padding: 84px 0">
+    <div class="wrap" style="display: grid; grid-template-columns: 360px 1fr; gap: 72px; align-items: start">
+      <div>
+        <div class="eyebrow">What you get</div>
+        <h2 style="font-weight: 600; font-size: 34px; line-height: 1.14; margin-top: 12px">Deliverables, not a deck</h2>
+        <p style="font-size: 16px; line-height: 1.6; margin: 16px 0 0">Every item below is a document or an exercise your team owns at handover, and can run again next time without us.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #DDE2EC; border: 1px solid #DDE2EC; border-radius: 8px; overflow: hidden">
+        <div style="background: #FFFFFF; padding: 24px 26px">
+          <div class="mono" style="font-size: 11px; color: #FB722E">01</div>
+          <h4 style="font-weight: 600; font-size: 17px; margin-top: 10px">ORAT master programme</h4>
+          <p style="font-size: 14px; line-height: 1.55; margin: 8px 0 0">Milestone plan from T&minus;18 to T&plus;3, dependency-mapped against construction and systems handover.</p>
+        </div>
+        <div style="background: #FFFFFF; padding: 24px 26px">
+          <div class="mono" style="font-size: 11px; color: #FB722E">02</div>
+          <h4 style="font-weight: 600; font-size: 17px; margin-top: 10px">Trials &amp; familiarisation plan</h4>
+          <p style="font-size: 14px; line-height: 1.55; margin: 8px 0 0">Scripted trials by system and by stakeholder, with volunteer numbers, scenarios and pass criteria.</p>
+        </div>
+        <div style="background: #FFFFFF; padding: 24px 26px">
+          <div class="mono" style="font-size: 11px; color: #FB722E">03</div>
+          <h4 style="font-weight: 600; font-size: 17px; margin-top: 10px">Standard operating procedures</h4>
+          <p style="font-size: 14px; line-height: 1.55; margin: 8px 0 0">Terminal, apron and landside procedures written for the new facility, not adapted from the old one.</p>
+        </div>
+        <div style="background: #FFFFFF; padding: 24px 26px">
+          <div class="mono" style="font-size: 11px; color: #FB722E">04</div>
+          <h4 style="font-weight: 600; font-size: 17px; margin-top: 10px">Passenger flow &amp; LOS model</h4>
+          <p style="font-size: 14px; line-height: 1.55; margin: 8px 0 0">Demand forecast against IATA Level of Service targets, sized with Aero Opt. Drives staffing and counter allocation.</p>
+        </div>
+        <div style="background: #FFFFFF; padding: 24px 26px">
+          <div class="mono" style="font-size: 11px; color: #FB722E">05</div>
+          <h4 style="font-weight: 600; font-size: 17px; margin-top: 10px">Transfer &amp; cutover runbook</h4>
+          <p style="font-size: 14px; line-height: 1.55; margin: 8px 0 0">Hour-by-hour move plan, including the fallback position at every point where you can still turn back.</p>
+        </div>
+        <div style="background: #FFFFFF; padding: 24px 26px">
+          <div class="mono" style="font-size: 11px; color: #FB722E">06</div>
+          <h4 style="font-weight: 600; font-size: 17px; margin-top: 10px">Day-one command structure</h4>
+          <p style="font-size: 14px; line-height: 1.55; margin: 8px 0 0">Who decides what during the stabilisation window, and the escalation path that keeps it off the CEO&rsquo;s desk.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- phases -->
+  <div style="background: #FFFFFF; border-top: 1px solid #DDE2EC; padding: 84px 0">
+    <div class="wrap">
+      <div class="eyebrow">How it runs</div>
+      <h2 style="font-weight: 600; font-size: 34px; line-height: 1.14; margin-top: 12px; max-width: 26ch">Four phases against your opening date</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: 44px">
+        <div style="padding-right: 28px">
+          <div class="mono" style="font-size: 12px; color: #FB722E; letter-spacing: 0.06em">T&minus;18 &rarr; T&minus;12</div>
+          <div style="height: 3px; background: #FB722E; margin: 12px 0 18px"></div>
+          <h3 style="font-weight: 600; font-size: 19px">Readiness assessment</h3>
+          <p style="font-size: 14px; line-height: 1.58; margin: 10px 0 0">Baseline the facility, the org and the systems. Name every gap that has a long lead time, while it is still cheap.</p>
+        </div>
+        <div style="padding-right: 28px">
+          <div class="mono" style="font-size: 12px; color: #FB722E; letter-spacing: 0.06em">T&minus;12 &rarr; T&minus;6</div>
+          <div style="height: 3px; background: #FB722E; opacity: 0.72; margin: 12px 0 18px"></div>
+          <h3 style="font-weight: 600; font-size: 19px">Procedures &amp; training</h3>
+          <p style="font-size: 14px; line-height: 1.58; margin: 10px 0 0">Write the SOPs, build the training, model the flows. Staff learn the new building before they work in it.</p>
+        </div>
+        <div style="padding-right: 28px">
+          <div class="mono" style="font-size: 12px; color: #FB722E; letter-spacing: 0.06em">T&minus;6 &rarr; T&minus;1</div>
+          <div style="height: 3px; background: #FB722E; opacity: 0.48; margin: 12px 0 18px"></div>
+          <h3 style="font-weight: 600; font-size: 19px">Trials</h3>
+          <p style="font-size: 14px; line-height: 1.58; margin: 10px 0 0">Progressive trials from single-system to full-scale with volunteer passengers. Every failure here is a free one.</p>
+        </div>
+        <div>
+          <div class="mono" style="font-size: 12px; color: #FB722E; letter-spacing: 0.06em">T&minus;1 &rarr; T&plus;3</div>
+          <div style="height: 3px; background: #FB722E; opacity: 0.26; margin: 12px 0 18px"></div>
+          <h3 style="font-weight: 600; font-size: 19px">Transfer &amp; stabilise</h3>
+          <p style="font-size: 14px; line-height: 1.58; margin: 10px 0 0">Run the cutover, hold the command structure through the stabilisation window, then hand it to your team.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- why us -->
+  <div style="background: #16203A; padding: 80px 0">
+    <div class="wrap" style="display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center">
+      <div>
+        <div class="eyebrow" style="color: #FB722E">Why us on this</div>
+        <h2 style="font-weight: 600; font-size: 34px; line-height: 1.16; color: #FFFFFF; margin-top: 12px; max-width: 24ch">The person who scopes it is the person who runs it</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #9AA4C0; margin: 20px 0 0; max-width: 50ch">Thirty years across aircraft manufacturing, maintenance and airport service delivery. Lead auditor for ISO 9001, 45001 and 14064, AS9100D aerospace auditor, ICAO-certified on CORSIA. On a transfer programme that combination matters: the readiness gaps that hurt on day one are usually compliance gaps first.</p>
+        <div class="btn btn-primary" style="margin-top: 34px">Book a consultation</div>
+      </div>
+      <div style="background: #0F1729; border: 1px solid #2C365A; border-radius: 8px; padding: 32px 34px">
+        <div class="eyebrow" style="color: #6E7896">Related</div>
+        <div style="display: flex; flex-direction: column; gap: 0; margin-top: 16px">
+          <div style="padding: 18px 0; border-bottom: 1px solid #232A3D">
+            <div style="font-family: Archivo, Arial, sans-serif; font-weight: 600; font-size: 17px; color: #FFFFFF">TaxiBot India</div>
+            <div style="font-size: 14px; color: #8C95B0; margin-top: 4px">World&rsquo;s first, with Airbus and Boeing</div>
+          </div>
+          <div style="padding: 18px 0; border-bottom: 1px solid #232A3D">
+            <div style="font-family: Archivo, Arial, sans-serif; font-weight: 600; font-size: 17px; color: #FFFFFF">Aero Opt</div>
+            <div style="font-size: 14px; color: #8C95B0; margin-top: 4px">The flow model behind the LOS targets</div>
+          </div>
+          <div style="padding: 18px 0">
+            <div style="font-family: Archivo, Arial, sans-serif; font-weight: 600; font-size: 17px; color: #FFFFFF">Audits &amp; Compliance</div>
+            <div style="font-size: 14px; color: #8C95B0; margin-top: 4px">Where most readiness gaps actually start</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div style="background: #0F1729; padding: 42px 0">
+    <div class="wrap" style="display: flex; justify-content: space-between; align-items: center">
+      <div class="mono" style="font-size: 11px; letter-spacing: 0.06em; color: #6E7896">&copy; 2026 Aerotech Support Services &middot; Aerocity, New Delhi</div>
+      <div class="mono" style="font-size: 11px; letter-spacing: 0.06em; color: #6E7896">+91 99102 94423 &middot; info@aerotechss.com</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

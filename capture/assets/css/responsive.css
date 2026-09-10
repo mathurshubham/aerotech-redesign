@@ -1,0 +1,910 @@
+@media (min-width: 1024px) {
+    
+}
+@media screen and (max-width: 900px) and (min-width: 600px) {
+    
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+/* Top Line */    
+.shivanshtop2{
+    color: #343c5c !important;
+    font-weight: 900;
+    padding-left: 10px !important;
+}
+.shivanshtop4{
+    padding-left:10px !important;
+}
+.consult{
+    margin-left: -15px;
+    font-weight:bold;
+    font-size: 20px;
+}
+.consult1{
+    margin-right: -15px;
+    font-weight:bold;
+    font-size: 20px;
+}
+.consult2{
+    color: white;
+    text-decoration: none;
+}
+.consult2:hover{
+    color: white;
+    text-decoration: none;
+}
+.shivanshcreation5{
+    height:50px;
+	line-height:50px;
+	font-size:11px;
+	font-weight: bolder;
+}
+.address1{
+    font-size:15px;
+}
+
+.filter-button{
+	font-size: 7px;
+}
+.priority{
+	font-size: 14px;
+    margin-top: 20px;
+}
+
+.our_portfolio1{
+    width: 215px;
+    border-top: 2px solid;
+    border-radius: 50px;
+    margin-top: -10px;
+    color: #fb722e;
+}
+.about_us2{
+    margin-top:2px;
+}
+.facebooks{
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+.youtubes{
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+.twitters{
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+.linkedins{
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+.instagrams{
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+
+.priority1{
+    font-size:14px;
+}
+.aread{
+    font-size:15px;
+} 
+
+/* Top Line */     
+/* Wallpaper Design */    
+.swall1{
+    text-align: center;
+    font-size: 29px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.priority{
+    font-weight: 700;
+    color: #343c5c;
+	font-size: 21px;
+    margin-top: 29px;
+    margin-bottom: 25px;
+} 
+.priority1{
+    font-size: 15px;
+}
+.swall5{
+    text-align: center;
+    font-size: 19px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Wallpaper Design */
+/* ACP Work */
+.acp1{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.acp2{
+    font-size: 19px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.acp4{
+    font-size: 15px;
+}
+/* ACP Work */
+/* Led Letter */
+.led1{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.led2{
+    font-size: 24px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.led4{
+    font-size: 15px;
+}
+.led5{
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Led Letter */
+/* Glass Work */
+.glass1{
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.glass2{
+    font-size: 24px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.glass4{
+    font-size: 15px;
+}
+.glass5{
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Glass Work */
+/* Cabinet Work */
+.cabinet1{
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.cabinet2{
+    font-size: 24px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.cabinet4{
+    font-size: 15px;
+}
+.cabinet5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Cabinet Work */
+/* Dining Work */
+.dining1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.dining2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.dining4{
+    font-size: 15px;
+}
+.dining5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Dining Work */
+/* Living Work */
+.living1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.living2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.living4{
+    font-size: 15px;
+}
+.living5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Living Work */
+/* False Ceiling */
+.falseceiling1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.falseceiling2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.falseceiling4{
+    font-size: 15px;
+}
+.falseceiling5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* False Ceiling */
+/* Modular Kitchen */
+.modular1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.modular2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.modular4{
+    font-size: 15px;
+}
+.modular5{
+    text-align: left;
+    font-size: 21px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Modular Kitchen */
+/* Interior Design */
+.interior1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.interior2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.interior4{
+    font-size: 15px;
+}
+.interior5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Interior Design */
+/* Wardrobe Design */
+.wardrobedesign1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.wardrobedesign2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.wardrobedesign4{
+    font-size: 15px;
+}
+.wardrobedesign5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Wardrobe Design */
+/* Showroom Design */
+.showroomdesign1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.showroomdesign2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.showroomdesign4{
+    font-size: 15px;
+}
+.showroomdesign5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Showroom Design */
+/* Industrial Design */
+.industrialdesign1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.industrialdesign2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.industrialdesign4{
+    font-size: 15px;
+}
+.industrialdesign5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Industrial Design */
+/* Residential Design */
+.residentialdesign1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.residentialdesign2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.residentialdesign4{
+    font-size: 15px;
+}
+.residentialdesign5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Residential Design */
+/* Commercial Design */
+.commercialdesign1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.commercialdesign2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.commercialdesign4{
+    font-size: 15px;
+}
+.commercialdesign5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Commercial Design */
+/* Interior Design Patna */
+.interiorpatna1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.interiorpatna2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.interiorpatna4{
+    font-size: 15px;
+}
+.interiorpatna5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Interior Design Patna */
+/* Interior Design Boring Road */
+.interiorboring1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.interiorboring2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.interiorboring4{
+    font-size: 15px;
+}
+.interiorboring5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Interior Design Boring Road */
+/* Interior Design Kankarbagh */
+.interiorkankarbagh1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.interiorkankarbagh2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.interiorkankarbagh4{
+    font-size: 15px;
+}
+.interiorkankarbagh5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Interior Design Kankarbagh */
+/* Interior Design Bailey Road */
+.interiorbailey1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.interiorbailey2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.interiorbailey4{
+    font-size: 15px;
+}
+.interiorbailey5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Interior Design Bailey Road */
+/* Interior Design Danapur */
+.interiordanapur1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.interiordanapur2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.interiordanapur4{
+    font-size: 15px;
+}
+.interiordanapur5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Interior Design Danapur */
+/* Interior Design Exhibition Road */
+.interiorexhibition1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.interiorexhibition2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.interiorexhibition4{
+    font-size: 15px;
+}
+.interiorexhibition5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Interior Design Exhibition Road */
+/* Interior Design Phulwari Sharif */
+.interiorphulwari1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.interiorphulwari2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.interiorphulwari4{
+    font-size: 15px;
+}
+.interiorphulwari5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Interior Design Phulwari Sharif */
+/* Architect Design */
+.architect1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.architect2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.architect4{
+    font-size: 15px;
+}
+.architect5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Architect Design */
+/* Bathroom Design */
+.bathroom1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.bathroom2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.bathroom4{
+    font-size: 15px;
+}
+.bathroom5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Bathroom Design */
+/* Salon Design */
+.salon1{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 29px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+}
+.salon2{
+    font-size: 21px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 29px;
+    margin-bottom: 25px;
+}
+.salon4{
+    font-size: 15px;
+}
+.salon5{
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 25px;
+}
+/* Salon Design */
+.shivanshcreation{
+    height:50px;
+	line-height:50px;
+	font-size:9px;
+	font-weight: bolder;
+}
+.address1{
+    font-size:15px;
+}
+.cccc1{
+    font-size:25px;
+}
+.filter-button{
+	font-size: 7px;
+}
+.priority{
+	font-size: 14px;
+    margin-top: 20px;
+}
+
+.our_portfolio1{
+    width: 215px;
+    border-top: 2px solid;
+    border-radius: 50px;
+    margin-top: -10px;
+    color: #fb722e;
+}
+.about_us2{
+    margin-top:2px;
+}
+.facebooks{
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+.youtubes{
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+.twitters{
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+.linkedins{
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+.instagrams{
+    width:50px;
+    height:50px;
+    line-height:50px;
+}
+.consult{
+    margin-left: -15px;
+    font-weight:bold;
+}
+.consult1{
+    margin-right: -15px;
+    font-weight:bold;
+}
+.consult2{
+    color: white;
+    text-decoration: none;
+}
+.consult2:hover{
+    color: white;
+    text-decoration: none;
+}
+.contactus2{
+    padding-top:20px;
+    padding-bottom:2px;
+}
+.maps{
+    width:100%;
+    height:250px;
+}
+.priority1{
+    font-size:14px;
+}
+.aread{
+    font-size:15px;
+} 
+.swall5{
+    text-align: center;
+    color: #343c5c;
+    font-size: 19px;
+    font-weight: 900;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+.swall14 a{
+    font-size:12px;
+}
+.swall9 a{
+    font-size:12px;
+}  
+.shivanshfrequently2{
+    color: #343c5c;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+}
+    
+}
+ 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

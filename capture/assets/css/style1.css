@@ -1,0 +1,41 @@
+.slider{
+    width:100%;
+    overflow:hidden;
+    padding:20px 0;
+}
+
+.slide-track{
+    display:flex;
+    width:max-content;
+    animation:scroll 20s linear infinite;
+}
+
+.slide{
+    flex:0 0 auto;
+    margin:0 10px;
+}
+
+.slide img{
+    width:250px;
+    height:180px;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
+}
+
+@keyframes scroll{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-50%);
+    }
+}
+
+/* Pause on Hover (Optional) */
+.slider:hover .slide-track{
+    animation-play-state:paused;
+}
+animation: scroll 10s linear infinite;   /* Fast */
+animation: scroll 20s linear infinite;   /* Normal */
+animation: scroll 35s linear infinite;   /* Slow */

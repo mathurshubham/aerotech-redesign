@@ -1,0 +1,1495 @@
+.dropdown:hover .dropdown-menu{
+    display:block;
+}
+
+/* Mobile m v kar skte h same code agar ispe nahi hua h to thik h*/
+.our_portfolio.logo{
+	height:50px;
+	width:100px;
+}
+.logo{
+    height:50px;
+}
+.aerotech4{
+    text-align:left;
+    color:white;
+    line-height:40px;
+}
+.aerotech5{
+    text-align:right;
+    color:white; 
+    line-height:40px;
+}
+
+/* Top Line */
+.consult{
+    margin-left: -15px;
+    font-weight:bold;
+    font-size: 20px;
+}
+.consult1{
+    margin-right: -15px;
+    font-weight:bold;
+    font-size: 20px;
+}
+.consult2{
+    color: #ffffff;
+    text-decoration: none;
+}
+.consult2:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+.shivanshtop{
+    background-color: #ffffff !important;
+}
+.shivanshtop1{
+    background-color: #343c5c;
+    border-color: white;
+}
+.shivanshtop2{
+    color:#343c5c !important;
+    font-weight: 900;
+} 
+.shivanshtop2:hover{
+    background-color: #343c5c;
+    color: white !important;
+    font-weight: 900;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.shivanshtop2a{
+    color:#343c5c !important;
+    font-weight: 900;
+} 
+.shivanshtop2a:hover{
+    background-color: #343c5c;
+    color: white !important;
+    font-weight: 900;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+.shivanshtop4{
+    background-color:#343c5c;
+    color:#ffffff;
+    font-weight: 900;
+}
+.shivanshtop4a{
+    background-color: #343c5c;
+    color: #ffffff;
+    font-weight: 900;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: -8px;
+    margin-bottom: -8px;
+}
+.shivanshtop4a:hover{
+    background-color:#343c5c;
+    color:#ffffff;
+    font-weight: 900;
+}
+/* Top Line */
+.ourteam {
+    text-align: center;
+}
+.ourportfolio1 {
+    height: 350px;
+    width: 100%;
+}
+.ourportfolio {
+    margin-top: 20px;
+}
+.about_us{
+	background-color:#ffffff;
+	padding-top: 10px;
+    padding-bottom: 50px;
+}
+.about_us4{
+	color: #343c5c;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 40px;
+    font-weight: 900;
+}
+.aerotech2{
+    background-color:#fb722e;
+    height:40px;
+}
+.best-interior-designer-company-patna-shivansh-creation1{
+    text-align:left;
+    color:white;
+    line-height:40px;
+}
+.best-interior-designer-company-patna-shivansh-creation2{
+    text-align:right;
+    color:white; 
+    line-height:40px;
+}
+
+.shivansh-creation{
+    background-color:#ffffff !important;
+}
+.shivansh_creation{
+    background-color:#343c5c;
+    color:#ffffff;
+    font-weight: 900;
+}
+.shivansh_creation1{
+    color:#343c5c !important;
+    font-weight: 900;
+} 
+.shivansh_creation1:hover{
+    background-color:#343c5c;
+    color:white !important;
+    font-weight: 900;
+}
+.shivansh_creation2{
+    background-color:#343c5c;
+    color:#ffffff;
+    font-weight: 900;
+}
+.shivansh_creation2:hover{
+    background-color:#343c5c;
+    color:white !important;
+    font-weight: 900;
+}
+.aboutinner1{
+    width: 100%;
+    padding: 90px 0;
+    text-align: center;
+    background-color: rgba(52,60,92,0.89);
+}
+.aboutinner2{
+    align-items: center!important;
+}
+.aboutinner3 h2{
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 41px;
+    line-height: 51px;
+    margin-bottom: 0px;
+    color: #fff;
+}
+.aboutinner4{
+    color: #fb722e;
+}
+.aboutinner4 span{
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 14px;
+    line-height: 30px;
+    position: relative;
+}
+.aboutinner4 span:first-child a {
+    color: #fff;
+    text-decoration: none;
+}
+.about_us2{
+	margin-top:10px;
+}
+.about_us5{
+	width: 180px;
+    border-top: 2px solid;
+    border-radius: 50px;
+    margin-top: -10px;
+    color: #fb722e;
+}
+.about_uss5{
+	width: 180px;
+    border-top: 2px solid;
+    border-radius: 50px;
+    margin-top: -25px;
+    color: #fb722e;
+}
+.about_uss6{
+    font-size: 18px;
+    font-weight: 500;
+    color: #343c5c;
+    margin-top: 15px;
+}
+.aimg{
+	margin-top:15px;
+	width:100%;
+}
+.priority{
+	font-size: 27px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.priority1{
+    font-size: 18px;
+}
+.aread{
+	background-color:#343c5c;
+	color:white;
+	font-size:20px;
+	text-decoration:none;
+	border-radius:20px;
+	padding-left: 10px;
+    padding-right: 10px;
+}
+.aread:hover{
+	background-color:#fb722e;
+	color:white;
+	text-decoration:none;
+	border-radius:20px;
+}
+.shivansh21{
+    background-color: #343c5c;
+    border-color: white;
+}
+.areads{
+	background-color:#fb722e;
+	color:white;
+	font-size:20px;
+	text-decoration:none;
+	border-radius:20px;
+	padding-left: 10px;
+    padding-right: 10px;
+}
+.areads:hover{
+	background-color:#bababa;
+	color:white;
+	text-decoration:none;
+	border-radius:20px;
+}
+.our_service{
+/*	background-image: linear-gradient(45deg, #0062cc, transparent); */
+    background-color: #ebebeb;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.our_service2{
+	color: #343c5c;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+}
+.our_service4{
+	width: 180px;
+    border-top: 2px solid;
+    border-radius: 50px;
+    margin-top: -10px;
+    color: #fb722e;
+}
+.our_services{
+/*	background-image: linear-gradient(45deg, #122fc0, transparent); */
+	background-color: #343c5c;
+    margin-top: 10px;
+    text-align: center;
+	border-radius:20px;
+}
+.our_services1{
+	color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+.our_services:hover{
+/*    background-image: linear-gradient(45deg, #ed0909, transparent); */
+	background-color: #fb722e;
+	border-radius:20px;
+}
+.our_services1:hover{
+	color: white;
+    text-decoration: none;
+}
+.simg1{
+	height:auto;
+	width:100%;
+	margin-top: 20px;
+}
+.our_portfolio{
+/*	background-image: linear-gradient(50deg, #2cadec, transparent); */
+    background-color: #ffffff;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.our_portfolio1{
+	width: 225px;
+    border-top: 2px solid;
+    border-radius: 50px;
+    margin-top: -10px;
+    color: #fb722e;
+}
+.client_list{
+ /* background-image: linear-gradient(50deg, #eb2525, transparent); */
+	background-color: #fb722e;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.client_list1{
+	color:white;
+	text-align: left;
+}
+.client_list2{
+	width: 140px;
+    border-top: 4px solid;
+    margin-top: -7px;
+    color: #fb722e;
+    margin-left: 0px;
+    border-radius: 50px;
+}
+/* About Us Page Design */
+.aboutinner{
+    background-image: url(../images/1.jpg);
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    margin:0px;
+}
+/* About Us Page Design */
+.client_list4{
+	width:140px;
+	border-top:4px solid;
+	margin-top: -7px;
+    color: #ffffff;
+	margin-left: 0px;
+}
+.footer{
+	background-color:#343c5c;
+}
+.footer1{
+	padding-top: 10px;
+    padding-bottom: 20px;
+}
+.footer2{
+	color: white;
+    margin-top: 50px;
+}
+.shivanshcreation{
+    background-color: #fb722e;
+    height: 40px;
+}
+.shivanshcreation4{
+    color:white;
+    text-decoration:none;
+}
+.shivanshcreation4:hover{
+    color:white;
+    text-decoration:none;
+}
+.aerotech1{
+	background-color:#fb722e;
+	color:white;
+	text-align: center;
+	height:80px;
+	line-height:80px;
+	font-size:25px;	
+	margin:0px;
+}
+.aerotech{
+    color:white;
+    text-decoration:none;
+}
+.aerotech:hover{
+    color:white;
+    text-decoration:none;
+}
+#portfolio{
+	padding: 20px;
+	margin: 0 auto;
+}
+.gallery-title{
+	font-size: 36px;
+    color: #343c5c;
+    text-align: center;
+    font-weight: 900;
+}
+.filter-button{
+	font-size: 14px;
+    border: 1px solid #343c5c;
+    border-radius: 5px;
+    text-align: center;
+    color: #343c5c;
+    margin-bottom: 5px;
+    font-weight: 900;
+}
+.filter-button:hover{
+	font-size: 14px;
+	font-weight: 900;
+    border: 1px solid #343c5c;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    background-color: #343c5c;
+}
+.btn-default:active .filter-button:active{
+	background-color:#fb722e;
+	color:#fff;
+}
+.gallery_product{
+	margin-bottom:30px;
+}
+.pimg{
+	height:350px;
+	width:100%;
+}
+.bb{
+	align-items:center;
+	justify-content:center;
+}
+@keyframes scroll{
+0%{
+	transform: translateX(0);
+}
+100%{
+	transform: translateX(calc(-250px * 7));
+}
+}
+.slider{
+	height:100px;
+	margin:auto;
+	overflow:hidden;
+	position:relative;
+	width:auto;
+}
+.slider .slide-track{
+	animation: scroll 40s linear infinite;
+	display:flex;
+	width:calc(250px * 14);
+}
+.slider .slide{
+	height:100px;
+	width:250px;
+}
+.simg{
+	width:95%;
+}
+.designsk{
+	color: #eef215;
+}
+.designsk1{
+	color: #343c5c;
+	text-decoration:none;
+}
+.designsk:hover{
+	color: #343c5c;
+}
+.designsk1:hover{
+	color: #f2f2f2;
+	text-decoration:none;
+}
+.cccc {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.cccc1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 40px;
+}
+.aboutus{
+	margin-top:20px;
+	width:100%;
+}
+.contactus{
+	background-color:#c7c7c7;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.contactus1{
+	font-size:20px;
+	color:#fb722e;
+}
+.contactus2{
+	font-size:20px;
+	color:#fb722e;
+	padding-bottom: 30px
+}
+.address{
+	font-size:22px;
+}
+.address1{
+    color: black;
+	text-decoration:none;
+	font-size: 18px;
+}
+.address1:hover{
+	text-decoration:none;
+	color:#fb722e;
+}
+.address2{
+    color: white;
+	text-decoration:none;
+}
+.address2:hover{
+	text-decoration:none;
+	color:#fb722e;
+}
+.facebooks{
+	background: #0000e6;
+    color: white;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 30px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+.facebooks:hover{
+	background: #4747d1;
+}
+.youtubes{
+	background: #ed0b0b;
+    color: white;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 30px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+.youtubes:hover{
+	background: #e43434;
+}
+.twitters{
+	background: #0073e6;
+    color: white;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 30px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+.twitters:hover{
+	background:  #008ae6;
+}
+.linkedins{
+	background: #0073e6;
+    color: white;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 30px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+.linkedins:hover{
+	background:  #008ae6;
+}
+.instagrams{
+    background: #e68a00;
+    color: white;
+    text-align: center;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 30px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+.instagrams:hover{
+	background: #e6005c;
+}
+.linkedins{
+	background: #008ae6;
+    color: white;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+	margin-top: 20px;
+	border-radius: 10px;
+}
+.linkedins:hover{
+	background: #00ace6;
+}
+
+.interiordelhi{
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: #fb722e;
+}
+.get-left-form {
+    top: 370px;
+    right: 0px;
+    position: fixed;
+    z-index: 999;
+}
+.get-left-form1 {
+    top: 390px;
+    right: 50px;
+    position: fixed;
+    z-index: 999;
+    background: white;
+    width: 75px;
+    height: 25px;
+    color: black;
+    line-height: 25px !important;
+    font-size: 11px;
+    text-align: center;
+}
+.get-left-form-whatsapp{
+    cursor:pointer;
+    width:45px;
+    height:45px;
+}
+.get-left-forms {
+    top: 420px;
+    right: 0px;
+    position: fixed;
+    z-index: 999;
+}
+.get-left-forms1 {
+    top: 450px;
+    right: 50px;
+    position: fixed;
+    z-index: 999;
+    background: white;
+    width: 75px;
+    height: 25px;
+    color: black;
+    line-height: 25px !important;
+    font-size: 11px;
+    text-align: center;
+}
+.get-left-forms-phone{
+    cursor:pointer;
+    width:45px;
+    height:45px;
+}
+.modular-kitchen-designer-in-greater-noida{
+    margin-top: -18px;
+}
+.maps{
+    width:100%;
+    height:450px;
+}
+/* Service */
+.swall{
+    width: 150px;
+    border-top: 2px solid;
+    margin-top: -2px;
+    color: #fb722e;
+    border-radius: 50px;
+}
+.swall1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.swall2{
+    background-color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 50px;
+}
+.swall4{
+    background-color: #ebebeb;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.swall5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.swall6{
+    width: 270px;
+    border-top: 2px solid;
+    margin-top: -5px;
+    margin-bottom: 50px;
+    color: #fb722e;
+    border-radius: 50px;
+}
+.swall7{
+    padding-top: 5px;
+}
+.swall8{
+    margin-bottom: 20px;
+}
+.swall14{
+    float:left;
+}
+.swall9{
+    float:right;
+}/*
+.swall14 a{
+    font-size:15px;
+}
+.swall9 a{
+    font-size:15px;
+} */
+.swall10{
+    color: #343c5c;
+    font-size: 27px;
+    font-weight: 900;
+}
+.swall11{
+    color: #343c5c;
+    font-size: 17px;
+    font-weight: 900;
+}
+.swall12{
+    color: #343c5c;
+    font-size: 15px;
+    font-weight: 900;
+}
+.swals{
+    background-color: #fb722e;
+    width: 210px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 20px;
+    border-radius: 50px;
+}
+.swals a{
+    color:#ffffff;
+}
+.swals a:hover{
+    color:#ffffff;
+    text-decoration: none;
+}
+.btn-primary{
+    color: #fff;
+    background-color: #343c5c;
+    border-color: #343c5c;
+}
+.btn-primary:hover{
+    color: #fff;
+    background-color: #343c5c;
+    border-color: #343c5c;
+}  
+.btn-outline-primary {
+    color: #343c5c;
+    border-color: #343c5c;
+}
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #343c5c;
+    border-color: #343c5c;
+}
+.inner{
+    overflow:hidden;
+}
+.inner img{
+    transition:all 1.5s ease;
+}
+.inner:hover img{
+    transform: scale(1.5);
+}
+/* Service */
+/* FAQ Code */
+.accordion .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.accordion .card-header.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\f067"; 
+}
+.shivanshfrequently{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.shivanshfrequently1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.shivanshfrequently2{
+    color: #343c5c;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.shivanshfrequently4{
+    cursor:pointer;
+}
+.shivanshfrequently5{
+    color:#343c5c;
+}
+.shivanshfrequently5:hover{
+    text-decoration:none;
+    color:#343c5c;
+}
+/* FAQ Code */
+/* ACP Work */
+.acp1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.acp2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.acp4{
+    font-size: 18px;
+}
+/* ACP Work */
+/* Led Letter */
+.led1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.led2{
+	font-size: 24px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.led4{
+    font-size: 18px;
+}
+.led5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Led Letter */
+/* Glass Work */
+.glass1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.glass2{
+	font-size: 24px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.glass4{
+    font-size: 18px;
+}
+.glass5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Glass Work */
+/* Cabinet Work */
+.cabinet1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.cabinet2{
+	font-size: 24px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.cabinet4{
+    font-size: 18px;
+}
+.cabinet5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Cabinet Work */
+/* Dining Work */
+.dining1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.dining2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.dining4{
+    font-size: 18px;
+}
+.dining5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Dining Work */
+/* Living Work */
+.living1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.living2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.living4{
+    font-size: 18px;
+}
+.living5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Living Work */
+/* False Ceiling */
+.falseceiling1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.falseceiling2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.falseceiling4{
+    font-size: 18px;
+}
+.falseceiling5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* False Ceiling */
+/* Modular Kitchen */
+.modular1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.modular2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.modular4{
+    font-size: 18px;
+}
+.modular5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Modular Kitchen */
+/* Interior Design */
+.interior1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.interior2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.interior4{
+    font-size: 18px;
+}
+.interior5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Interior Design */
+/* Wardrobe Design */
+.wardrobedesign1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.wardrobedesign2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.wardrobedesign4{
+    font-size: 18px;
+}
+.wardrobedesign5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Wardrobe Design */
+/* Showroom Design */
+.showroomdesign1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.showroomdesign2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.showroomdesign4{
+    font-size: 18px;
+}
+.showroomdesign5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Showroom Design */
+/* Industrial Design */
+.industrialdesign1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.industrialdesign2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.industrialdesign4{
+    font-size: 18px;
+}
+.industrialdesign5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Industrial Design */
+/* Residential Design */
+.residentialdesign1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.residentialdesign2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.residentialdesign4{
+    font-size: 18px;
+}
+.residentialdesign5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Residential Design */
+/* Commercial Design */
+.commercialdesign1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.commercialdesign2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.commercialdesign4{
+    font-size: 18px;
+}
+.commercialdesign5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Commercial Design */
+/* Interior Design Patna */
+.interiorpatna1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.interiorpatna2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.interiorpatna4{
+    font-size: 18px;
+}
+.interiorpatna5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Interior Design Patna */
+/* Interior Design Boring Road */
+.interiorboring1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.interiorboring2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.interiorboring4{
+    font-size: 18px;
+}
+.interiorboring5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Interior Design Boring Road */
+/* Interior Design Kankarbagh */
+.interiorkankarbagh1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.interiorkankarbagh2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.interiorkankarbagh4{
+    font-size: 18px;
+}
+.interiorkankarbagh5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Interior Design Kankarbagh */
+/* Interior Design Bailey Road */
+.interiorbailey1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.interiorbailey2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.interiorbailey4{
+    font-size: 18px;
+}
+.interiorbailey5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Interior Design Bailey Road */
+/* Interior Design Danapur */
+.interiordanapur1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.interiordanapur2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.interiordanapur4{
+    font-size: 18px;
+}
+.interiordanapur5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Interior Design Danapur */
+/* Interior Design Exhibition Road */
+.interiorexhibition1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.interiorexhibition2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.interiorexhibition4{
+    font-size: 18px;
+}
+.interiorexhibition5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Interior Design Exhibition Road */
+/* Interior Design Phulwari Sharif */
+.interiorphulwari1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.interiorphulwari2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.interiorphulwari4{
+    font-size: 18px;
+}
+.interiorphulwari5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Interior Design Phulwari Sharif */
+/* Architect Design */
+.architect1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.architect2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.architect4{
+    font-size: 18px;
+}
+.architect5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Architect Design */
+/* Bathroom Design */
+.bathroom1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.bathroom2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.bathroom4{
+    font-size: 18px;
+}
+.bathroom5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Bathroom Design */
+/* Salon Design */
+.salon1{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+.salon2{
+	font-size: 28px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 10px;
+}
+.salon4{
+    font-size: 18px;
+}
+.salon5{
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #343c5c;
+    margin-top: 40px;
+}
+/* Salon Design */
+
+
+
+@media (min-width: 1024px) {
+    
+}
+@media screen and (max-width: 900px) and (min-width: 600px) {
+    
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+ 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
