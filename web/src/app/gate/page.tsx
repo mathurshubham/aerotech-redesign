@@ -5,8 +5,18 @@ import { Wordmark } from "@/components/site";
 import { GateForm } from "./GateForm";
 
 export const metadata: Metadata = {
-  title: "Preview access",
+  // `absolute` so the site name from the root template never appears either.
+  title: { absolute: "Preview access" },
+  // Overrides the site-wide description and Open Graph data on purpose: a
+  // visitor who has not entered the PIN should learn nothing about the
+  // business from the page source either.
+  description: "This site is in preview.",
   robots: { index: false, follow: false },
+  openGraph: {
+    title: "Preview access",
+    description: "This site is in preview.",
+    images: [],
+  },
 };
 
 function sanitizeNext(raw: string | string[] | undefined): string {

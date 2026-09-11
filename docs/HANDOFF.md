@@ -113,6 +113,9 @@ docs/
 web/                         The application
   DESIGN.md                  The design sheet every component follows
   src/app/                   Routes
+    layout.tsx               Document shell only — html, body, fonts, metadata
+    (site)/                  Everything behind the PIN: shell layout + all pages
+    gate/, api/gate/         The PIN gate, deliberately outside the site group
   src/components/site/       28 design-system components
   src/components/ui/         12 shadcn primitives
   src/components/blocks/     BlockRenderer for generic pages
@@ -145,13 +148,37 @@ web/                         The application
 | `/compliance` | Static | Downloads + Companies Act disclosures, via `BlockRenderer` |
 | `/privacy` | Static | via `BlockRenderer` |
 | `/contact` | Dynamic | Reads `?topic=` to preselect a chip |
-| `/gate` | Dynamic | Preview PIN page, `robots: noindex` |
+| `/gate` | Dynamic | Preview PIN page, outside the `(site)` group so it renders bare |
 | `/api/gate` | Route handler | POST, verifies the PIN and sets the cookie |
 | `/sitemap.xml`, `/robots.txt`, `/llms.txt`, `/feed.xml` | Static | |
 | `/icon`, `/opengraph-image` | Static | `next/og`, logos inlined as base64 |
 | 404 | Static | `not-found.tsx`, `robots: noindex` |
 
-All `[slug]` routes set `dynamicParams = false` so unknown slugs return a real 404 rather than rendering a shell.
+All `[slug]` routes set `dynamicParams = false` so unknown slugs return a real 404 rather than rendering a shell. A side effect worth knowing: an unknown slug never matches a route at all, so it is handled by the **root** `not-found.tsx`, not by any not-found inside the route group.
+
+### Route groups and what the gate can see
+
+`app/layout.tsx` is the document shell only — `<html>`, `<body>`, fonts and
+metadata. The site shell (skip link, header, `<main>`, footer, WhatsApp pill
+and the organisation JSON-LD) lives in `app/(site)/layout.tsx`, and every page
+except `/gate` sits inside that group.
+
+This exists so the gate gives nothing away. Before a visitor enters the PIN
+they should not see the navigation, the Aerocity address, the phone number or
+the service list — and that applies to the page source, not just the rendered
+page. Two things had to be true for it to hold:
+
+- **The root `not-found.tsx` must stay bare.** Next.js ships the nearest
+  not-found boundary inside the RSC payload of *every* page, so a 404 that
+  rendered the header and footer leaked both into `/gate`. The root 404 is
+  therefore a wordmark, a line of copy and a link home. A richer 404 can be
+  restored once the gate is removed.
+- **`/gate` overrides its metadata.** It sets an absolute title and its own
+  description and Open Graph values, otherwise it inherits the site-wide
+  description naming Aerocity and the business.
+
+Verified on the live deployment: the only business string in the unauthenticated
+page source is "Support Services" inside the wordmark.
 
 ---
 
@@ -257,6 +284,7 @@ Reading leads: `npx wrangler d1 execute aerotech-leads --remote --command "SELEC
 
 Private preview, not security. Four digits is 10,000 combinations.
 
+- `/gate` lives outside the `(site)` route group, so it renders without the site shell — see §5.
 - `src/middleware.ts` gates everything except `/gate`, `/api/*`, `/_next/*`, `/images/*`, `/downloads/*`, `robots.txt`, `sitemap.xml`, `llms.txt`, `feed.xml`, `favicon.ico`, `icon`, `opengraph-image`.
 - `/gate` is a **plain HTML POST form** to `/api/gate`. No client JavaScript is involved, deliberately.
 - The route handler verifies the PIN in constant time, then sets `aero_gate` — an HMAC-SHA256 signed value over `v1|<expiry>` using `GATE_SECRET`, HttpOnly, Secure, SameSite=Lax, 30 days — on its own 303 response. The PIN is never in the cookie.

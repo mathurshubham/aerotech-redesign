@@ -1,14 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, IBM_Plex_Mono, Inter } from "next/font/google";
 
-import {
-  SiteFooter,
-  SiteHeader,
-  SkipLink,
-  WhatsAppButton,
-} from "@/components/site";
-import { JsonLd } from "@/components/seo/JsonLd";
-import { organizationGraph } from "@/lib/jsonld";
 import { site } from "@/content/site";
 import "./globals.css";
 
@@ -59,6 +51,12 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
+/**
+ * Document shell only — fonts, metadata and `<body>`.
+ *
+ * The header, footer and organisation JSON-LD live in `(site)/layout.tsx` so
+ * that the PIN gate at `/gate` gives nothing away about the site.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -67,16 +65,7 @@ export default function RootLayout({
       lang="en-IN"
       className={`${archivo.variable} ${inter.variable} ${plexMono.variable}`}
     >
-      <body className="min-h-dvh flex flex-col">
-        <JsonLd data={organizationGraph()} />
-        <SkipLink />
-        <SiteHeader />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
-        <WhatsAppButton />
-      </body>
+      <body className="min-h-dvh flex flex-col">{children}</body>
     </html>
   );
 }
