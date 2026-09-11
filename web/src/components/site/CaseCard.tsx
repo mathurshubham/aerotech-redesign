@@ -34,13 +34,12 @@ export function CaseCard({ study }: { study: CaseStudy }) {
         <p className="mt-3 text-sm leading-[1.58] lg:text-[0.9375rem]">
           {renderText(study.summary)}
         </p>
-        <Link
-          href={`/work/${study.slug}`}
-          className={`${linkArrow} mt-4.5 self-start`}
-        >
-          Read the case
-          <ArrowRight size={16} strokeWidth={1.6} aria-hidden="true" />
-        </Link>
+        <div className="mt-4.5 self-start">
+          <Link href={`/work/${study.slug}`} className={linkArrow}>
+            Read the case
+            <ArrowRight size={16} strokeWidth={1.6} aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </article>
   );

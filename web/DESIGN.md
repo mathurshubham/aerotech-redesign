@@ -13,7 +13,8 @@ Rev 1 · 2026-09-11 · Binding for every component agent. Sources: `src/app/glob
 | `ink` | `#16203A` | Headings, nav links at rest |
 | `ink-soft` | `#343C5C` | Lede paragraphs, nav idle links |
 | `body` | `#4B5570` | Body copy. Never pure black |
-| `subtle` | `#6E7896` | Eyebrows, captions, meta |
+| `subtle` | `#6E7896` | Raw brand grey (`--navy-500`). Kept for non-text/shadcn `muted` use; do not use directly for text on `paper`/`surface` — it clears only 4.13–4.38:1 there, under the 4.5:1 AA floor for text below 24px |
+| `subtle-ink` | `#5C6683` | Eyebrows, captions, meta — what `.eyebrow` and the `text-subtle` utility actually render. 5.4:1 on `paper`, 5.7:1 on `surface`; AA-safe at any size used on the site |
 | `paper` | `#F7F8FA` | Page ground |
 | `surface` | `#FFFFFF` | Cards, white sections |
 | `surface-2` | `#EEF1F6` | Callouts, tertiary cards |
@@ -40,8 +41,8 @@ Archivo (`font-display`) headings · Inter (`font-sans`) body · IBM Plex Mono (
 | Lede | `1.1875rem` / 1.56 / `text-ink-soft` / max 54–58ch |
 | Card body | `0.9375rem` / 1.58 |
 | Small / meta | `0.875rem` |
-| Eyebrow | `.eyebrow` — mono 11px / 500 / `0.11em` / uppercase / `subtle` (`.eyebrow-accent` for orange, `band-muted` inside a band) |
-| Photo caption | mono 11px / `subtle` (or `band-muted`) / 9–10px above the image |
+| Eyebrow | `.eyebrow` — mono 11px / 500 / `0.11em` / uppercase / `subtle-ink` (`.eyebrow-accent` for orange, `band-muted` inside a band) |
+| Photo caption | mono 11px / `subtle-ink` (or `band-muted`) / 9–10px above the image |
 | Metric numeral | mono 25px / 500 / `orange-500` / line-height 1 |
 | Wordmark | Real logo image (`Wordmark.tsx`), not text — see §10a |
 
@@ -56,7 +57,7 @@ All-caps is for eyebrows, wordmark and mono labels only.
 - Card padding 28–30px (`p-7` / `px-7 pt-[30px] pb-7`). Image-topped cards: 26px 28px 28px below the image.
 - Section heading → content: 40–44px. Eyebrow → h2: 12px. h2 → paragraph: 20–22px.
 - Hairline grids (credential strip, deliverables): `gap: 1px` over a `band-line`/`line` background — the gap *is* the rule.
-- Nav height 84px desktop, 64px mobile. Buttons 52px tall (`h-13`), 44px in the nav.
+- Nav height 84px desktop, 66px mobile/tablet (67px including the 1px `border-b`) — `SiteHeader.tsx` (`h-[66px]`). Buttons 52px tall (`h-13`), 44px in the nav.
 - Breakpoints: 640 / 1024 / 1280 only.
 
 ## 4. Shape
@@ -116,7 +117,7 @@ Props: `variant?: "dark" | "light"` (navy glyph + ink name vs. light glyph + whi
 
 | Component | Spec | Artboard |
 |---|---|---|
-| `Nav` | Sticky white, 84px, `border-b line`, wordmark left, 15px/500 links, active link 2px orange inset underline, one orange 44px CTA. Sheet drawer < 1024px. | Main, Orat, MobileHome |
+| `Nav` | Sticky white, 84px desktop / 66px mobile (67px with the `border-b line`), wordmark left, 15px/500 links, active link 2px orange inset underline, one orange 44px CTA. Sheet drawer < 1024px. | Main, Orat, MobileHome |
 | `Footer` | `band-deep`, 4 cols (1.4fr 1fr 1fr 1fr, 48px gap), orange mono column heads, 14px `#8C95B0` links, mono legal bar above a `#232A3D` rule. Compact one-line variant. | Main, Orat |
 | `Hero` | 620px navy, photo at 0.5 opacity + 96° navy scrim, orange eyebrow, h1 max 17ch, 19px sub max 54ch, primary + ghost CTA, runway dash bottom. | Main, MobileHome |
 | `CredentialStrip` | 5-up 1px hairline grid on navy, mono 25px orange numeral + 13px `band-muted` label, 30px/24px cells. Highest-value element on the site. | Main, MobileHome |

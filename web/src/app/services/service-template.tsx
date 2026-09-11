@@ -249,7 +249,16 @@ export function ServicePage({
 
           {relatedLinks.length > 0 && (
             <div className="rounded-lg border border-band-line bg-band-deep px-6 py-6 lg:px-8.5 lg:py-8">
-              <p className="eyebrow text-subtle">Related</p>
+              {/*
+                This card sits on `bg-band-deep`, not inside a `.band`
+                ancestor, so the default `.eyebrow` (`text-subtle`) never
+                gets the on-band override — it was rendering the light-mode
+                colour on a navy background (a pre-existing contrast miss,
+                worse once `text-subtle` darkened for the paper/surface AA
+                fix). `text-band-muted` is the correct on-band eyebrow
+                colour, same as `.band .eyebrow`.
+              */}
+              <p className="eyebrow text-band-muted">Related</p>
               <ul className="mt-3">
                 {relatedLinks.map((related) => (
                   <li
@@ -258,7 +267,7 @@ export function ServicePage({
                   >
                     <Link
                       href={related.href}
-                      className={`inline-flex items-center gap-1.5 font-display text-[1.0625rem] font-semibold text-white transition-colors duration-150 hover:text-orange-500 ${focusRing}`}
+                      className={`-my-2.5 inline-flex min-h-11 items-center gap-1.5 py-2.5 font-display text-[1.0625rem] font-semibold text-white transition-colors duration-150 hover:text-orange-500 ${focusRing}`}
                     >
                       {related.title}
                     </Link>

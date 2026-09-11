@@ -9,6 +9,7 @@ import {
   DeliverablesGrid,
   FAQ,
   isPlaceholder,
+  linkArrow,
   PersonCard,
   PhaseTimeline,
   PhotoCaption,
@@ -159,13 +160,12 @@ function BlockView({
                 </h3>
                 <p className="text-sm leading-[1.58]">{renderText(card.body)}</p>
                 {card.href && (
-                  <Link
-                    href={card.href}
-                    className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-orange-600 hover:text-orange-500"
-                  >
-                    Read more
-                    <ArrowRight size={16} strokeWidth={1.6} aria-hidden="true" />
-                  </Link>
+                  <div className="mt-1">
+                    <Link href={card.href} className={linkArrow}>
+                      Read more
+                      <ArrowRight size={16} strokeWidth={1.6} aria-hidden="true" />
+                    </Link>
+                  </div>
                 )}
               </li>
             ))}

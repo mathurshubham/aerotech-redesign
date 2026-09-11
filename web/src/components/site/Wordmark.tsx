@@ -142,12 +142,24 @@ export function Wordmark({
     );
   }
 
+  // Grow the tap target to the 44px floor without moving the glyph: pad the
+  // link box and cancel the added height with an equal negative margin, so
+  // the row's layout (and the glyph's visual position within it) is
+  // unchanged — only the invisible hit area grows.
+  const hitSlop = Math.max(0, 44 - resolvedHeight) / 2;
+
   return (
     <Link
       href={href}
       aria-label="Aerotech Support Services — home"
       className={cn("inline-flex items-center rounded-lg", focusRing, className)}
-      style={{ gap: GLYPH_GAP * scale }}
+      style={{
+        gap: GLYPH_GAP * scale,
+        paddingTop: hitSlop,
+        paddingBottom: hitSlop,
+        marginTop: -hitSlop,
+        marginBottom: -hitSlop,
+      }}
     >
       {row}
     </Link>

@@ -83,13 +83,12 @@ export function CaseFeature({ study }: { study: CaseStudy }) {
             </dl>
           )}
 
-          <Link
-            href={`/work/${study.slug}`}
-            className={`${linkArrowBand} mt-6 lg:mt-7.5`}
-          >
-            Read the full case
-            <ArrowRight size={18} strokeWidth={1.6} aria-hidden="true" />
-          </Link>
+          <div className="mt-6 lg:mt-7.5">
+            <Link href={`/work/${study.slug}`} className={linkArrowBand}>
+              Read the full case
+              <ArrowRight size={18} strokeWidth={1.6} aria-hidden="true" />
+            </Link>
+          </div>
         </div>
 
         <div className="flex flex-col gap-3">

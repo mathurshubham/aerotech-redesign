@@ -190,59 +190,71 @@ export function BookingMock({
         )}
       </div>
 
-      <div className="mt-5 grid gap-6 lg:grid-cols-[1fr_220px]">
+      <div className="mt-5 grid min-w-0 gap-6 lg:grid-cols-[1fr_220px]">
         {/* Calendar */}
-        <div>
+        <div className="min-w-0">
           <p className="font-mono text-[0.8125rem] font-medium text-ink">
             {today ? MONTH_LABEL_FORMAT.format(today) : " "}
           </p>
-          <div className="mt-3 grid grid-cols-7 gap-1 font-mono text-[0.6875rem] text-subtle">
-            {WEEKDAY_LABELS.map((d, i) => (
-              <div key={`${d}-${i}`} className="flex h-6 items-center justify-center">
-                {d}
-              </div>
-            ))}
-          </div>
-          <div className="mt-1 grid grid-cols-7 gap-1">
-            {today
-              ? monthCells.map((cell, i) => {
-                  const isSelected = selectedDay ? sameDay(cell.date, selectedDay) : false;
-                  const disabled = cell.isPast || cell.isWeekend || !cell.inMonth;
-                  return (
-                    <button
-                      key={i}
-                      type="button"
-                      disabled={disabled}
-                      tabIndex={
-                        focusIndex === i || (focusIndex === null && isSelected) ? 0 : -1
-                      }
-                      onClick={() => !disabled && selectDay(cell.date)}
-                      onFocus={() => setFocusIndex(i)}
-                      onKeyDown={(e) => handleDayKeyDown(e, i)}
-                      aria-pressed={isSelected}
-                      aria-label={cell.date.toDateString()}
-                      className={cn(
-                        "relative flex h-10 w-10 items-center justify-center rounded-lg text-sm transition-colors duration-150",
-                        !cell.inMonth && "text-navy-300",
-                        disabled && cell.inMonth && "text-navy-300",
-                        !disabled && !isSelected && "text-ink hover:bg-navy-100",
-                        cell.isAvailable && !isSelected && "bg-navy-100 font-medium",
-                        isSelected && "bg-orange-500 font-semibold text-white hover:bg-orange-500",
-                      )}
-                    >
-                      {cell.date.getDate()}
-                      {cell.isAvailable && !isSelected && (
-                        <span
-                          aria-hidden="true"
-                          className="absolute bottom-1 h-1 w-1 rounded-full bg-orange-500"
-                        />
-                      )}
-                    </button>
-                  );
-                })
-              : Array.from({ length: 35 }).map((_, i) => (
-                  <div key={i} className="h-10 w-10 rounded-lg" />
-                ))}
+          {/*
+            Below `lg` (where this stacks to a single, narrower column),
+            cells are a fixed 44px (the tap-target floor) laid out on an
+            explicit 44px column track (`grid-cols-[repeat(7,2.75rem)]`)
+            rather than a flexible `1fr` one — so at narrow widths
+            (7*44 + 6*4px gap = 332px) the grid scrolls horizontally in its
+            own container instead of squeezing/overlapping the cells below
+            44px or pushing the page into horizontal overflow. `lg:grid-cols-7`
+            restores the original flexible desktop layout unchanged.
+          */}
+          <div className="mt-3 min-w-0 overflow-x-auto">
+            <div className="grid grid-cols-[repeat(7,2.75rem)] gap-1 font-mono text-[0.6875rem] text-subtle lg:grid-cols-7">
+              {WEEKDAY_LABELS.map((d, i) => (
+                <div key={`${d}-${i}`} className="flex h-6 items-center justify-center">
+                  {d}
+                </div>
+              ))}
+            </div>
+            <div className="mt-1 grid grid-cols-[repeat(7,2.75rem)] gap-1 lg:grid-cols-7">
+              {today
+                ? monthCells.map((cell, i) => {
+                    const isSelected = selectedDay ? sameDay(cell.date, selectedDay) : false;
+                    const disabled = cell.isPast || cell.isWeekend || !cell.inMonth;
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        disabled={disabled}
+                        tabIndex={
+                          focusIndex === i || (focusIndex === null && isSelected) ? 0 : -1
+                        }
+                        onClick={() => !disabled && selectDay(cell.date)}
+                        onFocus={() => setFocusIndex(i)}
+                        onKeyDown={(e) => handleDayKeyDown(e, i)}
+                        aria-pressed={isSelected}
+                        aria-label={cell.date.toDateString()}
+                        className={cn(
+                          "relative flex h-11 w-11 items-center justify-center rounded-lg text-sm transition-colors duration-150",
+                          !cell.inMonth && "text-navy-300",
+                          disabled && cell.inMonth && "text-navy-300",
+                          !disabled && !isSelected && "text-ink hover:bg-navy-100",
+                          cell.isAvailable && !isSelected && "bg-navy-100 font-medium",
+                          isSelected && "bg-orange-500 font-semibold text-white hover:bg-orange-500",
+                        )}
+                      >
+                        {cell.date.getDate()}
+                        {cell.isAvailable && !isSelected && (
+                          <span
+                            aria-hidden="true"
+                            className="absolute bottom-1 h-1 w-1 rounded-full bg-orange-500"
+                          />
+                        )}
+                      </button>
+                    );
+                  })
+                : Array.from({ length: 35 }).map((_, i) => (
+                    <div key={i} className="h-11 w-11 rounded-lg" />
+                  ))}
+            </div>
           </div>
         </div>
 

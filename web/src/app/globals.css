@@ -15,6 +15,12 @@
   --navy-700: #343c5c;
   --navy-600: #4b5570;
   --navy-500: #6e7896;
+  /* Darker than --navy-500 specifically for small text on light grounds:
+     #6e7896 on --paper/--surface lands at 4.13-4.38:1, under the 4.5:1 AA
+     floor for text below 24px. #5c6683 clears it (5.4:1 / 5.7:1) while
+     reading as the same muted grey. Do not use --navy-500 directly for
+     text on paper/surface — use this token (via `.eyebrow`/`text-subtle`). */
+  --subtle-ink: #5c6683;
   --navy-400: #9aa4c0;
   --navy-300: #c3cadd;
   --navy-200: #dde2ec;
@@ -95,6 +101,7 @@
   --color-navy-300: var(--navy-300);
   --color-navy-400: var(--navy-400);
   --color-navy-500: var(--navy-500);
+  --color-subtle-ink: var(--subtle-ink);
   --color-navy-600: var(--navy-600);
   --color-navy-700: var(--navy-700);
   --color-navy-800: var(--navy-800);
@@ -112,7 +119,7 @@
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-body: var(--body);
-  --color-subtle: var(--navy-500);
+  --color-subtle: var(--subtle-ink);
   --color-band: var(--band);
   --color-band-deep: var(--band-deep);
   --color-band-ink: var(--band-ink);

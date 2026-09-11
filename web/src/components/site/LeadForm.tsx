@@ -264,6 +264,13 @@ export function LeadForm({
             id={`${formId}-date`}
             name="targetDate"
             type="text"
+            // Free text on purpose ("Q2 2026", "after DGCA approval") — a
+            // native `type="month"`/`date` picker can't hold that, so this
+            // stays a plain text field. `inputMode="text"` is the correct,
+            // explicit hint for it (rather than leaving inputMode unset):
+            // it keeps the full alphanumeric keyboard instead of letting a
+            // browser guess a numeric one from the name/placeholder.
+            inputMode="text"
             placeholder="Opening or audit date"
             className={cn(inputClass, "pr-11")}
           />

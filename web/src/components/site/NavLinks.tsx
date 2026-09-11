@@ -27,7 +27,11 @@ export function NavLinks() {
               href={item.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "inline-flex items-center rounded-sm pb-1 text-[0.9375rem] transition-colors duration-150",
+                // Single-word labels ("Work", "About"...) render narrower
+                // than the 44px hit-target floor. `-mx-3.5`/`px-3.5` widen
+                // the tap area without moving the visible text or the gap
+                // between items (the negative margin cancels the padding).
+                "-mx-3.5 inline-flex items-center justify-center rounded-sm px-3.5 pb-1 text-[0.9375rem] transition-colors duration-150",
                 active
                   ? "font-semibold text-ink shadow-[inset_0_-2px_0_var(--orange-500)]"
                   : "font-medium text-ink-soft hover:text-ink",
