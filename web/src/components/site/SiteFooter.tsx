@@ -17,7 +17,7 @@ export function SiteFooter() {
       <div className="container-site pt-12 lg:pt-14">
         <div className="grid gap-10 pb-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-12 lg:pb-11">
           <div>
-            <Wordmark href="/" variant="light" height={72} />
+            <Wordmark href="/" variant="light" height={48} />
             <p className="mt-4 max-w-[34ch] text-sm leading-relaxed text-navy-400">
               {site.description}
             </p>

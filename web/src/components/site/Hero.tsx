@@ -13,8 +13,12 @@ import { btnGhost, btnPrimary } from "./styles";
 type Action = { label: string; href: string };
 
 /**
- * Home hero: 620px navy, photo at 0.5 opacity under a 96° navy scrim,
- * runway dash pinned to the bottom edge.
+ * Home hero: 620px navy. At `lg`, the photo runs at 0.9 opacity under a
+ * left-weighted horizontal scrim — opaque behind the text column (~50% of
+ * a 1440px viewport, matching `container-site`'s 1200px cap + the lede's
+ * 54ch measure), fading to near-transparent on the right so the photo
+ * reads clearly there. Below `lg` the photo is dimmer under a
+ * top-to-bottom scrim; runway dash pinned to the bottom edge.
  */
 export function Hero({
   eyebrow,
@@ -42,11 +46,11 @@ export function Hero({
         height={height}
         priority
         sizes="100vw"
-        className="absolute inset-0 size-full object-cover opacity-40 lg:opacity-50"
+        className="absolute inset-0 size-full object-cover opacity-40 lg:opacity-90"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(22,32,58,0.72)_0%,var(--navy-900)_82%)] lg:bg-[linear-gradient(96deg,var(--navy-900)_8%,rgba(22,32,58,0.86)_46%,rgba(22,32,58,0.34)_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(22,32,58,0.72)_0%,var(--navy-900)_82%)] lg:bg-[linear-gradient(90deg,var(--navy-900)_0%,var(--navy-900)_50%,rgba(22,32,58,0.5)_66%,rgba(22,32,58,0.15)_82%,rgba(22,32,58,0.08)_100%)]"
       />
       <div className="container-site relative py-12 lg:flex lg:min-h-[620px] lg:flex-col lg:justify-center lg:py-0">
         <p className="eyebrow-accent">{eyebrow}</p>

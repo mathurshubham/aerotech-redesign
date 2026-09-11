@@ -10,7 +10,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-surface">
       <div className="container-site flex h-[66px] items-center justify-between lg:h-21">
-        <Wordmark variant="dark" height={56} priority />
+        <Wordmark variant="dark" height={38} priority />
 
         <div className="flex items-center gap-8">
           <nav aria-label="Main" className="hidden lg:block">

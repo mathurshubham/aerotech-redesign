@@ -92,18 +92,25 @@ One `h1` per page. Real landmarks: `header`, `nav`, `main`, `footer`, `section` 
 
 ## 9a. Logo assets
 
-The client's real logo (a swoosh mark + "Aerotech" + "Transforming Aviation" tagline) replaces the old drawn text wordmark everywhere. Source: `capture/assets/images/logo.png` (697×665 RGBA). Crops live in `scripts/source-images/logo-*.png`, built by `pnpm images` into `public/images/` + `public/images/manifest.json`:
+The client's real logo (a swoosh mark + "Aerotech" + "Transforming Aviation" tagline, drawn as one angled composition) is not legible as a single raster at nav sizes — "Aerotech" is set at an angle across the swoosh, and the source is low-resolution, so shrinking the whole mark to a 36–48px nav height turns the word to mush. `Wordmark` instead renders a **horizontal lockup**: just the arrowhead glyph, cropped out of the source, beside the name set as real type. Source: `capture/assets/images/logo.png` (697×665 RGBA). Crops live in `scripts/source-images/logo-*.png`, built by `pnpm images` into `public/images/` + `public/images/manifest.json`:
 
 | Asset | Crop | Use |
 |---|---|---|
-| `logo-lockup` | Full logo, transparent padding trimmed, tagline included (697×664) | Large/marketing use only — dark palette, needs a light ground |
-| `logo-mark` | Rows 1–570 (swoosh + "Aerotech"), tagline removed (697×570) | Nav — `Wordmark` default (`variant="dark"`) |
-| `logo-mark-light` | Same crop as `logo-mark`, recoloured per-pixel: near-black word text → white, swoosh → `#A8C0D8`/`#C3CADD` | Navy bands — `Wordmark variant="light"` (footer) |
-| `logo-glyph` | Swoosh arrowhead only, no text (162×220) | `icon.tsx` (32px tab icon) — the only crop that still reads that small |
+| `logo-lockup` | Full logo, transparent padding trimmed, tagline included (697×664) | Large/marketing use only, via `Wordmark withTagline` — dark palette, needs a light ground |
+| `logo-mark` | Rows 1–570 (swoosh + "Aerotech"), tagline removed (697×570) | Unused by `Wordmark` directly; kept as the source `logo-glyph`/`logo-glyph-light` are cropped from |
+| `logo-mark-light` | Same crop as `logo-mark`, recoloured per-pixel: near-black word text → white, swoosh → `#A8C0D8`/`#C3CADD` | Unused by `Wordmark` directly; source for `logo-glyph-light` |
+| `logo-glyph` | Swoosh arrowhead only, no text, cropped from `logo-mark` at `{left:535,top:0,width:162,height:220}` (162×220) | `Wordmark variant="dark"` (default) lockup glyph; `icon.tsx` (32px tab icon) |
+| `logo-glyph-light` | Same crop, taken from `logo-mark-light` (162×220) | `Wordmark variant="light"` lockup glyph — navy bands (footer, gate) |
 
-`Wordmark.tsx` renders these via `next/image` with explicit width/height from the manifest (`resolveImage` in `image-size.ts`); it is a server component. Props: `variant?: "dark" | "light"`, `height?: number`, `withTagline?: boolean` (uses `logo-lockup`), plus the legacy `onBand`/`size` props kept for call sites outside this change's scope (`MobileNav.tsx`, `app/gate/page.tsx`).
+`Wordmark.tsx` renders the lockup — `logo-glyph(-light)` beside a typeset name — via `next/image` + inline text, sized from the manifest (`resolveImage` in `image-size.ts`); it stays a server component. Layout, tuned at `height=38` (the nav size) and scaled proportionally for other heights:
 
-**Minimum legible height: 56px.** Tested a sheet of `logo-mark` at 40/48/56/64px: at 40–48px "Aerotech" blurs into an illegible smear; 56px is the smallest height it reads cleanly at. `SiteHeader` uses 56px (fits the existing 66px mobile / 84px desktop nav — no header resize needed); the footer's `logo-mark-light` runs at 72px, where legibility is not the binding constraint.
+- Glyph: `height` px tall (36–40px at nav size), left-aligned.
+- 12px gap, then the name: `AEROTECH`, Archivo 700, 19px, `0.02em` tracking.
+- Directly under it: `SUPPORT SERVICES`, IBM Plex Mono 500, 9px, `0.19em` tracking, uppercase.
+
+Props: `variant?: "dark" | "light"` (navy glyph + ink name vs. light glyph + white name), `height?: number` (glyph height in px, scales the rest), `withTagline?: boolean` (swaps in the full raster `logo-lockup` — dark palette only, do not combine with `variant="light"`), plus the legacy `onBand`/`size` props kept for call sites outside this change's scope (`MobileNav.tsx`, `app/gate/page.tsx`). `icon.tsx` and `opengraph-image.tsx` render the real logo directly and are unaffected by the lockup.
+
+**Minimum legible glyph height: ~24px.** Tested a sheet at 24/28/32/38px — the arrowhead's two chevron notches stay crisp at 1x down to ~24px; below that they start to fill in. `SiteHeader`/`MobileNav`/gate default to 38px (comfortably inside the 36–40px target), the footer runs the same lockup at 48px where there's more room.
 
 ## 10. Component inventory
 

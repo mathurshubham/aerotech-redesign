@@ -20,10 +20,10 @@ import { getCaseStudy, getPerson, services, site } from "@/content";
 export const metadata: Metadata = metaFor.home();
 
 const HERO_IMAGE = {
-  src: "/images/hero-runway.jpg",
-  alt: "Approach lighting on final into Indira Gandhi International, Delhi",
-  width: 1080,
-  height: 720,
+  src: "/images/aircraft-approach.jpg",
+  alt: "Aircraft on final approach against a clear sky",
+  width: 2560,
+  height: 1655,
 };
 
 export default function Home() {

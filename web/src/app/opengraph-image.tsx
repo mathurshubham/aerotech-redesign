@@ -1,9 +1,8 @@
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
-
 import { ImageResponse } from "next/og";
 
 import { site } from "@/content/site";
+
+import { LOGO_MARK_LIGHT_DATA_URI } from "@/lib/logo-data";
 
 export const alt = `${site.name}`;
 export const size = { width: 1200, height: 630 };
@@ -19,9 +18,7 @@ const DASH_COUNT = 14;
 const LOGO_WIDTH = 697;
 const LOGO_HEIGHT = 570;
 const LOGO_RENDER_HEIGHT = 200;
-const logoDataUri = `data:image/png;base64,${readFileSync(
-  join(process.cwd(), "public", "images", "logo-mark-light.png"),
-).toString("base64")}`;
+
 
 /**
  * Static — no request-time data — so this prerenders once at build time and is
@@ -52,7 +49,7 @@ export default function Image() {
         >
           {/* satori/ImageResponse requires <img>, not next/image */}
           <img
-            src={logoDataUri}
+            src={LOGO_MARK_LIGHT_DATA_URI}
             width={Math.round((LOGO_RENDER_HEIGHT * LOGO_WIDTH) / LOGO_HEIGHT)}
             height={LOGO_RENDER_HEIGHT}
             alt=""
