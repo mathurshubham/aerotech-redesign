@@ -83,3 +83,21 @@ resizes repeatedly overrode this session's `resize_window` calls (observed width
 All mobile-viewport checks (A4, C1-M, C7 sample) were still validated at an effective ~573–636px width,
 which is narrower than the site's `sm`/`md` Tailwind breakpoints, so the mobile CSS path was genuinely
 exercised even though the exact 390px target wasn't held.
+
+## Re-verification (post-fix)
+
+Static checks via curl against the dev server after commit `c018676`; browser-only cases verified live by the fix agent.
+
+| ID | Result | Note |
+|---|---|---|
+| A7 | PASS | Empty submit shows summary + focus, `aria-invalid` on required fields (browser, fix agent) |
+| A11 | PASS | Breadcrumb nav present on `/compliance` and `/privacy` |
+| A16 | PASS | `/sitemap.xml` includes `/services/india-market-entry/dgca-guide` |
+| C5 | PASS | Footer legal text now `navy-300` on `band-deep` (~10.9:1) |
+| C6 | PASS | TaxiBot: h1 h2 h2 h3×4 h2 h2. ORAT: h1 then h2/h3 only. No headings in header/footer |
+| 404 title | PASS | `Page not found | Aerotech Support Services` |
+| B8 | PASS | `.h1-hero` (`clamp(2.25rem,4vw,3.5rem)`) on home, case and page-head heroes |
+| B who-for h2 | PASS | Real `h2` present under the eyebrow |
+| Booking widget | PASS | Renders on `/contact`; select day → slot → Confirm shows status (browser, fix agent) |
+
+Obsolete by decision (placeholders removed, drafts unflagged): A10, A13, A14 stub PDFs, B4, C3.
