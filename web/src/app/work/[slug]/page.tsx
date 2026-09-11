@@ -160,7 +160,7 @@ export default async function CaseStudyPage({
                     height={img.height}
                     unoptimized={img.unoptimized}
                     loading="lazy"
-                    sizes="(min-width: 1024px) 588px, 100vw"
+                    sizes="(min-width: 1024px) 588px, (min-width: 640px) 50vw, 100vw"
                     className="h-auto w-full rounded-lg object-cover"
                   />
                   {image.caption && <PhotoCaption>{image.caption}</PhotoCaption>}
@@ -207,7 +207,7 @@ export default async function CaseStudyPage({
             Outcome
           </h2>
           <div>
-            <p className="max-w-[30ch] border-l-[3px] border-orange-500 pl-6 font-display text-2xl leading-[1.28] font-medium text-white">
+            <p className="max-w-[30ch] border-l-[3px] border-orange-500 pl-6 font-display text-xl leading-[1.3] font-medium text-white lg:text-2xl lg:leading-[1.28]">
               {renderText(study.outcome.quote)}
             </p>
             <p className="mt-8 max-w-[62ch] text-[1.0625rem] leading-[1.65] text-band-muted">

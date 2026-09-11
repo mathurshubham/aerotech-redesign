@@ -270,7 +270,7 @@ export function BookingMock({
                   }}
                   aria-pressed={isSelected}
                   className={cn(
-                    "h-10 w-full rounded-lg border text-sm font-medium transition-colors duration-150",
+                    "h-11 w-full rounded-lg border text-sm font-medium transition-colors duration-150",
                     isSelected
                       ? "border-orange-500 text-orange-600"
                       : "border-line text-body hover:border-navy-400",
@@ -287,7 +287,7 @@ export function BookingMock({
               <button
                 type="button"
                 onClick={() => setConfirmed(true)}
-                className={cn(btnPrimary, "h-10 w-full px-4 text-sm")}
+                className={cn(btnPrimary, "h-11 w-full px-4 text-sm")}
               >
                 Confirm {selectedSlot} IST
               </button>

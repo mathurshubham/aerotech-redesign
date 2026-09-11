@@ -12,8 +12,9 @@ import { btnPrimary, focusRing } from "./styles";
 
 export type LeadTopicOption = { value: string; label: string };
 
+// 16px (text-base): iOS Safari zooms in on focus for any input under 16px.
 const inputClass =
-  "h-11.5 w-full rounded-lg border border-line bg-paper px-3.5 text-[0.9375rem] text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-orange-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50";
+  "h-11.5 w-full rounded-lg border border-line bg-paper px-3.5 text-base text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-orange-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50";
 
 const labelClass = "mb-1.5 block text-[0.8125rem] font-semibold text-ink";
 
@@ -285,7 +286,7 @@ export function LeadForm({
           name="message"
           rows={4}
           placeholder="Scope, a programme date, the constraint you keep running into…"
-          className="w-full rounded-lg border border-line bg-paper px-3.5 py-3 text-[0.9375rem] leading-[1.55] text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-orange-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="w-full rounded-lg border border-line bg-paper px-3.5 py-3 text-base leading-[1.55] text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-orange-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         />
       </div>
 
@@ -318,6 +319,7 @@ export function LeadForm({
         <button
           type="submit"
           disabled={status === "sending"}
+          data-whatsapp-avoid
           className={cn(btnPrimary, "w-full sm:w-auto disabled:opacity-60")}
         >
           {status === "sending" ? "Sending…" : "Request a call"}

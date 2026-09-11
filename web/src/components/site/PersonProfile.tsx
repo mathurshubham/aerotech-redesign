@@ -29,7 +29,7 @@ export function PersonProfile({ person }: { person: Person }) {
               {person.career.map((role) => (
                 <li
                   key={`${role.role}-${role.org}`}
-                  className="grid grid-cols-[1fr_auto] items-baseline gap-6 border-t border-line py-4 last:border-b"
+                  className="grid grid-cols-1 gap-1 border-t border-line py-4 last:border-b sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-6"
                 >
                   <span className="text-base font-medium text-ink">
                     {role.role}

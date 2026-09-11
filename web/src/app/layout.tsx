@@ -53,6 +53,10 @@ export const viewport: Viewport = {
   themeColor: "#16203A",
   width: "device-width",
   initialScale: 1,
+  // WhatsAppButton pads its safe-area inset (`env(safe-area-inset-bottom)`)
+  // so it clears a home-indicator bar; that env() only resolves once the
+  // page opts into the inset area with viewport-fit=cover.
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

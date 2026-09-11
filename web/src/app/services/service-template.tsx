@@ -129,7 +129,7 @@ export function ServicePage({
         title={service.title}
         lede={service.oneLiner}
         aside={
-          <div className="lg:border-l lg:border-band-line lg:pl-7">
+          <div className="border-t border-band-line pt-7 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-7">
             <p className="eyebrow-accent">{asideEyebrow}</p>
             {rows.length > 0 && (
               <dl className="mt-4 flex flex-col gap-3.5">

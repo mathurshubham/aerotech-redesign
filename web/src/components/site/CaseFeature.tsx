@@ -98,12 +98,12 @@ export function CaseFeature({ study }: { study: CaseStudy }) {
             sizes="(min-width: 1024px) 568px, 100vw"
           />
           {study.gallery.length > 0 && (
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {study.gallery.slice(0, 2).map((image) => (
                 <BandPhoto
                   key={image.src + image.alt}
                   image={image}
-                  sizes="(min-width: 1024px) 278px, 50vw"
+                  sizes="(min-width: 1024px) 278px, (min-width: 640px) 50vw, 100vw"
                 />
               ))}
             </div>

@@ -79,7 +79,7 @@ export function ServiceCard({
       <Link
         href={href}
         className={cn(
-          "mt-1 inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-150",
+          "-my-2.5 mt-1 inline-flex min-h-11 items-center gap-1.5 py-2.5 text-sm font-semibold transition-colors duration-150",
           isTool
             ? "text-ink-soft hover:text-ink"
             : "text-orange-600 hover:text-orange-500",

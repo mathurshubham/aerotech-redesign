@@ -34,7 +34,7 @@ export default async function ContactPage({
   const photo = resolveImage(OFFICE_PHOTO.src, OFFICE_PHOTO);
 
   return (
-    <div className="py-10 lg:py-18">
+    <div className="py-11 lg:py-18">
       <JsonLd
         data={[
           breadcrumbGraph([

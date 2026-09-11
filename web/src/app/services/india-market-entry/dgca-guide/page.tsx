@@ -50,7 +50,7 @@ export default function DgcaGuidePage() {
         title={meta.title}
         lede={meta.description}
         aside={
-          <div className="lg:border-l lg:border-band-line lg:pl-7">
+          <div className="border-t border-band-line pt-7 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-7">
             <p className="eyebrow-accent">Status</p>
             <p className="mt-4">
               <Placeholder>draft — verify citations</Placeholder>

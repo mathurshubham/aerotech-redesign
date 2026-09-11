@@ -15,13 +15,19 @@ export function useMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     h2: ({ className, ...props }) => (
       <h2
-        className={cn("mt-14 scroll-mt-28 text-[clamp(1.5rem,2vw,1.875rem)] font-semibold", className)}
+        className={cn(
+          "mt-14 scroll-mt-28 text-[clamp(1.5rem,2vw,1.875rem)] font-semibold [overflow-wrap:anywhere]",
+          className,
+        )}
         {...props}
       />
     ),
     h3: ({ className, ...props }) => (
       <h3
-        className={cn("mt-10 scroll-mt-28 text-[1.375rem] font-semibold", className)}
+        className={cn(
+          "mt-10 scroll-mt-28 text-[1.375rem] font-semibold [overflow-wrap:anywhere]",
+          className,
+        )}
         {...props}
       />
     ),
@@ -31,7 +37,7 @@ export function useMDXComponents(components?: MDXComponents): MDXComponents {
     a: ({ className, href = "", ...props }) => {
       const external = /^(https?:)?\/\//i.test(href) || href.startsWith("mailto:");
       const classes = cn(
-        "font-medium text-orange-600 underline-offset-4 hover:text-orange-500 hover:underline",
+        "font-medium text-orange-600 underline-offset-4 hover:text-orange-500 hover:underline [overflow-wrap:anywhere]",
         className,
       );
       return external ? (

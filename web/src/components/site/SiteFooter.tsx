@@ -13,7 +13,7 @@ export function SiteFooter() {
   const { nap, legal } = site;
 
   return (
-    <footer className="bg-band-deep">
+    <footer className="bg-band-deep" data-whatsapp-avoid>
       <div className="container-site pt-12 lg:pt-14">
         <div className="grid gap-10 pb-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-12 lg:pb-11">
           <div>
@@ -29,13 +29,13 @@ export function SiteFooter() {
               </span>
               <a
                 href={`tel:${nap.phoneE164}`}
-                className={`inline-flex min-h-11 items-center font-mono sm:min-h-0 ${linkClass}`}
+                className={`inline-flex min-h-11 items-center font-mono lg:min-h-0 ${linkClass}`}
               >
                 {nap.phoneDisplay}
               </a>
               <a
                 href={`mailto:${nap.email}`}
-                className={`inline-flex min-h-11 items-center font-mono sm:min-h-0 ${linkClass}`}
+                className={`inline-flex min-h-11 items-center font-mono lg:min-h-0 ${linkClass}`}
               >
                 {nap.email}
               </a>
@@ -52,7 +52,7 @@ export function SiteFooter() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className={`inline-flex min-h-11 items-center sm:min-h-0 ${linkClass}`}
+                      className={`inline-flex min-h-11 items-center lg:min-h-0 ${linkClass}`}
                     >
                       {item.label}
                     </Link>
@@ -82,12 +82,18 @@ export function SiteFooter() {
             </span>
             <span>Grievance contact: {renderText(legal.grievanceContact)}</span>
           </p>
-          <p className="mt-3 flex gap-3 font-mono text-eyebrow tracking-[0.06em] text-navy-300">
-            <Link href="/privacy" className={`${focusRing} hover:text-white`}>
+          <p className="mt-3 flex items-center gap-3 font-mono text-eyebrow tracking-[0.06em] text-navy-300">
+            <Link
+              href="/privacy"
+              className={`inline-flex min-h-11 items-center lg:min-h-0 ${focusRing} hover:text-white`}
+            >
               Privacy
             </Link>
             <span aria-hidden="true">&middot;</span>
-            <Link href="/compliance" className={`${focusRing} hover:text-white`}>
+            <Link
+              href="/compliance"
+              className={`inline-flex min-h-11 items-center lg:min-h-0 ${focusRing} hover:text-white`}
+            >
               Compliance
             </Link>
           </p>

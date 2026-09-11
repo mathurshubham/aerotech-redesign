@@ -18,7 +18,7 @@ export function FAQ({ faqs, idPrefix = "faq" }: { faqs: Faq[]; idPrefix?: string
           value={`${idPrefix}-${i}`}
           className="border-b border-line"
         >
-          <AccordionTrigger className="min-h-11 py-4 font-display text-[1.0625rem] leading-[1.4] font-semibold text-ink no-underline hover:no-underline **:data-[slot=accordion-trigger-icon]:text-orange-500">
+          <AccordionTrigger className="min-h-12 py-4 font-display text-[1.0625rem] leading-[1.4] font-semibold text-ink no-underline hover:no-underline **:data-[slot=accordion-trigger-icon]:mt-1 **:data-[slot=accordion-trigger-icon]:text-orange-500">
             {renderText(faq.q)}
           </AccordionTrigger>
           <AccordionContent className="pb-5 text-[0.9375rem] leading-[1.62] text-body">

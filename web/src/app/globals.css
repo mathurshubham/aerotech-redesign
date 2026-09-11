@@ -199,4 +199,20 @@
     font-size: 1.0625rem;
     line-height: 1.68;
   }
+  /* Long-form content (DGCA guide, compliance, privacy) never forces the
+     page wide on mobile: wide tables scroll in their own box, inline code
+     wraps instead of running off the measure. */
+  .prose-site table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .prose-site :not(pre) > code {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  .prose-site pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }

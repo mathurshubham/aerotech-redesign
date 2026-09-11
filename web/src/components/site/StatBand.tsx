@@ -34,7 +34,7 @@ export function StatBand({
   return (
     <section
       aria-label={label}
-      className={cn(onBand ? "bg-band" : "bg-paper", "py-10 lg:py-15", className)}
+      className={cn(onBand ? "bg-band" : "bg-paper", "py-11 lg:py-15", className)}
     >
       <div className="container-site">
         {eyebrow && <p className={onBand ? "eyebrow-accent mb-6" : "eyebrow mb-6"}>{eyebrow}</p>}
