@@ -28,8 +28,9 @@ export default async function GatePage({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const { next: nextRaw } = await searchParams;
+  const { next: nextRaw, error: errorRaw } = await searchParams;
   const next = sanitizeNext(nextRaw);
+  const error = Array.isArray(errorRaw) ? errorRaw[0] : errorRaw;
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-paper px-6 py-16">
@@ -42,7 +43,7 @@ export default async function GatePage({
         <p className="mt-2.5 text-[0.9375rem] text-body">
           This site is in preview. Ask Aerotech for the PIN if you don&apos;t have it.
         </p>
-        <GateForm next={next} />
+        <GateForm next={next} error={error} />
       </div>
     </main>
   );

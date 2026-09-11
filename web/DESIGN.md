@@ -43,7 +43,7 @@ Archivo (`font-display`) headings · Inter (`font-sans`) body · IBM Plex Mono (
 | Eyebrow | `.eyebrow` — mono 11px / 500 / `0.11em` / uppercase / `subtle` (`.eyebrow-accent` for orange, `band-muted` inside a band) |
 | Photo caption | mono 11px / `subtle` (or `band-muted`) / 9–10px above the image |
 | Metric numeral | mono 25px / 500 / `orange-500` / line-height 1 |
-| Wordmark | Archivo 700 21px `0.02em` + mono 9px `0.19em` "SUPPORT SERVICES" |
+| Wordmark | Real logo image (`Wordmark.tsx`), not text — see §10a |
 
 All-caps is for eyebrows, wordmark and mono labels only.
 
@@ -89,6 +89,21 @@ Fade + 8px rise, 200ms, `ease-out`, on scroll-in, via `motion` (`motion/react`).
 ## 9. Accessibility (WCAG 2.2 AA)
 
 One `h1` per page. Real landmarks: `header`, `nav`, `main`, `footer`, `section` with `aria-labelledby`. 4.5:1 minimum — on paper use `body`/`ink`, on navy use `band-ink`/`band-muted`, links use `orange-600`. Visible focus everywhere via the `ring` token (`focus-visible:ring-3 focus-visible:ring-ring/50`); never remove outlines. 44×44px minimum hit targets on mobile. Keyboard-operable nav, accordion and form; labels plus `aria-describedby` for errors. Skip link to `#main`.
+
+## 9a. Logo assets
+
+The client's real logo (a swoosh mark + "Aerotech" + "Transforming Aviation" tagline) replaces the old drawn text wordmark everywhere. Source: `capture/assets/images/logo.png` (697×665 RGBA). Crops live in `scripts/source-images/logo-*.png`, built by `pnpm images` into `public/images/` + `public/images/manifest.json`:
+
+| Asset | Crop | Use |
+|---|---|---|
+| `logo-lockup` | Full logo, transparent padding trimmed, tagline included (697×664) | Large/marketing use only — dark palette, needs a light ground |
+| `logo-mark` | Rows 1–570 (swoosh + "Aerotech"), tagline removed (697×570) | Nav — `Wordmark` default (`variant="dark"`) |
+| `logo-mark-light` | Same crop as `logo-mark`, recoloured per-pixel: near-black word text → white, swoosh → `#A8C0D8`/`#C3CADD` | Navy bands — `Wordmark variant="light"` (footer) |
+| `logo-glyph` | Swoosh arrowhead only, no text (162×220) | `icon.tsx` (32px tab icon) — the only crop that still reads that small |
+
+`Wordmark.tsx` renders these via `next/image` with explicit width/height from the manifest (`resolveImage` in `image-size.ts`); it is a server component. Props: `variant?: "dark" | "light"`, `height?: number`, `withTagline?: boolean` (uses `logo-lockup`), plus the legacy `onBand`/`size` props kept for call sites outside this change's scope (`MobileNav.tsx`, `app/gate/page.tsx`).
+
+**Minimum legible height: 56px.** Tested a sheet of `logo-mark` at 40/48/56/64px: at 40–48px "Aerotech" blurs into an illegible smear; 56px is the smallest height it reads cleanly at. `SiteHeader` uses 56px (fits the existing 66px mobile / 84px desktop nav — no header resize needed); the footer's `logo-mark-light` runs at 72px, where legibility is not the binding constraint.
 
 ## 10. Component inventory
 

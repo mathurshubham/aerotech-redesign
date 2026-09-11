@@ -150,6 +150,47 @@
     ],
     "widths": []
   },
+  "logo-glyph": {
+    "width": 162,
+    "height": 220,
+    "formats": [
+      "png"
+    ],
+    "widths": []
+  },
+  "logo-lockup": {
+    "width": 697,
+    "height": 664,
+    "formats": [
+      "png",
+      "webp"
+    ],
+    "widths": [
+      480
+    ]
+  },
+  "logo-mark": {
+    "width": 697,
+    "height": 570,
+    "formats": [
+      "png",
+      "webp"
+    ],
+    "widths": [
+      480
+    ]
+  },
+  "logo-mark-light": {
+    "width": 697,
+    "height": 570,
+    "formats": [
+      "png",
+      "webp"
+    ],
+    "widths": [
+      480
+    ]
+  },
   "logo-spicejet": {
     "width": 138,
     "height": 69,

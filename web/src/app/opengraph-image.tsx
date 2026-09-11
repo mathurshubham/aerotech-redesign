@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { ImageResponse } from "next/og";
 
 import { site } from "@/content/site";
@@ -9,6 +12,16 @@ export const contentType = "image/png";
 const NAVY = "#16203A";
 const ORANGE = "#FB722E";
 const DASH_COUNT = 14;
+
+// `logo-mark-light.png` (swoosh + "Aerotech", recoloured for navy — see
+// `public/images/manifest.json`) replaces the old drawn "AEROTECH" text.
+// Read + inlined as a data URI at build time; satori renders plain <img>.
+const LOGO_WIDTH = 697;
+const LOGO_HEIGHT = 570;
+const LOGO_RENDER_HEIGHT = 200;
+const logoDataUri = `data:image/png;base64,${readFileSync(
+  join(process.cwd(), "public", "images", "logo-mark-light.png"),
+).toString("base64")}`;
 
 /**
  * Static — no request-time data — so this prerenders once at build time and is
@@ -37,17 +50,14 @@ export default function Image() {
             padding: "0 96px",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              fontSize: 108,
-              fontWeight: 700,
-              letterSpacing: -2,
-              color: "#FFFFFF",
-            }}
-          >
-            AEROTECH
-          </div>
+          {/* satori/ImageResponse requires <img>, not next/image */}
+          <img
+            src={logoDataUri}
+            width={Math.round((LOGO_RENDER_HEIGHT * LOGO_WIDTH) / LOGO_HEIGHT)}
+            height={LOGO_RENDER_HEIGHT}
+            alt=""
+            style={{ objectFit: "contain" }}
+          />
           <div
             style={{
               display: "flex",

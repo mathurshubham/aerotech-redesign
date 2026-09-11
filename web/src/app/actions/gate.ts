@@ -1,8 +1,6 @@
 "use server";
 
 import { cookies, headers } from "next/headers";
-import { redirect } from "next/navigation";
-
 import {
   GATE_COOKIE_MAX_AGE_SECONDS,
   GATE_COOKIE_NAME,
@@ -17,7 +15,7 @@ import {
   recordSuccess,
 } from "@/lib/gate/rate-limit";
 
-export type VerifyGateResult = { ok: true } | { ok: false; error: string };
+export type VerifyGateResult = { ok: true; next: string } | { ok: false; error: string };
 
 function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -47,7 +45,7 @@ export async function verifyGate(formData: FormData): Promise<VerifyGateResult> 
   // Gate disabled server-side (no GATE_PIN configured) — let the visitor
   // through rather than trapping them on the gate page.
   if (!GATE_PIN || !GATE_SECRET) {
-    redirect(next);
+    return { ok: true, next };
   }
 
   const headerList = await headers();
@@ -64,7 +62,7 @@ export async function verifyGate(formData: FormData): Promise<VerifyGateResult> 
     };
   }
 
-  if (!pin || !constantTimeEqualStrings(pin, GATE_PIN)) {
+  if (!pin || !constantTimeEqualStrings(pin, GATE_PIN.trim())) {
     recordFailure(idHash);
     // Artificial delay so a scripted 4-digit brute force can't move faster
     // than one attempt every 400-800ms even before the WAF rule engages.
@@ -89,5 +87,10 @@ export async function verifyGate(formData: FormData): Promise<VerifyGateResult> 
     maxAge: GATE_COOKIE_MAX_AGE_SECONDS,
   });
 
-  redirect(next);
+  // Deliberately no server-side `redirect()` here. On Cloudflare Workers the
+  // `Set-Cookie` written by a server action does not survive the redirect
+  // response, so the visitor lands back on the gate. Returning the path and
+  // navigating from the client keeps the cookie on a plain 200 action
+  // response, which does carry it.
+  return { ok: true, next };
 }
