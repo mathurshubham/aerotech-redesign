@@ -3,6 +3,9 @@
   "name": "aerotech-web",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-09-11",
+  "routes": [
+    { "pattern": "aerotech.shubhammathur.in", "custom_domain": true }
+  ],
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": ".open-next/assets",

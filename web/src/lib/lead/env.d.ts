@@ -12,4 +12,8 @@ interface CloudflareEnv {
   LEAD_FROM_EMAIL?: string;
   LEAD_TO_EMAIL?: string;
   TURNSTILE_SECRET_KEY?: string;
+  // Preview PIN gate (`src/proxy.ts`, `src/app/actions/gate.ts`) — see
+  // `src/lib/gate/README.md`. Unset `GATE_PIN` disables the gate entirely.
+  GATE_PIN?: string;
+  GATE_SECRET?: string;
 }

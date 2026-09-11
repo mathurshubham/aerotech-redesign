@@ -6,3 +6,10 @@ TURNSTILE_SECRET_KEY=""
 LEAD_TO_EMAIL="info@aerotechss.com"
 LEAD_FROM_EMAIL="Aerotech Website <leads@aerotechss.com>"
 NEXT_PUBLIC_TURNSTILE_SITE_KEY=""
+
+# Preview PIN gate (see src/lib/gate/README.md). Unset GATE_PIN disables the
+# gate entirely.
+#   wrangler secret put GATE_PIN
+#   wrangler secret put GATE_SECRET
+GATE_PIN=""
+GATE_SECRET=""
