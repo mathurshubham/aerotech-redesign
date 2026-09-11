@@ -12,7 +12,8 @@
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
-    "logo-data": "tsx scripts/make-logo-data.ts"
+    "logo-data": "tsx scripts/make-logo-data.ts",
+    "test": "tsx --test src/lib/**/*.test.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
