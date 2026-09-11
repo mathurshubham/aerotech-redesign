@@ -5,7 +5,7 @@ import type { LeadTopicOption } from "./LeadForm";
 /**
  * Chip labels for the lead form. Values are service slugs (plus `other`),
  * matching `LEAD_TOPICS` in `src/lib/lead/schema.ts`; labels are the phrasing
- * from `design/Contact.dc.html`.
+ * from `reference/design/Contact.dc.html`.
  */
 const CHIP_LABELS: Record<string, string> = {
   orat: "ORAT for a new terminal",

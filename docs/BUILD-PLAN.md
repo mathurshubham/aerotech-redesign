@@ -41,7 +41,7 @@ Not free — skip: CF Health Checks (Pro), Cloudflare Images storage/delivery, P
 ## 0.2 Phase 1 work breakdown
 
 1. **Scaffold** — Next 16 App Router, TS, Tailwind v4, `@opennextjs/cloudflare`, `wrangler.jsonc` with D1 + R2 + Images bindings, `open-next.config.ts` (R2 incremental cache, DO queue, D1 tag cache). Workers Builds + preview envs with isolated bindings.
-2. **Design system** — tokens from `REDESIGN-BRIEF.md`; components matching `design/*.dc.html`: nav, hero, credential strip, logo grid, service card, case card, case feature, person card, phase timeline, deliverables grid, form, contact band, footer, breadcrumb.
+2. **Design system** — tokens from `REDESIGN-BRIEF.md`; components matching `reference/design/*.dc.html`: nav, hero, credential strip, logo grid, service card, case card, case feature, person card, phase timeline, deliverables grid, form, contact band, footer, breadcrumb.
 3. **Content layer** — `content/` with Zod schemas: `services/*.mdx`, `work/*.mdx`, `insights/*.mdx`, `people/*.mdx`, `pages/*.mdx` (blocks), `site.json` (NAP, legal, socials). Seeded from `content/site-content.json` + the redesign drafts.
 4. **Routes** — `/`, `/services` + 5, `/services/india-market-entry/dgca-guide`, `/tools/aero-opt`, `/work` + 4, `/about`, `/about/ashwani-khanna`, `/insights` + 3, `/compliance`, `/contact`, `/privacy`.
 5. **SEO/AIEO** — `metadataBase`, per-page canonical, `sitemap.ts`, `robots.ts` (Allow all AI tokens), JSON-LD graph (Organization, WebSite, Person, Service ×5, Article, BreadcrumbList), OG images, `llms.txt` (30 min), RSS.

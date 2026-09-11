@@ -2,7 +2,7 @@
 
 Executed by Sonnet driver agents using the Claude-in-Chrome tools against `http://localhost:3000` (`pnpm dev` in `web/`). Every case records PASS/FAIL, a screenshot path under `docs/qa/<run-date>/`, and a one-line note. Failures become a fix list for the build agents; the suite re-runs after fixes.
 
-Reference for "correct": `web/DESIGN.md`, `docs/REDESIGN-BRIEF.md` §6–7, and the six draft artboards in `design/`.
+Reference for "correct": `web/DESIGN.md`, `docs/REDESIGN-BRIEF.md` §6–7, and the six draft artboards in `reference/design/`.
 
 ## Viewports
 
@@ -62,12 +62,12 @@ Screenshot each route at D and M, then compare against the draft artboards and `
 
 | ID | Case | Pass condition |
 |---|---|---|
-| B1 | Home vs `design/Main.dc.html` | Same band order: nav, hero, credential strip, logo row, services grid, TaxiBot feature, principal, second proof row, contact band, footer. Hero H1 wording matches brief |
-| B2 | Mobile home vs `design/MobileHome.dc.html` | Credential strip 2-up; services stacked with "all services" link; phone becomes its own tap target |
-| B3 | ORAT vs `design/Orat.dc.html` | Dark page head with engagement-shape panel; who-it's-for 3-up; deliverables 2×3 grid; four phases with T-windows; why-us band |
-| B4 | TaxiBot vs `design/Taxibot.dc.html` | Photo hero with overlay; fact bar 4-up; challenge → approach (numbered 01–04) → outcome band with pull quote and stat tiles; PLACEHOLDER callout present |
-| B5 | About vs `design/About.dc.html` | Intro + photo card; four-number band incl. `119 → 1`; career list; certifications grid; honours; key projects 2-col |
-| B6 | Contact vs `design/Contact.dc.html` | Form ≤ 5 visible required fields + topic chips; "skip the form" navy card; office card with photo; recovery-hotline note |
+| B1 | Home vs `reference/design/Main.dc.html` | Same band order: nav, hero, credential strip, logo row, services grid, TaxiBot feature, principal, second proof row, contact band, footer. Hero H1 wording matches brief |
+| B2 | Mobile home vs `reference/design/MobileHome.dc.html` | Credential strip 2-up; services stacked with "all services" link; phone becomes its own tap target |
+| B3 | ORAT vs `reference/design/Orat.dc.html` | Dark page head with engagement-shape panel; who-it's-for 3-up; deliverables 2×3 grid; four phases with T-windows; why-us band |
+| B4 | TaxiBot vs `reference/design/Taxibot.dc.html` | Photo hero with overlay; fact bar 4-up; challenge → approach (numbered 01–04) → outcome band with pull quote and stat tiles; PLACEHOLDER callout present |
+| B5 | About vs `reference/design/About.dc.html` | Intro + photo card; four-number band incl. `119 → 1`; career list; certifications grid; honours; key projects 2-col |
+| B6 | Contact vs `reference/design/Contact.dc.html` | Form ≤ 5 visible required fields + topic chips; "skip the form" navy card; office card with photo; recovery-hotline note |
 | B7 | Palette discipline | Only token colours present. Orange appears only on CTAs, eyebrows, rules, active states — estimate ≤ 5 % of hero+first-fold pixels. No lime/green/blue leftovers |
 | B8 | Type | H1/H2/H3 sizes within the `clamp()` scale; body 17 px/1.62 at D, 16 px at M; body text **left-aligned, never justified**; no weight 800/900 anywhere (`getComputedStyle` sweep) |
 | B9 | Eyebrows | Mono, uppercase, 11 px, letter-spaced, above every section heading |

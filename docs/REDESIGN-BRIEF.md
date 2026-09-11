@@ -1,6 +1,6 @@
 # aerotechss.com — Redesign Direction
 
-Rev 1 · 2026-09-10 · Based on the capture in `capture/raw/`, `capture/content/`, `capture/screenshots/` and the audit in `docs/DESIGN-AUDIT.md`.
+Rev 1 · 2026-09-10 · Based on the capture in `reference/capture/raw/`, `reference/capture/content/`, `reference/capture/screenshots/` and the audit in `docs/DESIGN-AUDIT.md`.
 
 ---
 

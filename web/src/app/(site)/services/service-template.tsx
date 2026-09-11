@@ -83,7 +83,7 @@ function phaseHeading(service: Service): string {
 }
 
 /**
- * One service page, composed per `design/Orat.dc.html`: dark page head with an
+ * One service page, composed per `reference/design/Orat.dc.html`: dark page head with an
  * engagement-shape aside, who-it's-for 3-up on 2px ink rules, a deliverables
  * intro column beside the hairline grid, the phase timeline, a navy why-us
  * band with the related panel, related work, the FAQ, and the CTA band.

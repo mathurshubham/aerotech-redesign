@@ -1,6 +1,6 @@
 # Aerotech — design language
 
-Rev 1 · 2026-09-11 · Binding for every component agent. Sources: `src/app/globals.css` (tokens), `docs/REDESIGN-BRIEF.md` §7, drafts in `design/*.dc.html`.
+Rev 1 · 2026-09-11 · Binding for every component agent. Sources: `src/app/globals.css` (tokens), `docs/REDESIGN-BRIEF.md` §7, drafts in `reference/design/*.dc.html`.
 
 **Rules of engagement:** use tokens, never raw hex. Use the `container-site`, `eyebrow`, `band`, `measure`, `runway`, `prose-site` utilities already in `globals.css` rather than re-deriving them. Do not add a colour, a radius, a shadow or a font.
 
@@ -93,7 +93,7 @@ One `h1` per page. Real landmarks: `header`, `nav`, `main`, `footer`, `section` 
 
 ## 9a. Logo assets
 
-The client's real logo (a swoosh mark + "Aerotech" + "Transforming Aviation" tagline, drawn as one angled composition) is not legible as a single raster at nav sizes — "Aerotech" is set at an angle across the swoosh, and the source is low-resolution, so shrinking the whole mark to a 36–48px nav height turns the word to mush. `Wordmark` instead renders a **horizontal lockup**: just the arrowhead glyph, cropped out of the source, beside the name set as real type. Source: `capture/assets/images/logo.png` (697×665 RGBA). Crops live in `scripts/source-images/logo-*.png`, built by `pnpm images` into `public/images/` + `public/images/manifest.json`:
+The client's real logo (a swoosh mark + "Aerotech" + "Transforming Aviation" tagline, drawn as one angled composition) is not legible as a single raster at nav sizes — "Aerotech" is set at an angle across the swoosh, and the source is low-resolution, so shrinking the whole mark to a 36–48px nav height turns the word to mush. `Wordmark` instead renders a **horizontal lockup**: just the arrowhead glyph, cropped out of the source, beside the name set as real type. Source: `reference/capture/assets/images/logo.png` (697×665 RGBA). Crops live in `scripts/source-images/logo-*.png`, built by `pnpm images` into `public/images/` + `public/images/manifest.json`:
 
 | Asset | Crop | Use |
 |---|---|---|

@@ -20,7 +20,7 @@ A complete redesigned marketing site for **Aerotech Support Services** (aviation
 | **Content status** | Real copy where it existed; **sample values elsewhere** — see §14 |
 | **CMS** | None yet. Content is typed files in the repo. Phase 2 — see §17 |
 
-The original site was captured before any work started, so nothing is lost: `capture/` holds the raw HTML, all 60 original images, extracted text and full-page screenshots of the old site as it was on 2026-09-10.
+The original site was captured before any work started, so nothing is lost: `reference/capture/` holds the raw HTML, all 60 original images, extracted text and full-page screenshots of the old site as it was on 2026-09-10.
 
 ### What is done
 
@@ -89,15 +89,16 @@ Tailwind v4 has no config file — the design tokens live in `@theme inline` ins
 ## 4. Repository layout
 
 ```
-capture/                     The old site, captured 2026-09-10 — do not edit
-  raw/                       11 pages of original HTML as served
-  assets/                    Original CSS, JS and all 60 images
-  content/                   site-content.json + per-page markdown extraction
-  screenshots/               Full-page desktop and mobile captures of the old site
-design/                      Approved redesign drafts (the visual spec)
-  *.dc.html                  6 artboards: Main, MobileHome, Orat, Taxibot, About, Contact
-  img/                       Downsampled imagery used by the drafts
-  canvas.json                Artboard layout for the design-canvas artifact
+reference/                   Read-only inputs. Never edited after capture
+  capture/                   The old site as it stood on 2026-09-10
+    raw/                     11 pages of original HTML as served
+    assets/                  Original CSS, JS and all 60 images
+    content/                 site-content.json + per-page markdown extraction
+    screenshots/             Full-page desktop and mobile captures of the old site
+  design/                    Approved redesign drafts — the visual spec
+    *.dc.html                6 artboards: Main, MobileHome, Orat, Taxibot, About, Contact
+    img/                     Downsampled imagery used by the drafts
+    canvas.json              Artboard layout for the design-canvas artifact
 docs/
   HANDOFF.md                 This file
   BUILD-PLAN.md              Stack research and decisions, with sources
@@ -134,7 +135,7 @@ web/                         The application
 
 | Route | Rendering | Notes |
 |---|---|---|
-| `/` | Static | Nine bands per `design/Main.dc.html` |
+| `/` | Static | Nine bands per `reference/design/Main.dc.html` |
 | `/services` | Static | Hub, 5 services + Aero Opt |
 | `/services/[slug]` | SSG, `dynamicParams = false` | orat, audits-compliance, sustainable-aviation, aircraft-recovery, india-market-entry |
 | `/services/india-market-entry/dgca-guide` | Static | Pillar explainer, renders the DGCA insight MDX |
@@ -206,7 +207,7 @@ The generic `Page` type composes from a fixed block set, rendered by `src/compon
 
 ## 7. Design system
 
-`web/DESIGN.md` is the authoritative sheet; `design/*.dc.html` are the approved visual targets. Tokens live in `globals.css`.
+`web/DESIGN.md` is the authoritative sheet; `reference/design/*.dc.html` are the approved visual targets. Tokens live in `globals.css`.
 
 - **Colour** — navy `#16203A` / `#343C5C`, paper `#F7F8FA`, line `#DDE2EC`, body `#4B5570`, small-text `--subtle-ink #5C6683`, orange `#FB722E` held to roughly 5% of pixels and used only for CTAs, eyebrows, rules and active states. Three surface modes: paper page, white card, navy band (`band` / `band-ink` / `band-muted` / `band-line`).
 - **Type** — Archivo 600/700 display, Inter 400/500 body at 17px/1.62 with a 68ch measure and left alignment (never justified), IBM Plex Mono 500 for eyebrows, credentials, captions and data. Weights stop at 700; 900 is banned. Hero h1 uses one `.h1-hero` clamp, ceiling 56px.
@@ -215,7 +216,7 @@ The generic `Page` type composes from a fixed block set, rendered by `src/compon
 - **Motion** — fade plus 8px rise, 200ms, once; `Reveal` renders a plain div under `prefers-reduced-motion`, so nothing is ever parked invisible.
 - **Icons** — lucide only, 24px, stroke 1.6. No emoji.
 
-The logo is worth its own note. `capture/assets/images/logo.png` is a 697×665 transparent raster: a swoosh with "Aerotech" inside it and "Transforming Aviation" beneath. It is a stacked, near-square composition, so at any height that fits a header the wordmark becomes an unreadable smudge — tested at 40, 48, 56 and 64px. The nav therefore uses a **horizontal lockup**: the real arrowhead glyph (`logo-glyph`) beside "AEROTECH" typeset in Archivo with "SUPPORT SERVICES" in mono beneath. `logo-lockup` (full artwork with tagline) and `logo-mark-light` (recoloured for navy bands) also exist. **Ask the client for vector artwork** — that is the actual fix, and it would let the real logo be used at any size.
+The logo is worth its own note. `reference/capture/assets/images/logo.png` is a 697×665 transparent raster: a swoosh with "Aerotech" inside it and "Transforming Aviation" beneath. It is a stacked, near-square composition, so at any height that fits a header the wordmark becomes an unreadable smudge — tested at 40, 48, 56 and 64px. The nav therefore uses a **horizontal lockup**: the real arrowhead glyph (`logo-glyph`) beside "AEROTECH" typeset in Archivo with "SUPPORT SERVICES" in mono beneath. `logo-lockup` (full artwork with tagline) and `logo-mark-light` (recoloured for navy bands) also exist. **Ask the client for vector artwork** — that is the actual fix, and it would let the real logo be used at any size.
 
 ---
 
