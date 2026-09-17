@@ -69,7 +69,7 @@ export function WhatsAppButton() {
       aria-hidden={hidden || undefined}
       tabIndex={hidden ? -1 : undefined}
       className={cn(
-        "fixed right-4 z-40 inline-flex min-h-14 items-center gap-2.5 rounded-full bg-orange-500 px-4.5 py-3.5 font-sans text-sm font-semibold text-white transition-opacity duration-150 hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 lg:hidden",
+        "fixed right-4 z-40 inline-flex min-h-14 items-center gap-2.5 rounded-full bg-aqua-600 px-4.5 py-3.5 font-sans text-sm font-semibold text-white transition-opacity duration-150 hover:bg-aqua-700 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 lg:hidden",
         hidden ? "pointer-events-none opacity-0" : "opacity-100",
       )}
       style={{ bottom: "calc(1rem + env(safe-area-inset-bottom))" }}

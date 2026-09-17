@@ -110,6 +110,8 @@ Nine bands, in this scroll order.
 
 ### Color
 
+> **Superseded.** The palette below is the original brief and is kept for the record. The site has since moved to pastel cool-sky grounds with a deep teal accent, and the dark navy bands became light pastel ones carrying ink text. `web/src/app/globals.css` is the authoritative token set; `web/DESIGN.md` §1 and §5 are the binding spec. The *ratio* rule below still holds — only the hues changed.
+
 Keep the navy/orange brand pair. Fix the ratio and add real neutrals.
 
 ```css

@@ -14,7 +14,7 @@ export type LeadTopicOption = { value: string; label: string };
 
 // 16px (text-base): iOS Safari zooms in on focus for any input under 16px.
 const inputClass =
-  "h-11.5 w-full rounded-lg border border-line bg-paper px-3.5 text-base text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-orange-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50";
+  "h-11.5 w-full rounded-lg border border-line bg-paper px-3.5 text-base text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-aqua-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50";
 
 const labelClass = "mb-1.5 block text-[0.8125rem] font-semibold text-ink";
 
@@ -125,9 +125,9 @@ export function LeadForm({
       >
         <div
           aria-hidden="true"
-          className="flex size-11 items-center justify-center rounded-full border border-orange-500"
+          className="flex size-11 items-center justify-center rounded-full border border-aqua-500"
         >
-          <Check size={24} strokeWidth={1.6} className="text-orange-500" />
+          <Check size={24} strokeWidth={1.6} className="text-aqua-500" />
         </div>
         <h2 className="mt-5 font-display text-[1.375rem] leading-[1.3] font-semibold">
           Enquiry received
@@ -233,7 +233,7 @@ export function LeadForm({
                   className={cn(
                     "inline-flex min-h-11 cursor-pointer items-center rounded-full border px-4 text-sm transition-colors duration-150",
                     selected
-                      ? "border-orange-500 bg-orange-100 font-medium text-orange-600"
+                      ? "border-aqua-500 bg-aqua-100 font-medium text-aqua-700"
                       : "border-line text-body hover:border-ink/30",
                     "peer-focus-visible:ring-3 peer-focus-visible:ring-ring/50",
                   )}
@@ -293,7 +293,7 @@ export function LeadForm({
           name="message"
           rows={4}
           placeholder="Scope, a programme date, the constraint you keep running into…"
-          className="w-full rounded-lg border border-line bg-paper px-3.5 py-3 text-base leading-[1.55] text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-orange-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="w-full rounded-lg border border-line bg-paper px-3.5 py-3 text-base leading-[1.55] text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-aqua-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         />
       </div>
 

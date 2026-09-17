@@ -37,7 +37,7 @@ function BandPhoto({
 }
 
 /**
- * Full-bleed navy band: copy, pull quote and a 3-up fact grid on the left,
+ * Full-bleed pastel band: copy, pull quote and a 3-up fact grid on the left,
  * a captioned image stack on the right.
  */
 export function CaseFeature({ study }: { study: CaseStudy }) {
@@ -51,7 +51,7 @@ export function CaseFeature({ study }: { study: CaseStudy }) {
           <p className="eyebrow-accent">Case study &middot; {renderText(study.eyebrow)}</p>
           <h2
             id={headingId}
-            className="mt-4 max-w-[20ch] font-display text-[1.75rem] leading-[1.13] font-semibold text-white lg:text-[2.5rem]"
+            className="mt-4 max-w-[20ch] font-display text-[1.75rem] leading-[1.13] font-semibold text-band-ink lg:text-[2.5rem]"
           >
             {renderText(study.title)}
           </h2>
@@ -59,8 +59,8 @@ export function CaseFeature({ study }: { study: CaseStudy }) {
             {renderText(study.summary)}
           </p>
 
-          <blockquote className="mt-6 border-l-[3px] border-orange-500 pl-4 lg:mt-7.5 lg:pl-5">
-            <p className="font-display text-lg leading-[1.42] font-medium text-white lg:text-xl">
+          <blockquote className="mt-6 border-l-[3px] border-aqua-500 pl-4 lg:mt-7.5 lg:pl-5">
+            <p className="font-display text-lg leading-[1.42] font-medium text-band-ink lg:text-xl">
               {renderText(study.outcome.quote)}
             </p>
           </blockquote>
@@ -71,7 +71,7 @@ export function CaseFeature({ study }: { study: CaseStudy }) {
                 <div key={stat.label} className="bg-band px-3 py-4 lg:px-4 lg:py-4.5">
                   <dt className="sr-only">{stat.label}</dt>
                   <dd>
-                    <span className="block font-mono text-[1.0625rem] text-white lg:text-xl">
+                    <span className="block font-mono text-[1.0625rem] text-band-ink lg:text-xl">
                       {renderText(stat.value)}
                     </span>
                     <span className="mt-1.5 block text-[0.6875rem] leading-[1.35] text-band-muted lg:text-xs">

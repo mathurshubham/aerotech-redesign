@@ -13,12 +13,17 @@ import { btnGhost, btnPrimary } from "./styles";
 type Action = { label: string; href: string };
 
 /**
- * Home hero: 620px navy. At `lg`, the photo runs at 0.9 opacity under a
- * left-weighted horizontal scrim — opaque behind the text column (~50% of
- * a 1440px viewport, matching `container-site`'s 1200px cap + the lede's
- * 54ch measure), fading to near-transparent on the right so the photo
+ * Home hero: 620px pastel band at `lg`. At `lg`, the photo runs at 0.8 opacity
+ * under a left-weighted horizontal scrim — opaque behind the text column
+ * (~50% of a 1440px viewport, matching `container-site`'s 1200px cap + the
+ * lede's 54ch measure), fading to near-transparent on the right so the photo
  * reads clearly there. Below `lg` the photo is dimmer under a
  * top-to-bottom scrim; runway dash pinned to the bottom edge.
+ *
+ * The scrim is a wash of `--band`, not a dark one: the headline is ink on
+ * pastel, so the photo has to be lifted toward the ground colour rather than
+ * pushed away from it. Keep the first 50% fully opaque — that is the only
+ * thing guaranteeing contrast for the h1 and lede.
  */
 export function Hero({
   eyebrow,
@@ -46,22 +51,22 @@ export function Hero({
         height={height}
         priority
         sizes="100vw"
-        className="absolute inset-0 size-full object-cover opacity-40 lg:opacity-90"
+        className="absolute inset-0 size-full object-cover opacity-35 lg:opacity-80"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(22,32,58,0.72)_0%,var(--navy-900)_82%)] lg:bg-[linear-gradient(90deg,var(--navy-900)_0%,var(--navy-900)_50%,rgba(22,32,58,0.5)_66%,rgba(22,32,58,0.15)_82%,rgba(22,32,58,0.08)_100%)]"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(221,231,246,0.76)_0%,var(--band)_82%)] lg:bg-[linear-gradient(90deg,var(--band)_0%,var(--band)_50%,rgba(221,231,246,0.6)_66%,rgba(221,231,246,0.24)_82%,rgba(221,231,246,0.12)_100%)]"
       />
       <div className="container-site relative py-12 lg:flex lg:min-h-[620px] lg:flex-col lg:justify-center lg:py-0">
         <p className="eyebrow-accent">{eyebrow}</p>
         <h1
           id="hero-title"
-          className="h1-hero mt-4 max-w-[17ch] font-display font-bold text-white lg:mt-5.5"
+          className="h1-hero mt-4 max-w-[17ch] font-display font-bold text-band-ink lg:mt-5.5"
         >
           {renderText(title)}
         </h1>
         {body && (
-          <p className="mt-4.5 max-w-[54ch] text-base leading-[1.56] text-navy-300 lg:mt-6.5 lg:text-[1.1875rem]">
+          <p className="mt-4.5 max-w-[54ch] text-base leading-[1.56] text-band-muted lg:mt-6.5 lg:text-[1.1875rem]">
             {renderText(body)}
           </p>
         )}
@@ -86,7 +91,7 @@ export function Hero({
 }
 
 /**
- * Page head: dark band with breadcrumb, h1, lede and an optional aside panel.
+ * Page head: pastel band with breadcrumb, h1, lede and an optional aside panel.
  * Used at the top of every non-home page.
  */
 export function PageHead({
@@ -123,7 +128,7 @@ export function PageHead({
             {eyebrow && !crumbs && <p className="eyebrow-accent mb-5">{eyebrow}</p>}
             <h1
               id="page-title"
-              className="h1-hero max-w-[22ch] font-display font-bold text-white"
+              className="h1-hero max-w-[22ch] font-display font-bold text-band-ink"
             >
               {renderText(title)}
             </h1>

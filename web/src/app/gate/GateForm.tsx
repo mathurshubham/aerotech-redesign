@@ -33,7 +33,7 @@ export function GateForm({ next, error }: { next: string; error?: string }) {
         aria-invalid={message ? true : undefined}
         aria-describedby={message ? "gate-pin-error" : undefined}
         className={cn(
-          "h-14 w-full rounded-lg border border-line bg-paper px-4 text-center font-mono text-[1.75rem] tracking-[0.35em] text-ink placeholder:tracking-normal placeholder:text-subtle transition-colors duration-150 focus-visible:border-orange-500",
+          "h-14 w-full rounded-lg border border-line bg-paper px-4 text-center font-mono text-[1.75rem] tracking-[0.35em] text-ink placeholder:tracking-normal placeholder:text-subtle transition-colors duration-150 focus-visible:border-aqua-500",
           focusRing,
           message && "border-destructive",
         )}

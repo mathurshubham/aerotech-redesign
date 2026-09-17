@@ -40,7 +40,7 @@ export function SectionHeading({
           id={id}
           className={cn(
             "mt-3 max-w-[24ch] font-display text-[1.75rem] leading-[1.14] font-semibold lg:text-[2.375rem]",
-            onBand && "text-white",
+            onBand && "text-band-ink",
           )}
         >
           {renderText(title)}

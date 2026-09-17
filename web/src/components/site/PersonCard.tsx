@@ -60,7 +60,7 @@ export function PersonCard({
           >
             {person.name}
           </h2>
-          <p className="mt-2 font-mono text-[0.8125rem] tracking-[0.06em] text-orange-500 uppercase">
+          <p className="mt-2 font-mono text-[0.8125rem] tracking-[0.06em] text-aqua-700 uppercase">
             {person.role}
           </p>
           <p className="mt-5 max-w-[58ch] text-[1.0625rem] leading-[1.56] text-ink-soft lg:text-[1.1875rem]">

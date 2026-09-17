@@ -10,7 +10,7 @@ export function isPlaceholder(value: string | undefined | null): boolean {
 }
 
 /**
- * A `[PLACEHOLDER: …]` string, rendered as a mono, orange-bordered chip so it
+ * A `[PLACEHOLDER: …]` string, rendered as a mono, teal-bordered chip so it
  * can never be mistaken for finished copy.
  */
 export function Placeholder({
@@ -24,7 +24,7 @@ export function Placeholder({
     <span
       data-placeholder="true"
       className={cn(
-        "inline-flex items-center rounded-lg border border-orange-500 bg-orange-100 px-2 py-0.5 align-baseline font-mono text-[0.75rem] leading-snug text-orange-600",
+        "inline-flex items-center rounded-lg border border-aqua-500 bg-aqua-100 px-2 py-0.5 align-baseline font-mono text-[0.75rem] leading-snug text-aqua-700",
         className,
       )}
     >

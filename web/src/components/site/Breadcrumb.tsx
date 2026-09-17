@@ -50,8 +50,8 @@ export function Breadcrumb({
                     // keep the visible line position unchanged.
                     "-my-4 inline-flex min-h-11 items-center py-4 transition-colors duration-150",
                     onBand
-                      ? "text-band-muted hover:text-white"
-                      : "text-subtle hover:text-orange-600",
+                      ? "text-band-muted hover:text-ink"
+                      : "text-subtle hover:text-aqua-700",
                     focusRing,
                   )}
                 >

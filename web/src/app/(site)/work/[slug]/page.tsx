@@ -73,7 +73,7 @@ export default async function CaseStudyPage({
         ]}
       />
 
-      {/* Hero — photo with navy gradient overlay */}
+      {/* Hero — photo under a pastel wash, opaque behind the headline */}
       <section aria-labelledby="case-title" className="relative overflow-hidden bg-band">
         <Image
           src={hero.src}
@@ -83,11 +83,11 @@ export default async function CaseStudyPage({
           unoptimized={hero.unoptimized}
           priority
           sizes="100vw"
-          className="absolute inset-0 size-full object-cover opacity-40"
+          className="absolute inset-0 size-full object-cover opacity-35 lg:opacity-80"
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[linear-gradient(0deg,var(--navy-900)_4%,rgba(22,32,58,0.82)_52%,rgba(22,32,58,0.55)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(221,231,246,0.76)_0%,var(--band)_82%)]"
         />
         <div className="container-site relative py-14 lg:py-30">
           <Breadcrumb
@@ -102,11 +102,11 @@ export default async function CaseStudyPage({
           <p className="eyebrow-accent">{renderText(study.eyebrow)}</p>
           <h1
             id="case-title"
-            className="h1-hero mt-4 max-w-[21ch] font-display font-bold text-white"
+            className="h1-hero mt-4 max-w-[21ch] font-display font-bold text-band-ink"
           >
             {renderText(study.title)}
           </h1>
-          <p className="mt-6 max-w-[56ch] text-lg leading-[1.55] text-navy-300 lg:text-xl">
+          <p className="mt-6 max-w-[56ch] text-lg leading-[1.55] text-band-muted lg:text-xl">
             {renderText(study.summary)}
           </p>
         </div>
@@ -183,7 +183,7 @@ export default async function CaseStudyPage({
                 key={step.title}
                 className="grid grid-cols-[44px_1fr] gap-5 border-t border-line py-6 last:border-b"
               >
-                <span className="font-mono text-sm text-orange-500">
+                <span className="font-mono text-sm text-aqua-700">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
@@ -200,14 +200,14 @@ export default async function CaseStudyPage({
         </div>
       </section>
 
-      {/* Outcome — dark band */}
+      {/* Outcome — pastel band */}
       <section aria-labelledby="outcome-heading" className="bg-band py-14 lg:py-21">
         <div className="container-site grid gap-8 lg:grid-cols-[200px_1fr] lg:gap-14">
           <h2 id="outcome-heading" className="eyebrow-accent pt-1">
             Outcome
           </h2>
           <div>
-            <p className="max-w-[30ch] border-l-[3px] border-orange-500 pl-6 font-display text-xl leading-[1.3] font-medium text-white lg:text-2xl lg:leading-[1.28]">
+            <p className="max-w-[30ch] border-l-[3px] border-aqua-500 pl-6 font-display text-xl leading-[1.3] font-medium text-band-ink lg:text-2xl lg:leading-[1.28]">
               {renderText(study.outcome.quote)}
             </p>
             <p className="mt-8 max-w-[62ch] text-[1.0625rem] leading-[1.65] text-band-muted">
@@ -224,8 +224,8 @@ export default async function CaseStudyPage({
                         className={cn(
                           "block font-mono text-2xl leading-none",
                           i === study.outcome.stats.length - 1
-                            ? "text-orange-500"
-                            : "text-white",
+                            ? "text-aqua-500"
+                            : "text-band-ink",
                         )}
                       >
                         {renderText(stat.value)}
@@ -240,13 +240,13 @@ export default async function CaseStudyPage({
             )}
 
             {study.placeholders.length > 0 && (
-              <div className="mt-7 flex items-start gap-4 rounded-lg border border-band-line bg-[#0F1729] px-6 py-5.5">
-                <span className="mt-0.5 font-mono text-xs text-orange-500">
+              <div className="mt-7 flex items-start gap-4 rounded-lg border border-band-line bg-surface px-6 py-5.5">
+                <span className="mt-0.5 font-mono text-xs text-aqua-700">
                   PLACEHOLDER
                 </span>
                 <ul className="flex flex-col gap-1.5">
                   {study.placeholders.map((placeholder) => (
-                    <li key={placeholder} className="text-sm leading-[1.6] text-[#8C95B0]">
+                    <li key={placeholder} className="text-sm leading-[1.6] text-body">
                       {renderText(placeholder)}
                     </li>
                   ))}

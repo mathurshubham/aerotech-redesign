@@ -31,9 +31,9 @@ export function serviceHref(service: Pick<Service, "slug" | "isTool">): string {
 }
 
 /**
- * White card: 26px orange lucide icon, h3, 15px body, orange `Name →` link.
- * `featured` adds an orange border and a "New" pill; `tool` fills with
- * `surface-2` and drops the icon to navy.
+ * White card: 26px teal lucide icon, h3, 15px body, teal `Name →` link.
+ * `featured` adds a teal border and a "New" pill; `tool` fills with
+ * `surface-2` and drops the icon to ink-soft.
  */
 export function ServiceCard({
   service,
@@ -53,7 +53,7 @@ export function ServiceCard({
         isTool
           ? "border-line bg-surface-2"
           : variant === "featured"
-            ? "border-orange-500 bg-surface"
+            ? "border-aqua-500 bg-surface"
             : "border-line bg-surface",
       )}
     >
@@ -62,10 +62,10 @@ export function ServiceCard({
           size={26}
           strokeWidth={1.6}
           aria-hidden="true"
-          className={isTool ? "text-ink-soft" : "text-orange-500"}
+          className={isTool ? "text-ink-soft" : "text-aqua-500"}
         />
         {variant === "featured" && (
-          <span className="rounded-full border border-orange-500 px-2.5 py-1 font-mono text-[0.5625rem] tracking-[0.1em] text-orange-600 uppercase">
+          <span className="rounded-full border border-aqua-500 px-2.5 py-1 font-mono text-[0.5625rem] tracking-[0.1em] text-aqua-700 uppercase">
             New
           </span>
         )}
@@ -82,7 +82,7 @@ export function ServiceCard({
           "-my-2.5 mt-1 inline-flex min-h-11 items-center gap-1.5 py-2.5 text-sm font-semibold transition-colors duration-150",
           isTool
             ? "text-ink-soft hover:text-ink"
-            : "text-orange-600 hover:text-orange-500",
+            : "text-aqua-700 hover:text-aqua-600",
           focusRing,
         )}
       >

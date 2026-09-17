@@ -42,7 +42,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#16203A",
+  // Matches `--surface`, the sticky header's ground, so the mobile browser
+  // chrome reads as an extension of the nav. Was a dark navy when the header
+  // sat on a dark palette.
+  themeColor: "#FFFFFF",
   width: "device-width",
   initialScale: 1,
   // WhatsAppButton pads its safe-area inset (`env(safe-area-inset-bottom)`)

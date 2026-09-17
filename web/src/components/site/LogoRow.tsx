@@ -5,7 +5,7 @@ import { site } from "@/content";
 import { resolveImage } from "./image-size";
 
 /**
- * Static greyscale client grid on a white band. Never a marquee.
+ * Static greyscale client grid on a white strip. Never a marquee.
  */
 export function LogoRow({ label = "Selected clients" }: { label?: string }) {
   return (

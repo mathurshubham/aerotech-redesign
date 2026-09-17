@@ -19,7 +19,7 @@ export function StatBand({
   eyebrow?: string;
   label?: string;
   tone?: "band" | "paper";
-  /** One numeral may carry the orange accent. Keeps orange under 5%. */
+  /** One numeral may carry the teal accent. Keeps teal under 5%. */
   accentIndex?: number;
   className?: string;
 }) {
@@ -56,9 +56,9 @@ export function StatBand({
                   className={cn(
                     "block font-mono text-2xl leading-none lg:text-[1.875rem]",
                     i === accentIndex
-                      ? "text-orange-500"
+                      ? "text-aqua-500"
                       : onBand
-                        ? "text-white"
+                        ? "text-band-ink"
                         : "text-ink",
                   )}
                 >

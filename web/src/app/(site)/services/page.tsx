@@ -110,7 +110,7 @@ export default function ServicesPage() {
           <ol className="grid gap-8 lg:grid-cols-3 lg:gap-12">
             {HOW_WE_ENGAGE.map((step) => (
               <li key={step.n} className="border-t-2 border-ink pt-5">
-                <p className="font-mono text-eyebrow font-medium tracking-[0.11em] text-orange-500">
+                <p className="font-mono text-eyebrow font-medium tracking-[0.11em] text-aqua-700">
                   {step.n}
                 </p>
                 <h3 className="mt-2.5 font-display text-lg leading-[1.3] font-semibold lg:text-[1.3125rem]">

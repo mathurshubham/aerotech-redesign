@@ -10,8 +10,8 @@ import { btnGhost, btnPrimary, focusRing } from "./styles";
 import { leadTopics } from "./topics";
 
 /**
- * Dark contact band. With `form`, the lead panel sits on the right and the
- * NAP rows on the left (home); without it, a single orange CTA (page ends).
+ * Pastel contact band. With `form`, the lead panel sits on the right and the
+ * NAP rows on the left (home); without it, a single teal CTA (page ends).
  */
 export function CTABand({
   title,
@@ -49,7 +49,7 @@ export function CTABand({
         <div>
           <h2
             id={headingId}
-            className="max-w-[24ch] font-display text-[1.75rem] leading-[1.14] font-semibold text-white lg:text-[2.25rem]"
+            className="max-w-[24ch] font-display text-[1.75rem] leading-[1.14] font-semibold text-band-ink lg:text-[2.25rem]"
           >
             {renderText(title)}
           </h2>
@@ -66,9 +66,9 @@ export function CTABand({
                   size={19}
                   strokeWidth={1.6}
                   aria-hidden="true"
-                  className="mt-1 shrink-0 text-orange-500"
+                  className="mt-1 shrink-0 text-aqua-500"
                 />
-                <span className="text-[0.9375rem] leading-[1.5] text-navy-300 lg:text-base">
+                <span className="text-[0.9375rem] leading-[1.5] text-band-muted lg:text-base">
                   {site.nap.addressLines.join(", ")}
                   <br />
                   {site.nap.locality} {site.nap.postalCode} — adjacent to Delhi IGI
@@ -77,13 +77,13 @@ export function CTABand({
               <li>
                 <a
                   href={`tel:${site.nap.phoneE164}`}
-                  className={`flex min-h-11 items-center gap-3.5 font-mono text-base text-white transition-colors duration-150 hover:text-orange-500 ${focusRing}`}
+                  className={`flex min-h-11 items-center gap-3.5 font-mono text-base text-aqua-700 transition-colors duration-150 hover:text-ink ${focusRing}`}
                 >
                   <Phone
                     size={19}
                     strokeWidth={1.6}
                     aria-hidden="true"
-                    className="shrink-0 text-orange-500"
+                    className="shrink-0 text-aqua-500"
                   />
                   {site.nap.phoneDisplay}
                 </a>
@@ -91,13 +91,13 @@ export function CTABand({
               <li>
                 <a
                   href={`mailto:${site.nap.email}`}
-                  className={`flex min-h-11 items-center gap-3.5 font-mono text-base text-white transition-colors duration-150 hover:text-orange-500 ${focusRing}`}
+                  className={`flex min-h-11 items-center gap-3.5 font-mono text-base text-aqua-700 transition-colors duration-150 hover:text-ink ${focusRing}`}
                 >
                   <Mail
                     size={19}
                     strokeWidth={1.6}
                     aria-hidden="true"
-                    className="shrink-0 text-orange-500"
+                    className="shrink-0 text-aqua-500"
                   />
                   {site.nap.email}
                 </a>
