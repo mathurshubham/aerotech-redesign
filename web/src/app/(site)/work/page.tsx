@@ -20,8 +20,8 @@ export default function WorkPage() {
 
       <PageHead
         crumbs={[{ label: "Home", href: "/" }, { label: "Work" }]}
-        title="Proof, not positioning"
-        lede="Four engagements, in the operator's own words: what the problem actually was, what we did, and what happened. No case study here claims a number we cannot stand behind."
+        title="Selected engagements"
+        lede="Four engagements, in the operator's own words: what the problem actually was, what was done, and what happened. No case study here claims a figure that cannot be substantiated."
       />
 
       <section aria-labelledby="work-grid" className="py-12 lg:py-21">
@@ -46,8 +46,8 @@ export default function WorkPage() {
       </section>
 
       <CTABand
-        title="Bring us the engagement you cannot get wrong"
-        body="Thirty minutes, with the person who would run it."
+        title="Bring the engagement that cannot be allowed to fail"
+        body="A thirty-minute call with the person who runs it."
       />
     </>
   );

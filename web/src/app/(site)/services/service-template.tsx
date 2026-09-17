@@ -220,7 +220,7 @@ export function ServicePage({
       <section aria-labelledby="why-us" className="bg-band py-12 lg:py-20">
         <div className="container-site grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-18">
           <div>
-            <p className="eyebrow-accent">Why us on this</p>
+            <p className="eyebrow-accent">Suitability for this mandate</p>
             <h2
               id="why-us"
               className="mt-3 max-w-[24ch] font-display text-[1.75rem] leading-[1.16] font-semibold text-band-ink lg:text-[2.125rem]"
@@ -308,7 +308,7 @@ export function ServicePage({
           <div className="container-site">
             <SectionHeading
               eyebrow="Common questions"
-              title="Questions we get on this"
+              title="Questions raised most often"
               id="faqs"
             />
             <FAQ faqs={service.faqs} idPrefix={`faq-${service.slug}`} />

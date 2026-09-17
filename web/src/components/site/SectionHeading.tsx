@@ -4,11 +4,14 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 import { renderText } from "./Placeholder";
+import { SectionMarker } from "./SectionMarker";
 import { linkArrow, linkArrowBand } from "./styles";
 
 /**
- * Eyebrow + h2, with an optional right-aligned "All … →" link.
- * The eyebrow names the section; it is not decoration.
+ * Section marker + h2, with an optional right-aligned "All … →" link.
+ * The marker names the section; it is not decoration. `onBand` no longer
+ * changes the label colour — `aqua-700` clears AA on every ground the site
+ * has — it only darkens the heading and swaps the link's hover.
  */
 export function SectionHeading({
   eyebrow,
@@ -35,11 +38,11 @@ export function SectionHeading({
       )}
     >
       <div>
-        <p className={onBand ? "eyebrow-accent" : "eyebrow"}>{eyebrow}</p>
+        <SectionMarker>{eyebrow}</SectionMarker>
         <h2
           id={id}
           className={cn(
-            "mt-3 max-w-[24ch] font-display text-h2 font-semibold",
+            "mt-5 max-w-[24ch] font-display text-h2 font-semibold",
             onBand && "text-band-ink",
           )}
         >

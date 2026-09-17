@@ -136,7 +136,7 @@ export function LeadForm({
           {site.responsePromise}
         </p>
         <p className="eyebrow mt-4 font-normal">
-          Something urgent? {site.nap.phoneDisplay}
+          For urgent matters, call {site.nap.phoneDisplay}
         </p>
       </div>
     );
@@ -212,7 +212,7 @@ export function LeadForm({
         aria-invalid={errors.topic ? true : undefined}
         aria-describedby={errors.topic ? `${formId}-topic-error` : undefined}
       >
-        <legend className={labelClass}>What do you need?</legend>
+        <legend className={labelClass}>Enquiry type</legend>
         <div className="flex flex-wrap gap-2.5">
           {topics.map((option) => {
             const id = `${formId}-topic-${option.value}`;
@@ -307,14 +307,14 @@ export function LeadForm({
 
       <div className="mt-6">
         <label htmlFor={`${formId}-message`} className={labelClass}>
-          Anything we should read before the call?{" "}
+          Notes for the call{" "}
           <span className="font-normal text-subtle">(optional)</span>
         </label>
         <textarea
           id={`${formId}-message`}
           name="message"
           rows={3}
-          placeholder="Scope, a programme date, the constraint you keep running into…"
+          placeholder="Scope, a programme date, or an operating constraint."
           className="w-full rounded-lg border border-line bg-paper px-3.5 py-3 text-base leading-[1.55] text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-aqua-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         />
       </div>
@@ -375,7 +375,7 @@ export function LeadForm({
 
       <p className="eyebrow mt-5 flex items-center gap-2.5 border-t border-line pt-5 font-normal">
         <Lock size={15} strokeWidth={1.6} aria-hidden="true" />
-        Not stored or shared. No newsletter.
+        Not stored or shared. No newsletter enrolment.
       </p>
     </form>
   );

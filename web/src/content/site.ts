@@ -6,7 +6,7 @@ const siteData: Site = {
   url: "https://aerotech.shubhammathur.in",
   description:
     "Aviation and airport consulting from Aerocity, New Delhi. Operational readiness and transfer, audits and compliance, sustainable aviation and India market entry, led by lead auditor Ashwani Khanna.",
-  tagline: "From regulatory approval to day-one operations.",
+  tagline: "Operational readiness, certification and ORAT for Indian aviation.",
   nav: [
     { label: "Services", href: "/services" },
     { label: "Work", href: "/work" },
@@ -113,7 +113,7 @@ const siteData: Site = {
       alt: "Global Vectra Helicorp",
     },
   ],
-  responsePromise: "Goes straight to Ashwani. Typical reply within one working day.",
+  responsePromise: "Routed directly to Ashwani Khanna. Typical reply within one working day.",
   calcom: {
     username: "aerotech",
     event: "30min",

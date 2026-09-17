@@ -176,9 +176,9 @@
      on the site so section headings can't drift apart per component (they
      previously rendered at 36/38/40px for the same nominal level). Fluid, in
      the same clamp idiom as `.h1-hero`, so there are no breakpoint jumps. */
-  --text-h2: clamp(1.75rem, 2.6vw, 2.375rem);
+  --text-h2: clamp(1.875rem, 2.9vw, 2.5rem);
   --text-h2--line-height: 1.14;
-  --text-h3: clamp(1.125rem, 1.4vw, 1.375rem);
+  --text-h3: clamp(1.25rem, 1.6vw, 1.4375rem);
   --text-h3--line-height: 1.3;
 }
 
@@ -287,10 +287,10 @@
     height: 4px;
     background: var(--runway);
   }
-  /* Hero/case/page-head h1 — one scale, ceiling 56px at any desktop width. */
+  /* Hero/case/page-head h1 — one scale, ceiling 64px at any desktop width. */
   .h1-hero {
-    font-size: clamp(2.25rem, 4vw, 3.5rem);
-    line-height: 1.05;
+    font-size: clamp(2.25rem, 4.4vw, 4rem);
+    line-height: 1.04;
   }
   .band {
     @apply bg-band text-band-muted;

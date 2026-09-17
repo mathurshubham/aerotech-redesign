@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { LeadForm } from "./LeadForm";
 import { renderText } from "./Placeholder";
 import { type Tone, toneClass } from "./Section";
+import { SectionMarker } from "./SectionMarker";
 import { btnGhost, btnPrimary, focusRing, sectionPad, slide as slideClass } from "./styles";
 import { leadTopics } from "./topics";
 
@@ -18,6 +19,8 @@ export function CTABand({
   title,
   body,
   topic,
+  eyebrow,
+  proof,
   form = false,
   primary = { label: "Book a consultation", href: "/contact#book" },
   secondary,
@@ -28,6 +31,10 @@ export function CTABand({
   title: string;
   body?: string;
   topic?: string;
+  /** Section label above the heading. */
+  eyebrow?: string;
+  /** One line of evidence beside the action — see `Hero`'s `proof`. */
+  proof?: string;
   form?: boolean;
   primary?: { label: string; href: string };
   secondary?: { label: string; href: string };
@@ -63,6 +70,7 @@ export function CTABand({
             form && "lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:self-start",
           )}
         >
+          {eyebrow && <SectionMarker className="mb-5">{eyebrow}</SectionMarker>}
           <h2
             id={headingId}
             className="max-w-[24ch] font-display text-h2 font-semibold text-band-ink"
@@ -120,7 +128,31 @@ export function CTABand({
               </li>
             </ul>
           ) : (
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row lg:hidden">
+            <div className="mt-7 lg:hidden">
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link href={primary.href} className={btnPrimary}>
+                  {primary.label}
+                </Link>
+                {secondary && (
+                  <Link href={secondary.href} className={btnGhost}>
+                    {secondary.label}
+                  </Link>
+                )}
+              </div>
+              {proof && (
+                <p className="mt-4 max-w-[42ch] text-sm leading-[1.5] text-band-muted">
+                  {renderText(proof)}
+                </p>
+              )}
+            </div>
+          )}
+        </div>
+
+        {form ? (
+          <LeadForm topics={leadTopics} initialTopic={topic} />
+        ) : (
+          <div className="hidden shrink-0 flex-col items-end gap-4 lg:flex">
+            <div className="flex gap-3">
               <Link href={primary.href} className={btnPrimary}>
                 {primary.label}
               </Link>
@@ -130,20 +162,10 @@ export function CTABand({
                 </Link>
               )}
             </div>
-          )}
-        </div>
-
-        {form ? (
-          <LeadForm topics={leadTopics} initialTopic={topic} />
-        ) : (
-          <div className="hidden shrink-0 gap-3 lg:flex">
-            <Link href={primary.href} className={btnPrimary}>
-              {primary.label}
-            </Link>
-            {secondary && (
-              <Link href={secondary.href} className={btnGhost}>
-                {secondary.label}
-              </Link>
+            {proof && (
+              <p className="max-w-[34ch] text-right text-sm leading-[1.5] text-band-muted">
+                {renderText(proof)}
+              </p>
             )}
           </div>
         )}

@@ -57,7 +57,7 @@ export default function DgcaGuidePage() {
             </p>
             <p className="mt-4 text-sm leading-[1.55] text-band-muted">
               Every regulatory reference below is marked where it still needs
-              checking against the current DGCA text before you rely on it.
+              checking against the current DGCA text before it is relied upon.
             </p>
             <dl className="mt-5 flex flex-col gap-3.5 border-t border-band-line pt-5">
               <div className="flex items-baseline justify-between gap-4 text-sm">

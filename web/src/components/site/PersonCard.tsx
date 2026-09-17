@@ -9,6 +9,7 @@ import { resolveImage } from "./image-size";
 import { PhotoCaption } from "./PhotoCaption";
 import { isPlaceholder, Placeholder, renderText } from "./Placeholder";
 import { type Tone, toneClass } from "./Section";
+import { SectionMarker } from "./SectionMarker";
 import { linkArrow, sectionPad, slide as slideClass } from "./styles";
 
 const FACTS = [
@@ -28,6 +29,7 @@ export function PersonCard({
   caption = "Lead auditor briefing · New Delhi",
   tone = "surface",
   slide = false,
+  id,
 }: {
   person: Person;
   eyebrow?: string;
@@ -36,12 +38,15 @@ export function PersonCard({
   tone?: Tone;
   /** Claim a screen and become a scroll-snap point. */
   slide?: boolean;
+  /** Slide id, so `SectionRail` can observe this section. */
+  id?: string;
 }) {
   const img = resolveImage(person.photo.src, person.photo);
   const headingId = `person-${person.slug}`;
 
   return (
     <section
+      id={id}
       aria-labelledby={headingId}
       className={cn(
         "border-y border-line",
@@ -66,10 +71,10 @@ export function PersonCard({
         </figure>
 
         <div>
-          <p className="eyebrow">{eyebrow}</p>
+          <SectionMarker>{eyebrow}</SectionMarker>
           <h2
             id={headingId}
-            className="mt-3 font-display text-h2 font-semibold"
+            className="mt-5 font-display text-h2 font-semibold"
           >
             {person.name}
           </h2>

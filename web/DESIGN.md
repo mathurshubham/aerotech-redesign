@@ -37,9 +37,9 @@ Archivo (`font-display`) headings · Inter (`font-sans`) body · IBM Plex Mono (
 
 | Element | Spec |
 |---|---|
-| h1 | `clamp(2.25rem, 4vw, 3.5rem)` / 700 / line-height 1.05 / `-0.018em` / max 20ch |
-| h2 | `text-h2` — `clamp(1.75rem, 2.6vw, 2.375rem)` / 600 / 1.14 / max 24ch |
-| h3 | `text-h3` — `clamp(1.125rem, 1.4vw, 1.375rem)` / 600 / 1.3 |
+| h1 | `.h1-hero` — `clamp(2.25rem, 4.4vw, 4rem)` / 700 / line-height 1.04 / `-0.018em` / max 20ch |
+| h2 | `text-h2` — `clamp(1.875rem, 2.9vw, 2.5rem)` / 600 / 1.14 / max 24ch |
+| h3 | `text-h3` — `clamp(1.25rem, 1.6vw, 1.4375rem)` / 600 / 1.3 |
 | h4 (card sub) | `1.0625rem` / 600 |
 | Body | `1.0625rem` / 1.62 / `measure` (68ch) / **left-aligned, never justified** |
 | Lede | `1.1875rem` / 1.56 / `text-ink-soft` / max 54–58ch |
@@ -49,6 +49,27 @@ Archivo (`font-display`) headings · Inter (`font-sans`) body · IBM Plex Mono (
 | Photo caption | sans 13px / `subtle-ink` (or `band-muted`) / 9–10px above the image |
 | Metric numeral | mono 25px / 500 / `aqua-500` / line-height 1 |
 | Wordmark | Real logo image (`Wordmark.tsx`), not text — see §9a |
+
+### Register
+
+The buyers are institutions: airport operators, airlines, foreign aerospace OEMs
+entering India, and DGCA-facing compliance teams. The work is official,
+procurement-driven and involves dealing with regulators. So copy reads as a
+professional services firm writing a scope of work, never as an agency writing a
+slogan.
+
+- **Lead with the mandate or the deliverable**, named the way a scope of work or
+  an RFP line item names it. Not a hook, not a first-person confession ("I need a
+  DGCA approval…"), not an aphorism ("An audit is worth the signature on it").
+- **Authority and standard names carry the persuasion**: DGCA, CAR, ICAO, CORSIA,
+  ISO 9001/45001/14064, AS9100D, ACI-ASQ, T−18, airframer, regulator, operator,
+  ground handler. Specificity is the credibility; adjectives are not.
+- **Formal but plain.** No hype adjectives, no exclamation, no rhetorical
+  questions, no second-person challenges.
+- Prefer *engagement*, *mandate*, *conducted*, *appointed*, *submission*,
+  *verification* over *project*, *run*, *got*, *landed*.
+- **Never fabricate a fact to make a line land.** An unquantified claim stays
+  unquantified until someone supplies the number.
 
 All-caps is for the wordmark only. Mono is for **data** — numerals, phone, email, credential values — never for a label a visitor has to read as prose.
 
@@ -67,7 +88,16 @@ picked its own arbitrary rem value.
 - Container: `.container-site` — max 1200px, 24px gutters.
 - 12-column mental grid, **24px gap** between cards. Cards never touch.
 - Card padding 28–30px (`p-7` / `px-7 pt-[30px] pb-7`). Image-topped cards: 26px 28px 28px below the image.
-- Section heading → content: 40–44px. Eyebrow → h2: 12px. h2 → paragraph: 20–22px.
+- Section heading → content: 40–44px. Marker → h2: 20px. h2 → paragraph: 20–22px.
+- Every section heading is preceded by a **`SectionMarker`**: a 52×3 `aqua-500`
+  rule plus the label. It is the runway motif at one dash, so a section label and
+  the hero's closing rule read as the same system. Never a bare `.eyebrow` in a
+  heading slot.
+- **Every primary button carries one line of proof in the same eyeline** —
+  `Hero`'s and `CTABand`'s `proof` prop. A visitor deciding whether to make
+  contact is deciding about the person on the other end, and that line is the
+  last thing they read before clicking. One primary action per screen, repeated
+  down the page; never two competing buttons.
 - Hairline grids (credential strip, deliverables): `gap: 1px` over a `band-line`/`line` background — the gap *is* the rule.
 - Nav height 84px desktop, 66px mobile/tablet (67px including the 1px `border-b`) — `SiteHeader.tsx` (`h-[66px]`). Buttons 52px tall (`h-13`), 44px in the nav.
 - Breakpoints: 640 / 1024 / 1280 only.

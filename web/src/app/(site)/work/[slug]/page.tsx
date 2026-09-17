@@ -267,12 +267,12 @@ export default async function CaseStudyPage({
             >
               {relatedService
                 ? relatedService.oneLiner
-                : "Bringing aviation equipment into the Indian market?"}
+                : "Aviation equipment entering the Indian market"}
             </h2>
             <p className="mt-3 max-w-[52ch] text-base leading-[1.6]">
               {relatedService
                 ? relatedService.summary.split(". ")[0] + "."
-                : "That path is now a service."}
+                : "India market entry is now a standing service."}
             </p>
           </div>
           <div className="flex shrink-0 flex-col gap-3 sm:flex-row">

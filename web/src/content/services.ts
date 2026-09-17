@@ -9,7 +9,7 @@ const servicesData: Service[] = [
     oneLiner:
       "Trials, orientation and familiarisation that get a new terminal to day one without a first-week incident.",
     summary:
-      "A new terminal has one opening day and no rehearsal. ORAT is how you make the first flight look like the thousandth: preparing staff, procedures and systems, and planning a smooth transfer from the old installation to the new one. The work starts with operational and technical management — writing new operational concepts and procedures, or updating existing ones, for ground handling, control-centre operation and every class of emergency response. Training and familiarisation follow, then scripted operational trials that verify system functionality and surface gaps before a paying passenger ever sees them.",
+      "Operational Readiness and Transfer (ORAT) prepares a new terminal's staff, procedures and systems for opening day, and plans the transfer from the existing facility to the new one. The engagement begins with operational and technical management — writing new operational concepts and procedures, or updating existing ones, for ground handling, control-centre operation and every class of emergency response. Training and familiarisation follow, then scripted operational trials that verify system functionality and surface gaps before a paying passenger ever sees them.",
     forWhom: [
       {
         title: "Airport operators",
@@ -53,7 +53,7 @@ const servicesData: Service[] = [
       {
         n: "06",
         title: "Day-one command structure",
-        body: "Who decides what during the stabilisation window, and the escalation path that keeps it off the CEO's desk.",
+        body: "Who decides what during the stabilisation window, and the escalation path that resolves issues before they reach executive level.",
       },
     ],
     phases: [
@@ -70,7 +70,7 @@ const servicesData: Service[] = [
       {
         window: "T-6 → T-1",
         title: "Trials",
-        body: "Progressive trials from single-system to full-scale with volunteer passengers. Every failure here is a free one.",
+        body: "Progressive trials from single-system to full-scale with volunteer passengers, so failures surface here rather than in service.",
       },
       {
         window: "T-1 → T+3",
@@ -86,7 +86,7 @@ const servicesData: Service[] = [
     faqs: [
       {
         q: "How far ahead of opening should ORAT start?",
-        a: "Around eighteen months (T-18) for a full programme. If your opening date is inside twelve months, the scope changes — there is no longer room for a full trials programme, and the work becomes risk triage. Say so on the call and it will be scoped that way.",
+        a: "Around eighteen months (T-18) for a full programme. If your opening date is inside twelve months, the scope changes — there is no longer room for a full trials programme, and the engagement becomes risk triage. Raise this at the outset and it will be scoped accordingly.",
       },
       {
         q: "What does the ORAT team actually deliver?",
@@ -106,7 +106,7 @@ const servicesData: Service[] = [
       },
     ],
     cta: {
-      title: "Talk to us about your transfer programme",
+      title: "Scope a transfer programme",
       body: "Bring a terminal opening date, even a provisional one.",
       topic: "ORAT for a new terminal",
     },
@@ -122,9 +122,9 @@ const servicesData: Service[] = [
     shortTitle: "Audits & compliance",
     eyebrow: "Services / Audits & compliance",
     oneLiner:
-      "ISO 9001, 45001 and 14064 lead-auditor work plus AS9100D aerospace audits, run by the auditor himself.",
+      "ISO 9001, 45001 and 14064 lead-auditor engagements, AS9100D aerospace audits, and CORSIA verification — conducted personally by the certified lead auditor.",
     summary:
-      "A broad range of specialised aerospace and aviation advisory services to continually improve process and practice and help clients run their business safely, on time and on budget. Work has included setting up operational procedures and an emission monitoring plan for India's largest air charter operator, developing operational procedures, technical guidance and quality and compliance assessment for India's largest private-sector helicopter operator, and process enhancement, internal assessment, on-site operational audits and service-quality checks for SpiceJet across its pan-India network.",
+      "Aerospace and aviation advisory services covering process and compliance improvement, delivered to help clients operate safely, on time and on budget. Engagements have included setting up operational procedures and an emission monitoring plan for India's largest air charter operator, developing operational procedures, technical guidance and quality and compliance assessment for India's largest private-sector helicopter operator, and process enhancement, internal assessment, on-site operational audits and service-quality checks for SpiceJet across its pan-India network.",
     forWhom: [
       {
         title: "Airlines & MROs",
@@ -189,7 +189,7 @@ const servicesData: Service[] = [
       },
     ],
     whyUs:
-      "Ashwani Khanna is a certified lead auditor for ISO 9001, ISO 45001 and ISO 14064, a certified AS9100D aerospace auditor, and ICAO-certified on CORSIA verification and validation. The audits are run by the auditor, not handed to a junior on his certification.",
+      "Ashwani Khanna is a certified lead auditor for ISO 9001, ISO 45001 and ISO 14064, a certified AS9100D aerospace auditor, and ICAO-certified on CORSIA verification and validation. The audits are conducted personally by the auditor, not delegated to a junior operating under his certification.",
     credentialsForThis: ["3 × ISO", "AS9100D", "CORSIA"],
     relatedWork: ["delhi-t3-orat"],
     relatedServices: ["orat", "sustainable-aviation"],
@@ -204,7 +204,7 @@ const servicesData: Service[] = [
       },
       {
         q: "What is a pre-assessment audit and do I need one?",
-        a: "It is a rehearsal of the certification body's actual audit, run against the same clauses, so non-conformities surface while you still control the timeline to fix them. Worth doing before any first-time certification or a renewal you cannot afford to fail.",
+        a: "It is a rehearsal of the certification body's actual audit, run against the same clauses, so non-conformities surface while the timeline to fix them is still within the client's control. Recommended before any first-time certification, and before a renewal where the cost of failure is high.",
       },
       {
         q: "What happens after the audit finds non-conformities?",
@@ -234,7 +234,7 @@ const servicesData: Service[] = [
     oneLiner:
       "CORSIA verification, ISO 14064 greenhouse-gas accounting and emission monitoring plans for airlines and airports.",
     summary:
-      "Helping organisations put efficient, manageable processes in place that meet stakeholder requirements for quality, health and safety, environmental management and other areas of sustainable development — and to show what changed, not just what was intended. Work has included partnering with AeroWash, a Swedish manufacturer, to bring robotic aircraft exterior dry-wash services to Indian carriers, replacing a water-based, non-measurable cleaning practice with a scientific one that measurably reduces ATF consumption, cuts emissions and eliminates water use at the parking stand. Separately, developing the Indian market for TaxiBot — an alternate taxiing solution that reduces fuel burn and emissions during aircraft dispatch — and introducing India's first robotic UV-C disinfectant device for aircraft sanitisation.",
+      "Process and compliance work covering quality, health and safety, and environmental management, built to demonstrate measurable outcomes rather than stated intentions. Engagements have included partnering with AeroWash, a Swedish manufacturer, to bring robotic aircraft exterior dry-wash services to Indian carriers, replacing a water-based, non-measurable cleaning practice with a scientific one that measurably reduces ATF consumption, cuts emissions and eliminates water use at the parking stand. Separately, developing the Indian market for TaxiBot — an alternate taxiing solution that reduces fuel burn and emissions during aircraft dispatch — and introducing India's first robotic UV-C disinfectant device for aircraft sanitisation.",
     forWhom: [
       {
         title: "Airlines",
@@ -332,9 +332,9 @@ const servicesData: Service[] = [
     title: "Aircraft recovery",
     shortTitle: "Aircraft recovery",
     eyebrow: "Services / Aircraft recovery",
-    oneLiner: "Recovery plans, internal team preparation and drills, so a disabled aircraft is off the runway on a clock you set.",
+    oneLiner: "Recovery plans, internal team preparation and drills, so a disabled aircraft clears the runway to a schedule the operator sets.",
     summary:
-      "Helping clients prepare internal teams to identify and respond to the removal of immobilised or disabled aircraft in a timely manner, meeting the requirements ICAO sets for disabled-aircraft operations. Emergency and disaster-management services for airline operators, airport operators, fuelling companies, maintenance hangars and other critical utility infrastructure.",
+      "Internal-team preparation for the identification of, and response to, immobilised or disabled aircraft, meeting the requirements ICAO sets for disabled-aircraft operations. Emergency and disaster-management services for airline operators, airport operators, fuelling companies, maintenance hangars and other critical utility infrastructure.",
     forWhom: [
       {
         title: "Airport operators",
@@ -443,9 +443,9 @@ const servicesData: Service[] = [
     shortTitle: "India market entry",
     eyebrow: "Services / India market entry",
     oneLiner:
-      "DGCA approvals, OEM sign-off and field representation for foreign suppliers entering Indian aviation. We have done it for TaxiBot and Stelia.",
+      "DGCA approvals, OEM sign-off and field representation for foreign suppliers entering Indian aviation — delivered for TaxiBot and Stelia.",
     summary:
-      "The differentiated wedge: India market entry and regulatory approval for foreign aviation OEMs and suppliers, already delivered twice. TaxiBot required obtaining regulatory compliances, securing approvals from both Airbus and Boeing, and running the operational evaluation through to a delivered product — resulting in the world's first TaxiBot operations with Airbus (A321 family) and Boeing (B737-NG family) aircraft. Stelia Aerospace, a manufacturer of business-class seats for major airlines worldwide, was served through field representation to its Indian clientele. No other adviser in this market can point to that TaxiBot precedent.",
+      "India market entry and regulatory approval for foreign aviation OEMs and suppliers — delivered twice already. TaxiBot required obtaining regulatory compliances, securing approvals from both Airbus and Boeing, and running the operational evaluation through to a delivered product — resulting in the world's first TaxiBot operations with Airbus (A321 family) and Boeing (B737-NG family) aircraft. Stelia Aerospace, a manufacturer of business-class seats for major airlines worldwide, was served through field representation to its Indian clientele. That combination of market development, DGCA compliance and dual-OEM approval has not been repeated by another adviser in this market.",
     forWhom: [
       {
         title: "Foreign OEMs",
@@ -505,7 +505,7 @@ const servicesData: Service[] = [
       },
     ],
     whyUs:
-      "Aerotech has already taken a product from no regulatory precedent to scheduled service in India — twice. TaxiBot: market development, DGCA compliance, and approvals from both Airbus and Boeing. Stelia Aerospace: field representative to its Indian clientele. That path is now a service.",
+      "Aerotech has already taken a product from no regulatory precedent to scheduled service in India — twice. TaxiBot: market development, DGCA compliance, and approvals from both Airbus and Boeing. Stelia Aerospace: field representative to its Indian clientele. That path is offered as a defined engagement.",
     credentialsForThis: ["World 1st", "3 × ISO"],
     relatedWork: ["taxibot-india", "stelia-aerospace"],
     relatedServices: ["audits-compliance"],
@@ -532,7 +532,7 @@ const servicesData: Service[] = [
       },
     ],
     cta: {
-      title: "Bringing a product into Indian aviation?",
+      title: "Scope a market-entry engagement",
       body: "Tell us the product, the airframe or system it touches, and who you have already approached.",
       topic: "India market entry",
     },
@@ -547,7 +547,7 @@ const servicesData: Service[] = [
     title: "Aero Opt",
     shortTitle: "Aero Opt",
     eyebrow: "Tools / Aero Opt",
-    oneLiner: "Our resource-optimisation tool. Forecasts passenger flow against a Level of Service target and sizes staffing to it.",
+    oneLiner: "A resource-optimisation tool that forecasts passenger flow against a Level of Service target and sizes staffing to it.",
     isTool: true,
     summary:
       "Aero Opt predicts passenger flow demand for planning purposes — monthly, weekly, next day — as well as for real-time terminal operations, based on planned or actual flights, processes and rules. Specially trained algorithms determine the resource requirements needed to hit defined quality targets (Level of Service / Level of Health) for the passenger flow demand, and enable an appropriate deployment of human resources to minimise variable operational cost while still meeting those targets. The tool uses cast modelling to simulate passenger flows through the terminal and predict the impact of peak-hour flows on processing facilities, informing whether additional temporary processors are needed to hold the level of service during peak or extraordinary-peak periods. Being web-based, it can be accessed, edited and shared accurately in real time.",

@@ -6,10 +6,12 @@ import {
   CTABand,
   Hero,
   LogoRow,
+  MandateGrid,
   PersonCard,
   Reveal,
   Section,
   SectionHeading,
+  SectionRail,
   ServiceCard,
   CaseCard,
 } from "@/components/site";
@@ -19,6 +21,21 @@ import { metaFor } from "@/lib/seo";
 import { getCaseStudy, getPerson, services, site } from "@/content";
 
 export const metadata: Metadata = metaFor.home();
+
+/**
+ * The homepage's slides, in scroll order, for `SectionRail`. Labels are what
+ * the rail shows on hover — short enough to read at a glance, and named for
+ * what the visitor gets rather than for the component that renders it.
+ */
+const SLIDES = [
+  { id: "start", label: "Start" },
+  { id: "mandates-section", label: "Scope of engagement" },
+  { id: "practices", label: "Practice areas" },
+  { id: "case", label: "TaxiBot case" },
+  { id: "principal", label: "Engagement lead" },
+  { id: "engagements", label: "Engagement record" },
+  { id: "book", label: "Contact" },
+];
 
 const HERO_IMAGE = {
   src: "/images/aircraft-approach.jpg",
@@ -43,13 +60,21 @@ export default function Home() {
           path: "/",
         })}
       />
+      {/* The rail is scroll-as-navigation, not narrative: on a page paced as
+          slides the visitor needs to know where they are and how much is
+          left. Every id below belongs to a `.section-slide`; `LogoRow` is a
+          rail rather than a slide and so has no dot. */}
+      <SectionRail items={SLIDES} />
+
       <Hero
+        id="start"
         eyebrow="Aviation & airport consulting · New Delhi"
         title={site.tagline}
-        body="Thirty years of Indian aviation operations, compliance and ORAT. We delivered the world's first TaxiBot operations with both Airbus and Boeing."
+        body="Thirty years of airport and airline operations in India. Every engagement is led by the certified lead auditor who signs the report and represents you before the regulator."
         image={HERO_IMAGE}
         primary={{ label: "Book a consultation", href: "/contact#book" }}
-        secondary={{ label: "See our work", href: "/work" }}
+        secondary={{ label: "Review the case record", href: "/work/taxibot-india" }}
+        proof="Thirty minutes with Ashwani Khanna, Director. Response within one working day."
         footer={<CredentialStrip credentials={site.credentials} label="Credentials" />}
       />
 
@@ -58,11 +83,18 @@ export default function Home() {
           white. */}
       <LogoRow />
 
-      <Section tone="paper" slide aria-labelledby="services">
+      {/* `tone="band"`, not the `surface` a bare `CaseFeature`/`PersonCard`
+          would default to: `LogoRow` right above is already a white rail and
+          the "Five practices" section right below is `paper`, so `surface`
+          here would repeat the ground on one side or the other. `band` is
+          the one tone that alternates against both neighbours. */}
+      <MandateGrid id="mandates-section" tone="band" slide />
+
+      <Section id="practices" tone="paper" slide aria-labelledby="services">
         <div className="container-site">
           <SectionHeading
-            eyebrow="What we do"
-            title="Five practices, one operating discipline"
+            eyebrow="Practice areas"
+            title="Five practice areas, one operating discipline"
             id="services"
             link={{ label: "All services", href: "/services" }}
           />
@@ -87,17 +119,17 @@ export default function Home() {
         </div>
       </Section>
 
-      {taxibot && <CaseFeature study={taxibot} tone="band" slide />}
+      {taxibot && <CaseFeature id="case" study={taxibot} tone="band" slide />}
 
-      {principal && <PersonCard person={principal} tone="surface" slide />}
+      {principal && <PersonCard id="principal" person={principal} tone="surface" slide />}
 
-      <Section tone="paper" slide aria-labelledby="selected-work">
+      <Section id="engagements" tone="paper" slide aria-labelledby="selected-work">
         <div className="container-site">
           <SectionHeading
-            eyebrow="Selected work"
-            title="Proof, not positioning"
+            eyebrow="Engagement record"
+            title="Selected engagements"
             id="selected-work"
-            link={{ label: "All work", href: "/work" }}
+            link={{ label: "All engagements", href: "/work" }}
           />
           <ul className="grid gap-6 lg:grid-cols-2">
             {proof.map((study, i) => (
@@ -115,8 +147,9 @@ export default function Home() {
         id="book"
         tone="band"
         slide
-        title="Talk to us about your project"
-        body="Thirty minutes with the person who would run the engagement. Bring a terminal opening date, an audit scope, or an approval you cannot get through."
+        eyebrow="Contact"
+        title="Discuss an engagement"
+        body="Thirty minutes with the director who would lead the engagement. Bring a terminal opening date, an audit scope, or an approval that has stalled."
         form
       />
     </>
