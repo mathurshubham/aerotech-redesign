@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils";
 
 import { LeadForm } from "./LeadForm";
 import { renderText } from "./Placeholder";
-import { btnGhost, btnPrimary, focusRing } from "./styles";
+import { type Tone, toneClass } from "./Section";
+import { btnGhost, btnPrimary, focusRing, sectionPad, slide as slideClass } from "./styles";
 import { leadTopics } from "./topics";
 
 /**
@@ -21,6 +22,8 @@ export function CTABand({
   primary = { label: "Book a consultation", href: "/contact#book" },
   secondary,
   id,
+  tone = "band",
+  slide = false,
 }: {
   title: string;
   body?: string;
@@ -29,6 +32,10 @@ export function CTABand({
   primary?: { label: string; href: string };
   secondary?: { label: string; href: string };
   id?: string;
+  /** Ground is set by the page, not baked in here. */
+  tone?: Tone;
+  /** Claim a screen and become a scroll-snap point. */
+  slide?: boolean;
 }) {
   const headingId = id ? `${id}-title` : "cta-title";
 
@@ -36,20 +43,29 @@ export function CTABand({
     <section
       id={id}
       aria-labelledby={headingId}
-      className={cn("bg-band", form ? "py-12 lg:py-21" : "py-12 lg:py-18")}
+      className={cn(toneClass(tone), slide && slideClass, sectionPad)}
     >
       <div
         className={cn(
           "container-site",
           form
-            ? "grid gap-10 lg:grid-cols-[1fr_420px] lg:items-start lg:gap-20"
+            ? "grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,30rem)] lg:items-start lg:gap-16"
             : "flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12",
         )}
       >
-        <div>
+        {/* With the form, this column is much shorter than the panel beside
+            it, which left a screen of empty band next to a form the visitor
+            was still filling in. Sticking it below the header keeps the ask
+            and the phone number in view for the whole scroll of the form
+            instead of splitting them onto a slide of their own. */}
+        <div
+          className={cn(
+            form && "lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:self-start",
+          )}
+        >
           <h2
             id={headingId}
-            className="max-w-[24ch] font-display text-[1.75rem] leading-[1.14] font-semibold text-band-ink lg:text-[2.25rem]"
+            className="max-w-[24ch] font-display text-h2 font-semibold text-band-ink"
           >
             {renderText(title)}
           </h2>

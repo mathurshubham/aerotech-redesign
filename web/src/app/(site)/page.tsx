@@ -8,6 +8,7 @@ import {
   LogoRow,
   PersonCard,
   Reveal,
+  Section,
   SectionHeading,
   ServiceCard,
   CaseCard,
@@ -49,13 +50,15 @@ export default function Home() {
         image={HERO_IMAGE}
         primary={{ label: "Book a consultation", href: "/contact#book" }}
         secondary={{ label: "See our work", href: "/work" }}
+        footer={<CredentialStrip credentials={site.credentials} label="Credentials" />}
       />
 
-      <CredentialStrip credentials={site.credentials} label="Credentials" />
-
+      {/* Deliberately not a slide: a 150px proof rail between the first and
+          second screens. Forcing it to `100dvh` would buy a screen of empty
+          white. */}
       <LogoRow />
 
-      <section aria-labelledby="services" className="py-12 lg:py-24">
+      <Section tone="paper" slide aria-labelledby="services">
         <div className="container-site">
           <SectionHeading
             eyebrow="What we do"
@@ -82,13 +85,13 @@ export default function Home() {
             ))}
           </ul>
         </div>
-      </section>
+      </Section>
 
-      {taxibot && <CaseFeature study={taxibot} />}
+      {taxibot && <CaseFeature study={taxibot} tone="band" slide />}
 
-      {principal && <PersonCard person={principal} />}
+      {principal && <PersonCard person={principal} tone="surface" slide />}
 
-      <section aria-labelledby="selected-work" className="py-12 lg:py-24">
+      <Section tone="paper" slide aria-labelledby="selected-work">
         <div className="container-site">
           <SectionHeading
             eyebrow="Selected work"
@@ -106,10 +109,12 @@ export default function Home() {
             ))}
           </ul>
         </div>
-      </section>
+      </Section>
 
       <CTABand
         id="book"
+        tone="band"
+        slide
         title="Talk to us about your project"
         body="Thirty minutes with the person who would run the engagement. Bring a terminal opening date, an audit scope, or an approval you cannot get through."
         form

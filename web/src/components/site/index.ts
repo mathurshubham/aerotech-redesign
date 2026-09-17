@@ -19,6 +19,7 @@ export { PhotoCaption } from "./PhotoCaption";
 export { isPlaceholder, Placeholder, renderText } from "./Placeholder";
 export { Prose } from "./Prose";
 export { Reveal } from "./Reveal";
+export { Section, toneClass, type Tone } from "./Section";
 export { SectionHeading } from "./SectionHeading";
 export { serviceHref, ServiceCard } from "./ServiceCard";
 export { SiteFooter } from "./SiteFooter";
@@ -33,7 +34,9 @@ export {
   focusRing,
   linkArrow,
   linkArrowBand,
+  rail,
   sectionPad,
+  slide,
 } from "./styles";
 export { leadTopics, resolveTopic } from "./topics";
 export { WhatsAppButton } from "./WhatsAppButton";

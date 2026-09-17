@@ -3,11 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { CaseStudy, ImageRef } from "@/content";
+import { cn } from "@/lib/utils";
 
 import { resolveImage } from "./image-size";
 import { PhotoCaption } from "./PhotoCaption";
 import { renderText } from "./Placeholder";
-import { linkArrowBand } from "./styles";
+import { type Tone, toneClass } from "./Section";
+import { linkArrowBand, sectionPad, slide as slideClass } from "./styles";
 
 function BandPhoto({
   image,
@@ -40,18 +42,31 @@ function BandPhoto({
  * Full-bleed pastel band: copy, pull quote and a 3-up fact grid on the left,
  * a captioned image stack on the right.
  */
-export function CaseFeature({ study }: { study: CaseStudy }) {
+export function CaseFeature({
+  study,
+  tone = "band",
+  slide = false,
+}: {
+  study: CaseStudy;
+  /** Ground is set by the page, not baked in here. */
+  tone?: Tone;
+  /** Claim a screen and become a scroll-snap point. */
+  slide?: boolean;
+}) {
   const headingId = `case-feature-${study.slug}`;
   const stats = study.outcome.stats.slice(0, 3);
 
   return (
-    <section aria-labelledby={headingId} className="bg-band py-12 lg:py-22">
+    <section
+      aria-labelledby={headingId}
+      className={cn(toneClass(tone), slide && slideClass, sectionPad)}
+    >
       <div className="container-site grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
           <p className="eyebrow-accent">Case study &middot; {renderText(study.eyebrow)}</p>
           <h2
             id={headingId}
-            className="mt-4 max-w-[20ch] font-display text-[1.75rem] leading-[1.13] font-semibold text-band-ink lg:text-[2.5rem]"
+            className="mt-4 max-w-[20ch] font-display text-h2 font-semibold text-band-ink"
           >
             {renderText(study.title)}
           </h2>

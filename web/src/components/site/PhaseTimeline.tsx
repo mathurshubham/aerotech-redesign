@@ -29,7 +29,7 @@ export function PhaseTimeline({ phases }: { phases: Phase[] }) {
               aria-hidden="true"
               className={`h-[3px] w-8 bg-aqua-600 lg:w-full ${opacities[i % opacities.length]}`}
             />
-            <p className="mt-4 font-mono text-eyebrow font-medium tracking-[0.09em] text-aqua-700 uppercase">
+            <p className="eyebrow-accent mt-4">
               {renderText(phase.window)}
             </p>
             <h3 className="mt-2.5 font-display text-[1.1875rem] leading-[1.3] font-semibold">

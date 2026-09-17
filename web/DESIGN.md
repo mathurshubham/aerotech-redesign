@@ -27,7 +27,7 @@ Rev 2 · 2026-09-17 · Binding for every component agent. Sources: `src/app/glob
 | `band` / `band-deep` | `#dde7f6` / `#cbd9ee` | Pastel sky section / footer. Light grounds, dark text |
 | `band-ink` / `band-muted` / `band-line` | `#232e49` / `#55628a` / `#b3c6e2` | Headings, secondary text, dividers inside a pastel band |
 
-Verified contrast: on `paper` — ink 12.67:1 · body 5.64:1 · subtle 5.27:1 · aqua-700 7.80:1 · aqua-600 5.36:1 · aqua-500 3.98:1. On `band` — ink 10.8:1 · body/`band-muted` 4.81:1 · subtle 4.64:1 · aqua-700 6.65:1 · aqua-600 4.57:1 · aqua-500 3.39:1. On `band-deep` — ink 9.43:1 · ink-soft 5.96:1 · aqua-700 5.81:1; `body` 4.20:1 and `subtle` 4.05:1 fail. White text on `aqua-600` 5.70:1 · on `aqua-700` 8.29:1.
+Verified contrast: on `paper` — ink 12.67:1 · body 5.64:1 · subtle 5.27:1 · aqua-700 7.80:1 · aqua-600 5.36:1 · aqua-500 3.98:1. On `band` — ink 10.8:1 · body/`band-muted` 4.81:1 · subtle 4.64:1 · aqua-700 6.65:1 · aqua-600 4.57:1 · aqua-500 3.39:1. On `band-deep` — ink 9.43:1 · ink-soft 5.96:1 · aqua-700 5.81:1; `body` 4.20:1, `subtle` 4.05:1, `aqua-600` 3.99:1 and `aqua-500` 2.96:1 all fail, so **never put those four on `band-deep`** — the unlayered guard at the end of `globals.css` promotes them if you do. White text on `aqua-600` 5.70:1 · on `aqua-700` 8.29:1.
 
 **The ≤5% accent rule.** Aqua marks actions and emphasis only, roughly 5% of pixels on any screen: primary buttons, link arrows, lucide icons, credential numerals, the 3px pull-quote rule, the runway dash, footer eyebrows. Never on headings, never as a section fill, never as a heading underline, never on more than one button in a group. Grounds went pastel, so the accent went darker and more saturated — a pale teal on a pale sky band has nothing to push against. On light grounds the text-safe stop is `aqua-700`; `aqua-500` is a fill/stroke colour. `.eyebrow-accent` renders `aqua-700`, not the -500 stroke stop: an 11px eyebrow is small text, and -700 is the only accent stop that clears 4.5:1 on both paper and band.
 
@@ -38,24 +38,32 @@ Archivo (`font-display`) headings · Inter (`font-sans`) body · IBM Plex Mono (
 | Element | Spec |
 |---|---|
 | h1 | `clamp(2.25rem, 4vw, 3.5rem)` / 700 / line-height 1.05 / `-0.018em` / max 20ch |
-| h2 | `clamp(1.75rem, 2.5vw, 2.5rem)` / 600 / 1.14 / max 24ch |
-| h3 | `1.375rem` / 600 / 1.3 |
+| h2 | `text-h2` — `clamp(1.75rem, 2.6vw, 2.375rem)` / 600 / 1.14 / max 24ch |
+| h3 | `text-h3` — `clamp(1.125rem, 1.4vw, 1.375rem)` / 600 / 1.3 |
 | h4 (card sub) | `1.0625rem` / 600 |
 | Body | `1.0625rem` / 1.62 / `measure` (68ch) / **left-aligned, never justified** |
 | Lede | `1.1875rem` / 1.56 / `text-ink-soft` / max 54–58ch |
 | Card body | `0.9375rem` / 1.58 |
 | Small / meta | `0.875rem` |
-| Eyebrow | `.eyebrow` — mono 11px / 500 / `0.11em` / uppercase / `subtle-ink` (`.eyebrow-accent` for aqua-700, `band-muted` inside a band). Do not use `.eyebrow` on `band-deep` |
-| Photo caption | mono 11px / `subtle-ink` (or `band-muted`) / 9–10px above the image |
+| Eyebrow | `.eyebrow` — **sans 13px / 600 / `0.01em` / sentence case** / `subtle-ink` (`.eyebrow-accent` for aqua-700). Never mono, never uppercase, never wide-tracked: these labels carry real information and the visitor is not necessarily a designer. `.eyebrow` on `band-deep` is bumped to `ink-soft` automatically — see the guard at the end of `globals.css` |
+| Photo caption | sans 13px / `subtle-ink` (or `band-muted`) / 9–10px above the image |
 | Metric numeral | mono 25px / 500 / `aqua-500` / line-height 1 |
 | Wordmark | Real logo image (`Wordmark.tsx`), not text — see §9a |
 
-All-caps is for eyebrows, wordmark and mono labels only.
+All-caps is for the wordmark only. Mono is for **data** — numerals, phone, email, credential values — never for a label a visitor has to read as prose.
+
+h2 and h3 are `--text-h2`/`--text-h3` tokens (`globals.css`), the same fluid
+idiom as `.h1-hero`. Never set a heading size per component: the same nominal
+level used to render at 36/38/40px across three components because each one
+picked its own arbitrary rem value.
 
 ## 3. Space and grid
 
 - 8pt scale: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 128.
-- Section padding: `clamp(4rem, 8vw, 7.5rem)` vertical. Drafts sit at 80–100px desktop.
+- Section padding: `clamp(4rem, 8vw, 7.5rem)` vertical — the `.section-pad`
+  utility, exported as `sectionPad`. It is the *only* section rhythm; never
+  hand-roll a `py-NN` on a section. A slide (below) runs it at
+  `clamp(2.5rem, 5vw, 5rem)`, since the slide already reserves the screen.
 - Container: `.container-site` — max 1200px, 24px gutters.
 - 12-column mental grid, **24px gap** between cards. Cards never touch.
 - Card padding 28–30px (`p-7` / `px-7 pt-[30px] pb-7`). Image-topped cards: 26px 28px 28px below the image.

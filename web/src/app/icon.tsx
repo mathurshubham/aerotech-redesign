@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
 import { LOGO_GLYPH_DATA_URI } from "@/lib/logo-data";
+import { OG_INK } from "@/lib/og-colors";
 
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
@@ -9,8 +10,9 @@ export const contentType = "image/png";
 // against an arbitrary browser-tab background at 32px, and the source glyph
 // is a mid-blue swoosh — on a pastel ground it disappears. So the icon keeps
 // a deep ground, taken from the palette's dark end rather than the retired
-// navy.
-const INK = "#232E49";
+// navy. Satori runs on the Edge with no CSSOM, so the value has to be a
+// literal; `og-colors.ts` holds it and a test keeps it equal to the token.
+const INK = OG_INK;
 
 // `logo-glyph.png` is the swoosh arrowhead only (no wordmark) — the only
 // crop of the real logo that still reads at 32px. Read + inlined as a data

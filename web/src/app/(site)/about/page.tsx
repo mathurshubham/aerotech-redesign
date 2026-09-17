@@ -268,7 +268,7 @@ export default function AboutPage() {
                       : "border-t border-line py-5.5"
                   }
                 >
-                  <p className="font-mono text-eyebrow font-medium tracking-[0.08em] text-aqua-700 uppercase">
+                  <p className="eyebrow-accent">
                     {project.client}
                   </p>
                   <p className="mt-2 text-base leading-[1.55] text-ink">

@@ -18,7 +18,7 @@ export function PhotoCaption({
   return (
     <figcaption
       className={cn(
-        "mt-2.5 font-mono text-eyebrow",
+        "mt-2.5 text-eyebrow",
         onBand ? "text-band-muted" : "text-subtle",
         className,
       )}

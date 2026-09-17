@@ -49,9 +49,15 @@ export function WhatsAppButton() {
     check();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
+    // Scroll snapping can settle on a position after the last `scroll` event
+    // the rAF loop saw, which would leave the button's overlap state one
+    // frame stale on the slide-paced pages. `scrollend` is the authoritative
+    // "we have stopped here" signal; harmless where it is unsupported.
+    window.addEventListener("scrollend", onScroll);
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
+      window.removeEventListener("scrollend", onScroll);
       if (raf) cancelAnimationFrame(raf);
     };
   }, []);

@@ -321,7 +321,7 @@ function BlockView({
                     <p className="text-[0.9375rem] font-medium text-ink">
                       {renderText(item.title)}
                     </p>
-                    <p className="mt-1.5 font-mono text-eyebrow text-subtle">
+                    <p className="eyebrow mt-1.5 font-normal">
                       {pending ? (
                         <Placeholder>[PLACEHOLDER: file not yet supplied]</Placeholder>
                       ) : (
@@ -338,7 +338,7 @@ function BlockView({
               );
             })}
           </ul>
-          <p className="mt-6 font-mono text-eyebrow text-subtle">
+          <p className="eyebrow mt-6 font-normal">
             Registered office: {site.nap.addressLines.join(", ")},{" "}
             {site.nap.locality} {site.nap.postalCode}.
           </p>

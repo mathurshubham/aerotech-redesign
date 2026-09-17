@@ -100,7 +100,12 @@ export function Wordmark({
   const glyphWidth = Math.round((resolvedHeight * glyph.width) / glyph.height);
 
   const nameColor = resolvedVariant === "light" ? "text-white" : "text-ink";
-  const taglineColor = resolvedVariant === "light" ? "text-mist-300" : "text-subtle";
+  // `--subtle-ink` clears 4.5:1 on paper, surface and `--band`, but only
+  // reaches 4.05:1 on `--band-deep` — and the footer renders this lockup on
+  // exactly that ground. At 9px there is no large-text allowance, so the
+  // tagline uses the next stop down the ramp, which clears every ground the
+  // wordmark can land on.
+  const taglineColor = resolvedVariant === "light" ? "text-mist-300" : "text-ink-soft";
 
   const row = (
     <>

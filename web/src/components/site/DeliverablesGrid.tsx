@@ -14,7 +14,7 @@ export function DeliverablesGrid({
     <ol className="grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2">
       {deliverables.map((item) => (
         <li key={item.n} className="bg-surface px-6 py-6 lg:px-6.5">
-          <p className="font-mono text-eyebrow font-medium tracking-[0.09em] text-aqua-700">
+          <p className="eyebrow-accent">
             {item.n}
           </p>
           <h3 className="mt-2.5 font-display text-[1.0625rem] leading-[1.35] font-semibold">
