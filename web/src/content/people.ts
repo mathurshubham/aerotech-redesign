@@ -5,6 +5,7 @@ const peopleData: Person[] = [
     slug: "ashwani-khanna",
     name: "Ashwani Khanna",
     role: "Director",
+    postNominal: "Ph.D. Aviation Management",
     photo: {
       src: "/images/ashwani-khanna.jpg",
       alt: "Ashwani Khanna, Director",
@@ -12,7 +13,14 @@ const peopleData: Person[] = [
       height: 440,
     },
     shortBio:
-      "A subject-matter expert with almost thirty years across aircraft manufacturing, maintenance and airport service delivery — and the person who runs your engagement, not a partner who hands it off.",
+      "Almost thirty years across aircraft manufacturing, maintenance and airport service delivery, and Managing Director at KSU Aviation, where the world's first TaxiBot operations entered service. Engagements are led personally, with no handover to a delivery team.",
+    headlineFacts: [
+      { label: "Lead auditor", value: "ISO 9001 · ISO 45001 · ISO 14064" },
+      { label: "Aerospace", value: "AS9100D certified auditor" },
+      { label: "ICAO", value: "CORSIA verification & validation" },
+      { label: "Doctorate", value: "Ph.D. in Aviation Management" },
+      { label: "IATA", value: "Ex-steering committee, Aircraft Recovery Task Force" },
+    ],
     longBio: [
       "A subject-matter expert with almost thirty years of experience across aviation, from aircraft manufacturing and maintenance to passenger service delivery. Certified as a lead auditor for Quality Management Systems (ISO 9001), Safety Management Systems (ISO 45001) and Green House Gas Emissions (ISO 14064), and a certified aerospace auditor (AS9100D). Also certified by ICAO on CORSIA verification and validation.",
       "Holds a Ph.D. in Aviation Management and has published articles and case studies in national and international journals, including papers on sustainable energy and environment sensing presented at the University of Cambridge.",

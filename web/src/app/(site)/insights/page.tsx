@@ -22,8 +22,8 @@ export default function InsightsPage() {
 
       <PageHead
         crumbs={[{ label: "Home", href: "/" }, { label: "Insights" }]}
-        title="Answer-first briefings on ORAT, DGCA and CORSIA"
-        lede="Short, direct write-ups on the questions we actually get asked — no gated PDF, no newsletter wall."
+        title="Briefings on ORAT, DGCA and CORSIA"
+        lede="Direct write-ups on the questions raised most often in scoping calls — no registration wall, no newsletter sign-up."
       />
 
       <section aria-labelledby="insights-list" className="py-12 lg:py-21">

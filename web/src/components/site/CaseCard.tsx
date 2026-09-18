@@ -36,7 +36,7 @@ export function CaseCard({ study }: { study: CaseStudy }) {
         </p>
         <div className="mt-4.5 self-start">
           <Link href={`/work/${study.slug}`} className={linkArrow}>
-            Read the case
+            Read the case record
             <ArrowRight size={16} strokeWidth={1.6} aria-hidden="true" />
           </Link>
         </div>

@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { Breadcrumb, type Crumb } from "./Breadcrumb";
 import { imageSize } from "./image-size";
 import { renderText } from "./Placeholder";
+import { SectionMarker } from "./SectionMarker";
 import { btnGhost, btnPrimary, slide } from "./styles";
 
 type Action = { label: string; href: string };
@@ -39,7 +40,9 @@ export function Hero({
   image,
   primary,
   secondary,
+  proof,
   footer,
+  id,
 }: {
   eyebrow: string;
   title: string;
@@ -47,13 +50,23 @@ export function Hero({
   image: ImageRef;
   primary?: Action;
   secondary?: Action;
+  /**
+   * One line of evidence under the action pair — who answers, and how fast.
+   * A primary button on this site never appears without it: a visitor
+   * deciding whether to make contact is deciding about the person on the
+   * other end, and that is the last thing they read before clicking.
+   */
+  proof?: string;
   /** Rendered inside the hero slide, below the copy — the credential strip. */
   footer?: ReactNode;
+  /** Slide id, so `SectionRail` can observe this section. */
+  id?: string;
 }) {
   const { width, height } = imageSize(image.src, image);
 
   return (
     <section
+      id={id}
       aria-labelledby="hero-title"
       className={cn("relative overflow-hidden bg-band", slide)}
     >
@@ -75,10 +88,10 @@ export function Hero({
           margins collapse to zero instead of the block overflowing its track
           and painting over the runway rule below it. */}
       <div className="container-site relative my-auto py-10 lg:py-12">
-        <p className="eyebrow-accent">{eyebrow}</p>
+        <SectionMarker>{eyebrow}</SectionMarker>
         <h1
           id="hero-title"
-          className="h1-hero mt-4 max-w-[17ch] font-display font-bold text-band-ink lg:mt-5.5"
+          className="h1-hero mt-5 max-w-[19ch] font-display font-bold text-band-ink lg:mt-6.5"
         >
           {renderText(title)}
         </h1>
@@ -100,6 +113,11 @@ export function Hero({
               </Link>
             )}
           </div>
+        )}
+        {proof && (
+          <p className="mt-4.5 max-w-[46ch] text-sm leading-[1.5] text-ink-soft">
+            {renderText(proof)}
+          </p>
         )}
       </div>
       {/* The runway rule sits between the hero copy and whatever closes the
@@ -149,7 +167,7 @@ export function PageHead({
         >
           <div>
             {crumbs && <Breadcrumb items={crumbs} onBand className="mb-5" />}
-            {eyebrow && !crumbs && <p className="eyebrow-accent mb-5">{eyebrow}</p>}
+            {eyebrow && !crumbs && <SectionMarker className="mb-5">{eyebrow}</SectionMarker>}
             <h1
               id="page-title"
               className="h1-hero max-w-[22ch] font-display font-bold text-band-ink"

@@ -70,7 +70,7 @@ export default async function PersonPage({
       <PersonProfile person={person} />
 
       <CTABand
-        title="Thirty minutes, with the person who would run it"
+        title="A thirty-minute call with the person who runs it"
         body="Bring a terminal opening date, an audit scope, or an approval that has stalled."
       />
     </>

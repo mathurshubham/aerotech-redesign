@@ -9,9 +9,15 @@ import { resolveImage } from "./image-size";
 import { PhotoCaption } from "./PhotoCaption";
 import { isPlaceholder, Placeholder, renderText } from "./Placeholder";
 import { type Tone, toneClass } from "./Section";
+import { SectionMarker } from "./SectionMarker";
 import { linkArrow, sectionPad, slide as slideClass } from "./styles";
 
-const FACTS = [
+/**
+ * Fallback for a person whose content carries no `headlineFacts`. The facts
+ * belong to the person, not to this component — they were hardcoded here
+ * while there was only ever one principal on the page.
+ */
+const FALLBACK_FACTS = [
   { label: "Lead auditor", value: "ISO 9001 · ISO 45001 · ISO 14064" },
   { label: "Aerospace", value: "AS9100D certified auditor" },
   { label: "ICAO", value: "CORSIA verification & validation" },
@@ -28,6 +34,7 @@ export function PersonCard({
   caption = "Lead auditor briefing · New Delhi",
   tone = "surface",
   slide = false,
+  id,
 }: {
   person: Person;
   eyebrow?: string;
@@ -36,12 +43,16 @@ export function PersonCard({
   tone?: Tone;
   /** Claim a screen and become a scroll-snap point. */
   slide?: boolean;
+  /** Slide id, so `SectionRail` can observe this section. */
+  id?: string;
 }) {
   const img = resolveImage(person.photo.src, person.photo);
   const headingId = `person-${person.slug}`;
+  const facts = person.headlineFacts ?? FALLBACK_FACTS;
 
   return (
     <section
+      id={id}
       aria-labelledby={headingId}
       className={cn(
         "border-y border-line",
@@ -66,22 +77,26 @@ export function PersonCard({
         </figure>
 
         <div>
-          <p className="eyebrow">{eyebrow}</p>
+          <SectionMarker>{eyebrow}</SectionMarker>
           <h2
             id={headingId}
-            className="mt-3 font-display text-h2 font-semibold"
+            className="mt-5 font-display text-h2 font-semibold"
           >
             {person.name}
           </h2>
+          {/* The doctorate sits beside the job title rather than inside it:
+              `role` feeds schema.org `jobTitle`, which has to stay a plain
+              job title. */}
           <p className="eyebrow-accent mt-2">
             {person.role}
+            {person.postNominal && ` · ${person.postNominal}`}
           </p>
           <p className="mt-5 max-w-[58ch] text-[1.0625rem] leading-[1.56] text-ink-soft lg:text-[1.1875rem]">
             {renderText(person.shortBio)}
           </p>
 
           <dl className="mt-8 grid gap-x-10 sm:grid-cols-2 lg:mt-8.5">
-            {FACTS.map((fact) => (
+            {facts.map((fact) => (
               <div key={fact.label} className="border-t border-line py-4">
                 <dt className="eyebrow">
                   {fact.label}

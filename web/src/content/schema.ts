@@ -107,8 +107,20 @@ export const PersonSchema = z.object({
   slug: z.string(),
   name: z.string(),
   role: z.string(),
+  /**
+   * Earned title shown beside the name in page chrome. Deliberately separate
+   * from `role`, which feeds schema.org `jobTitle` and has to stay a plain
+   * job title.
+   */
+  postNominal: z.string().optional(),
   photo: ImageRefSchema,
   shortBio: z.string(),
+  /**
+   * Standing credentials for the homepage card — the four to six facts a
+   * buyer checks before a call. The full set lives in `credentials`,
+   * `honours` and `affiliations`; this is what earns a slide.
+   */
+  headlineFacts: z.array(z.object({ label: z.string(), value: z.string() })).optional(),
   longBio: z.array(z.string()),
   credentials: z.array(z.object({ group: z.string(), items: z.array(z.string()) })),
   career: z.array(z.object({ role: z.string(), org: z.string() })),

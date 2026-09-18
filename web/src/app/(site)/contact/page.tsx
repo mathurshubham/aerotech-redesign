@@ -153,7 +153,7 @@ export default async function ContactPage({
               className="rounded-lg border border-line bg-surface-2 px-6 py-5.5"
             >
               <h2 id="aog" className="eyebrow">
-                Aircraft on the ground?
+                Aircraft on the ground
               </h2>
               <p className="mt-2.5 text-sm leading-[1.6]">
                 Recovery work runs on a different clock. Call the direct line

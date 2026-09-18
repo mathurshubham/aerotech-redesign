@@ -37,7 +37,7 @@ const workData: CaseStudy[] = [
     ],
     challenge: [
       "TaxiBot moves an aircraft from stand to runway on the nose gear, under the pilot's control, with the main engines off. The fuel and emissions case is obvious. The approval case was not: dispatch towing at taxi speed puts loads through a nose landing gear that no airframer had cleared for it, and no civil aviation authority had a rule to apply.",
-      "So the work was never really about selling equipment. It was about getting two airframers and one regulator to agree on something none of them had a precedent for — and then proving it on a live apron without disrupting a single departure.",
+      "The mandate was not to sell equipment: it was to secure agreement between two airframers and one regulator on a procedure without precedent for any of them — and then to prove it on a live apron without disrupting a single departure.",
     ],
     approach: [
       {

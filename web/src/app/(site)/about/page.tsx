@@ -86,20 +86,20 @@ export default function AboutPage() {
               id="page-title"
               className="max-w-[22ch] font-display text-[2.125rem] leading-[1.07] font-bold lg:text-[3.125rem]"
             >
-              A consultancy the size of the person running it
+              Scoped and delivered by the same person
             </h1>
             <p className="mt-5 max-w-[58ch] text-[1.0625rem] leading-[1.56] text-ink-soft lg:mt-6.5 lg:text-xl">
               {site.legalName} advises airlines, airports and aerospace
               suppliers on planning, operations management and technical
-              compliance. We are deliberately small: the person who scopes your
-              engagement is the person who delivers it.
+              compliance. The practice is deliberately small: the person who
+              scopes an engagement is the person who delivers it.
             </p>
             <p className="mt-5 max-w-[62ch] text-[1.0625rem] leading-[1.66]">
-              That is a constraint as much as a pitch. We take on work where
-              thirty years of operational judgement is the thing that matters —
-              a terminal transfer, an approval nobody has granted before, an
-              audit that has to hold up. For anything that needs a hundred
-              consultants, we will tell you so on the call.
+              That is a constraint as much as a discipline. The practice takes
+              on work where thirty years of operational judgement is the
+              deciding factor — a terminal transfer, an approval nobody has
+              granted before, an audit that has to hold up. Anything that
+              needs a hundred consultants is outside that remit.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:mt-9">
               <Link href="/contact#book" className={btnPrimary}>
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 id="career-heading"
                 className="mt-3 font-display text-2xl leading-[1.16] font-semibold lg:text-[1.875rem]"
               >
-                Operator side, not adviser side
+                Thirty years inside the operation
               </h2>
               <p className="mt-3.5 mb-6 text-base leading-[1.6]">
                 Every role below was inside an operation with a schedule to
@@ -255,7 +255,7 @@ export default function AboutPage() {
           <div className="container-site">
             <SectionHeading
               eyebrow="Selected engagements"
-              title="Where the judgement was earned"
+              title="Representative client engagements"
               id="engagements"
             />
             <ul className="grid gap-x-14 lg:grid-cols-2">
@@ -282,7 +282,7 @@ export default function AboutPage() {
       )}
 
       <CTABand
-        title="Thirty minutes, with the person who would run it"
+        title="A thirty-minute call with the person who runs it"
         body="Aerocity, adjacent to Delhi IGI. Or wherever the terminal is."
       />
     </>
