@@ -155,7 +155,7 @@ export function BookingMock({
         <div className="flex items-start gap-3">
           <span
             aria-hidden="true"
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-navy-900 font-mono text-sm font-medium text-white"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-mist-900 font-mono text-sm font-medium text-white"
           >
             {initials}
           </span>
@@ -164,15 +164,15 @@ export function BookingMock({
             <p className="mt-0.5 text-base font-semibold text-ink">{eventTitle}</p>
             <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[0.8125rem] text-body">
               <span className="inline-flex items-center gap-1.5">
-                <Clock size={15} strokeWidth={1.6} aria-hidden="true" className="text-orange-500" />
+                <Clock size={15} strokeWidth={1.6} aria-hidden="true" className="text-aqua-500" />
                 {durationMin} min
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Video size={15} strokeWidth={1.6} aria-hidden="true" className="text-orange-500" />
+                <Video size={15} strokeWidth={1.6} aria-hidden="true" className="text-aqua-500" />
                 Google Meet
               </span>
               <span className="inline-flex items-center gap-1.5">
-                <Globe size={15} strokeWidth={1.6} aria-hidden="true" className="text-orange-500" />
+                <Globe size={15} strokeWidth={1.6} aria-hidden="true" className="text-aqua-500" />
                 {timezone}
               </span>
             </div>
@@ -183,7 +183,7 @@ export function BookingMock({
             href={calLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-orange-600 transition-colors duration-150 hover:text-orange-500"
+            className="text-sm font-semibold text-aqua-700 transition-colors duration-150 hover:text-aqua-600"
           >
             Open full calendar
           </a>
@@ -234,18 +234,18 @@ export function BookingMock({
                         aria-label={cell.date.toDateString()}
                         className={cn(
                           "relative flex h-11 w-11 items-center justify-center rounded-lg text-sm transition-colors duration-150",
-                          !cell.inMonth && "text-navy-300",
-                          disabled && cell.inMonth && "text-navy-300",
-                          !disabled && !isSelected && "text-ink hover:bg-navy-100",
-                          cell.isAvailable && !isSelected && "bg-navy-100 font-medium",
-                          isSelected && "bg-orange-500 font-semibold text-white hover:bg-orange-500",
+                          !cell.inMonth && "text-mist-300",
+                          disabled && cell.inMonth && "text-mist-300",
+                          !disabled && !isSelected && "text-ink hover:bg-mist-100",
+                          cell.isAvailable && !isSelected && "bg-mist-100 font-medium",
+                          isSelected && "bg-aqua-600 font-semibold text-white hover:bg-aqua-600",
                         )}
                       >
                         {cell.date.getDate()}
                         {cell.isAvailable && !isSelected && (
                           <span
                             aria-hidden="true"
-                            className="absolute bottom-1 h-1 w-1 rounded-full bg-orange-500"
+                            className="absolute bottom-1 h-1 w-1 rounded-full bg-aqua-600"
                           />
                         )}
                       </button>
@@ -284,8 +284,8 @@ export function BookingMock({
                   className={cn(
                     "h-11 w-full rounded-lg border text-sm font-medium transition-colors duration-150",
                     isSelected
-                      ? "border-orange-500 text-orange-600"
-                      : "border-line text-body hover:border-navy-400",
+                      ? "border-aqua-500 text-aqua-700"
+                      : "border-line text-body hover:border-mist-400",
                   )}
                 >
                   {slot}
@@ -309,7 +309,7 @@ export function BookingMock({
           {confirmed && (
             <p
               role="status"
-              className="mt-3 rounded-lg border border-orange-500 bg-orange-100 px-3 py-2.5 text-[0.8125rem] leading-[1.5] text-orange-600"
+              className="mt-3 rounded-lg border border-aqua-500 bg-aqua-100 px-3 py-2.5 text-[0.8125rem] leading-[1.5] text-aqua-700"
             >
               Sample widget — booking goes live with Cal.com. Use the form or
               WhatsApp to reach us now.

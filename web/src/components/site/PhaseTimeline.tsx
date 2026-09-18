@@ -3,11 +3,11 @@ import type { Phase } from "@/content";
 import { renderText } from "./Placeholder";
 
 /**
- * Four equal columns with an orange bar that fades across the run. Stacks to
+ * Four equal columns with a teal bar that fades across the run. Stacks to
  * a single column below `lg`.
  */
 export function PhaseTimeline({ phases }: { phases: Phase[] }) {
-  const opacities = ["opacity-100", "opacity-75", "opacity-50", "opacity-30"];
+  const opacities = ["opacity-100", "opacity-90", "opacity-85", "opacity-80"];
 
   return (
     <ol className="grid gap-8 lg:grid-cols-4 lg:gap-0">
@@ -18,7 +18,7 @@ export function PhaseTimeline({ phases }: { phases: Phase[] }) {
             {/* Connects phases down the left edge on mobile, where the grid
                 collapses to one column — the sequence still reads as a
                 timeline rather than a stack of unrelated cards. Each phase
-                keeps its own orange bar; this rule just links them. */}
+                keeps its own teal bar; this rule just links them. */}
             {!last && (
               <span
                 aria-hidden="true"
@@ -27,9 +27,9 @@ export function PhaseTimeline({ phases }: { phases: Phase[] }) {
             )}
             <div
               aria-hidden="true"
-              className={`h-[3px] w-8 bg-orange-500 lg:w-full ${opacities[i % opacities.length]}`}
+              className={`h-[3px] w-8 bg-aqua-600 lg:w-full ${opacities[i % opacities.length]}`}
             />
-            <p className="mt-4 font-mono text-eyebrow font-medium tracking-[0.09em] text-orange-600 uppercase">
+            <p className="eyebrow-accent mt-4">
               {renderText(phase.window)}
             </p>
             <h3 className="mt-2.5 font-display text-[1.1875rem] leading-[1.3] font-semibold">

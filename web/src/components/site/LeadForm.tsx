@@ -1,6 +1,6 @@
 "use client";
 
-import { CalendarDays, Check, Lock } from "lucide-react";
+import { CalendarDays, Check, ChevronRight, Lock } from "lucide-react";
 import Script from "next/script";
 import { useEffect, useId, useRef, useState } from "react";
 
@@ -14,7 +14,7 @@ export type LeadTopicOption = { value: string; label: string };
 
 // 16px (text-base): iOS Safari zooms in on focus for any input under 16px.
 const inputClass =
-  "h-11.5 w-full rounded-lg border border-line bg-paper px-3.5 text-base text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-orange-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50";
+  "h-11.5 w-full rounded-lg border border-line bg-paper px-3.5 text-base text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-aqua-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50";
 
 const labelClass = "mb-1.5 block text-[0.8125rem] font-semibold text-ink";
 
@@ -125,9 +125,9 @@ export function LeadForm({
       >
         <div
           aria-hidden="true"
-          className="flex size-11 items-center justify-center rounded-full border border-orange-500"
+          className="flex size-11 items-center justify-center rounded-full border border-aqua-500"
         >
-          <Check size={24} strokeWidth={1.6} className="text-orange-500" />
+          <Check size={24} strokeWidth={1.6} className="text-aqua-500" />
         </div>
         <h2 className="mt-5 font-display text-[1.375rem] leading-[1.3] font-semibold">
           Enquiry received
@@ -135,7 +135,7 @@ export function LeadForm({
         <p className="mt-3 text-[0.9375rem] leading-[1.62]">
           {site.responsePromise}
         </p>
-        <p className="mt-4 font-mono text-eyebrow text-subtle">
+        <p className="eyebrow mt-4 font-normal">
           Something urgent? {site.nap.phoneDisplay}
         </p>
       </div>
@@ -233,7 +233,7 @@ export function LeadForm({
                   className={cn(
                     "inline-flex min-h-11 cursor-pointer items-center rounded-full border px-4 text-sm transition-colors duration-150",
                     selected
-                      ? "border-orange-500 bg-orange-100 font-medium text-orange-600"
+                      ? "border-aqua-500 bg-aqua-100 font-medium text-aqua-700"
                       : "border-line text-body hover:border-ink/30",
                     "peer-focus-visible:ring-3 peer-focus-visible:ring-ring/50",
                   )}
@@ -254,7 +254,29 @@ export function LeadForm({
         )}
       </fieldset>
 
-      <div className="mt-6">
+      {/* Both optional fields fold away behind one line. They were most of
+          the form's height while being the two things a visitor is least
+          likely to fill in, which made a four-field ask read as a long one.
+          A native `<details>` — no JS, open by keyboard, and anything typed
+          inside still submits with the form even if it is later collapsed. */}
+      <details className="group mt-6">
+        <summary
+          className={cn(
+            "-my-2 inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 py-2 text-sm font-semibold text-aqua-700 transition-colors duration-150 hover:text-aqua-600 [&::-webkit-details-marker]:hidden",
+            focusRing,
+          )}
+        >
+          <ChevronRight
+            size={16}
+            strokeWidth={1.8}
+            aria-hidden="true"
+            className="transition-transform duration-150 group-open:rotate-90"
+          />
+          Add a date or a note
+          <span className="font-normal text-subtle">(optional)</span>
+        </summary>
+
+      <div className="mt-4">
         <label htmlFor={`${formId}-date`} className={labelClass}>
           Target date{" "}
           <span className="font-normal text-subtle">(optional)</span>
@@ -291,11 +313,12 @@ export function LeadForm({
         <textarea
           id={`${formId}-message`}
           name="message"
-          rows={4}
+          rows={3}
           placeholder="Scope, a programme date, the constraint you keep running into…"
-          className="w-full rounded-lg border border-line bg-paper px-3.5 py-3 text-base leading-[1.55] text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-orange-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="w-full rounded-lg border border-line bg-paper px-3.5 py-3 text-base leading-[1.55] text-ink placeholder:text-subtle transition-colors duration-150 focus-visible:border-aqua-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         />
       </div>
+      </details>
 
       {/* Honeypot. Never shown, never announced, never submitted by a human. */}
       <div aria-hidden="true" className="sr-only">
@@ -350,7 +373,7 @@ export function LeadForm({
         {formError ?? ""}
       </p>
 
-      <p className="mt-5 flex items-center gap-2.5 border-t border-line pt-5 font-mono text-eyebrow text-subtle">
+      <p className="eyebrow mt-5 flex items-center gap-2.5 border-t border-line pt-5 font-normal">
         <Lock size={15} strokeWidth={1.6} aria-hidden="true" />
         Not stored or shared. No newsletter.
       </p>

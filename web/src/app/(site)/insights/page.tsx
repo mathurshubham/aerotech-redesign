@@ -47,7 +47,7 @@ export default function InsightsPage() {
                     </span>
                   ))}
                   {insight.draft && (
-                    <span className="rounded-full border border-orange-500 bg-orange-100 px-2.5 py-1 font-mono text-[0.6875rem] tracking-[0.08em] text-orange-600 uppercase">
+                    <span className="rounded-full border border-aqua-500 bg-aqua-100 px-2.5 py-1 font-mono text-[0.6875rem] tracking-[0.08em] text-aqua-700 uppercase">
                       Draft
                     </span>
                   )}
@@ -55,7 +55,7 @@ export default function InsightsPage() {
                 <h3 className="mt-3 font-display text-xl leading-[1.25] font-semibold lg:text-2xl">
                   <Link
                     href={`/insights/${insight.slug}`}
-                    className="transition-colors duration-150 hover:text-orange-600"
+                    className="transition-colors duration-150 hover:text-aqua-700"
                   >
                     {renderText(insight.title)}
                   </Link>
@@ -67,7 +67,7 @@ export default function InsightsPage() {
                   {formatDate(insight.date)} · {insight.readingMinutes} min read ·{" "}
                   <Link
                     href="/about/ashwani-khanna"
-                    className="text-orange-600 hover:text-orange-500"
+                    className="text-aqua-700 hover:text-aqua-600"
                   >
                     Ashwani Khanna
                   </Link>
@@ -77,7 +77,7 @@ export default function InsightsPage() {
           </ul>
 
           <p className="mt-9 font-mono text-[0.8125rem] text-subtle">
-            <a href="/feed.xml" className="text-orange-600 hover:text-orange-500">
+            <a href="/feed.xml" className="text-aqua-700 hover:text-aqua-600">
               RSS feed
             </a>
           </p>

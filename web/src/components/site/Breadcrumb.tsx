@@ -7,7 +7,7 @@ import { focusRing } from "./styles";
 export type Crumb = { label: string; href?: string };
 
 /**
- * Mono 11px uppercase trail above the page h1. The last item is plain text
+ * 13px sentence-case trail above the page h1. The last item is plain text
  * with `aria-current="page"` — never a link.
  */
 export function Breadcrumb({
@@ -21,7 +21,7 @@ export function Breadcrumb({
 }) {
   return (
     <nav aria-label="Breadcrumb" className={className}>
-      <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-eyebrow font-medium uppercase">
+      <ol className="eyebrow flex flex-wrap items-center gap-x-2 gap-y-1">
         {items.map((item, i) => {
           const last = i === items.length - 1;
           return (
@@ -50,8 +50,8 @@ export function Breadcrumb({
                     // keep the visible line position unchanged.
                     "-my-4 inline-flex min-h-11 items-center py-4 transition-colors duration-150",
                     onBand
-                      ? "text-band-muted hover:text-white"
-                      : "text-subtle hover:text-orange-600",
+                      ? "text-band-muted hover:text-ink"
+                      : "text-subtle hover:text-aqua-700",
                     focusRing,
                   )}
                 >

@@ -33,7 +33,7 @@ export function NavLinks() {
                 // between items (the negative margin cancels the padding).
                 "-mx-3.5 inline-flex items-center justify-center rounded-sm px-3.5 pb-1 text-[0.9375rem] transition-colors duration-150",
                 active
-                  ? "font-semibold text-ink shadow-[inset_0_-2px_0_var(--orange-500)]"
+                  ? "font-semibold text-ink shadow-[inset_0_-2px_0_var(--aqua-500)]"
                   : "font-medium text-ink-soft hover:text-ink",
                 focusRing,
               )}
@@ -47,25 +47,23 @@ export function NavLinks() {
   );
 }
 
-/** Same links, 44px tall, for the mobile Sheet. */
+/** Same links, for the mobile menu under the sticky header. */
 export function MobileNavLinks({ onNavigate }: { onNavigate?: () => void }) {
   const pathname = usePathname() ?? "/";
 
   return (
-    <ul className="flex flex-col">
+    <ul className="flex flex-col gap-1">
       {site.nav.map((item) => {
         const active = isActive(pathname, item.href);
         return (
-          <li key={item.href} className="border-b border-line">
+          <li key={item.href}>
             <Link
               href={item.href}
               onClick={onNavigate}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex min-h-11 items-center py-3 text-base transition-colors duration-150",
-                active
-                  ? "font-semibold text-orange-600"
-                  : "font-medium text-ink hover:text-orange-600",
+                "flex min-h-13 items-center font-display text-[1.75rem] leading-none font-semibold tracking-tight transition-colors duration-150",
+                active ? "text-aqua-700" : "text-ink hover:text-aqua-700",
                 focusRing,
               )}
             >

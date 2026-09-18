@@ -85,7 +85,7 @@ function BlockView({
             {block.eyebrow && <p className="eyebrow-accent mb-5">{block.eyebrow}</p>}
             <h1
               id="page-title"
-              className="max-w-[22ch] font-display text-[2.125rem] leading-[1.07] font-bold text-white lg:text-[3.125rem]"
+              className="max-w-[22ch] font-display text-[2.125rem] leading-[1.07] font-bold text-band-ink lg:text-[3.125rem]"
             >
               {renderText(block.title)}
             </h1>
@@ -97,7 +97,7 @@ function BlockView({
             {block.cta && (
               <Link
                 href={block.cta.href}
-                className="mt-8 inline-flex h-13 items-center gap-2.5 rounded-lg bg-orange-500 px-6 text-base font-semibold text-white transition-colors duration-150 hover:bg-orange-600"
+                className="mt-8 inline-flex h-13 items-center gap-2.5 rounded-lg bg-aqua-600 px-6 text-base font-semibold text-white transition-colors duration-150 hover:bg-aqua-700"
               >
                 {block.cta.label}
                 <ArrowRight size={18} strokeWidth={1.6} aria-hidden="true" />
@@ -315,19 +315,19 @@ function BlockView({
                     size={24}
                     strokeWidth={1.6}
                     aria-hidden="true"
-                    className="mt-0.5 shrink-0 text-orange-500"
+                    className="mt-0.5 shrink-0 text-aqua-500"
                   />
                   <div>
                     <p className="text-[0.9375rem] font-medium text-ink">
                       {renderText(item.title)}
                     </p>
-                    <p className="mt-1.5 font-mono text-eyebrow text-subtle">
+                    <p className="eyebrow mt-1.5 font-normal">
                       {pending ? (
                         <Placeholder>[PLACEHOLDER: file not yet supplied]</Placeholder>
                       ) : (
                         <a
                           href={item.file}
-                          className="text-orange-600 hover:text-orange-500"
+                          className="text-aqua-700 hover:text-aqua-600"
                         >
                           PDF · {item.size}
                         </a>
@@ -338,7 +338,7 @@ function BlockView({
               );
             })}
           </ul>
-          <p className="mt-6 font-mono text-eyebrow text-subtle">
+          <p className="eyebrow mt-6 font-normal">
             Registered office: {site.nap.addressLines.join(", ")},{" "}
             {site.nap.locality} {site.nap.postalCode}.
           </p>

@@ -3,15 +3,16 @@ import Image from "next/image";
 import { site } from "@/content";
 
 import { resolveImage } from "./image-size";
+import { rail } from "./styles";
 
 /**
- * Static greyscale client grid on a white band. Never a marquee.
+ * Static greyscale client grid on a white strip. Never a marquee.
  */
 export function LogoRow({ label = "Selected clients" }: { label?: string }) {
   return (
     <section
       aria-label={label}
-      className="border-b border-line bg-surface py-7 lg:py-11"
+      className={`${rail} border-b border-line bg-surface py-7 lg:py-11`}
     >
       <div className="container-site lg:flex lg:items-center lg:gap-14">
         <p className="eyebrow whitespace-nowrap">{label}</p>

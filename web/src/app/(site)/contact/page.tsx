@@ -83,22 +83,22 @@ export default async function ContactPage({
               </h2>
               <dl className="mt-5 flex flex-col gap-5">
                 <div>
-                  <dt className="text-xs text-navy-400">Direct line</dt>
+                  <dt className="text-xs text-band-muted">Direct line</dt>
                   <dd className="mt-1">
                     <a
                       href={`tel:${site.nap.phoneE164}`}
-                      className="inline-flex min-h-11 items-center font-mono text-[1.1875rem] text-white hover:text-orange-500"
+                      className="inline-flex min-h-11 items-center font-mono text-[1.1875rem] text-aqua-700 hover:text-ink"
                     >
                       {site.nap.phoneDisplay}
                     </a>
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-xs text-navy-400">Email</dt>
+                  <dt className="text-xs text-band-muted">Email</dt>
                   <dd className="mt-1">
                     <a
                       href={`mailto:${site.nap.email}`}
-                      className="inline-flex min-h-11 items-center font-mono text-base text-white hover:text-orange-500"
+                      className="inline-flex min-h-11 items-center font-mono text-base text-aqua-700 hover:text-ink"
                     >
                       {site.nap.email}
                     </a>
@@ -141,7 +141,7 @@ export default async function ContactPage({
                     size={19}
                     strokeWidth={1.6}
                     aria-hidden="true"
-                    className="shrink-0 text-orange-500"
+                    className="shrink-0 text-aqua-500"
                   />
                   Eight minutes from Delhi IGI Terminal 3
                 </p>

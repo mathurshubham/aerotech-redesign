@@ -3,17 +3,26 @@ import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
 
 import { LOGO_MARK_LIGHT_DATA_URI } from "@/lib/logo-data";
+import { OG_AQUA, OG_INK } from "@/lib/og-colors";
 
 export const alt = `${site.name}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const NAVY = "#16203A";
-const ORANGE = "#FB722E";
+// The social card stays a dark ground even though the site went pastel: it is
+// composited against whatever chrome Slack/WhatsApp/X puts around it, and the
+// only logo raster that reads at card size is `logo-mark-light`, which was
+// recoloured for a dark ground. `INK` is the palette's dark end (`--ink`);
+// `AQUA` is `--aqua-400`, the one accent stop with enough lift to clear 3:1
+// against it (4.5:1) — the darker -600/-700 button stops would sink into it.
+// Literals, not tokens: satori has no CSSOM. `og-colors.ts` is the one place
+// they live and `og-colors.test.ts` fails if they drift from `globals.css`.
+const INK = OG_INK;
+const AQUA = OG_AQUA;
 const DASH_COUNT = 14;
 
-// `logo-mark-light.png` (swoosh + "Aerotech", recoloured for navy — see
-// `public/images/manifest.json`) replaces the old drawn "AEROTECH" text.
+// `logo-mark-light.png` (swoosh + "Aerotech", recoloured for a dark ground —
+// see `public/images/manifest.json`) replaces the old drawn "AEROTECH" text.
 // Read + inlined as a data URI at build time; satori renders plain <img>.
 const LOGO_WIDTH = 697;
 const LOGO_HEIGHT = 570;
@@ -34,7 +43,7 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: NAVY,
+          background: INK,
           fontFamily: "system-ui, -apple-system, Helvetica, Arial, sans-serif",
         }}
       >
@@ -61,7 +70,7 @@ export default function Image() {
               marginTop: 20,
               fontSize: 34,
               fontWeight: 500,
-              color: ORANGE,
+              color: AQUA,
             }}
           >
             {site.tagline}
@@ -75,7 +84,7 @@ export default function Image() {
                 display: "flex",
                 flex: 1,
                 marginRight: i === DASH_COUNT - 1 ? 0 : 24,
-                background: ORANGE,
+                background: AQUA,
                 height: "100%",
               }}
             />

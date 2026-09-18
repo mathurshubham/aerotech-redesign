@@ -39,8 +39,8 @@ export function SectionHeading({
         <h2
           id={id}
           className={cn(
-            "mt-3 max-w-[24ch] font-display text-[1.75rem] leading-[1.14] font-semibold lg:text-[2.375rem]",
-            onBand && "text-white",
+            "mt-3 max-w-[24ch] font-display text-h2 font-semibold",
+            onBand && "text-band-ink",
           )}
         >
           {renderText(title)}

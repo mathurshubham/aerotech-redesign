@@ -62,13 +62,13 @@ export default function DgcaGuidePage() {
             <dl className="mt-5 flex flex-col gap-3.5 border-t border-band-line pt-5">
               <div className="flex items-baseline justify-between gap-4 text-sm">
                 <dt className="text-band-muted">Reading time</dt>
-                <dd className="font-mono text-white">
+                <dd className="font-mono text-band-ink">
                   {meta.readingMinutes} min
                 </dd>
               </div>
               <div className="flex items-baseline justify-between gap-4 text-sm">
                 <dt className="text-band-muted">Service</dt>
-                <dd className="font-mono text-white">India market entry</dd>
+                <dd className="font-mono text-band-ink">India market entry</dd>
               </div>
             </dl>
           </div>

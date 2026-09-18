@@ -56,7 +56,7 @@ export default async function PersonPage({
         aside={
           <div className="rounded-lg border border-band-line px-6 py-6">
             <p className="eyebrow-accent">Role</p>
-            <p className="mt-3 font-display text-xl font-semibold text-white">
+            <p className="mt-3 font-display text-xl font-semibold text-band-ink">
               {person.role}
             </p>
             <p className="mt-4 text-sm leading-[1.55] text-band-muted">

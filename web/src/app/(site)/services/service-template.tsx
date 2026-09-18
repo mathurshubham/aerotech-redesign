@@ -83,9 +83,9 @@ function phaseHeading(service: Service): string {
 }
 
 /**
- * One service page, composed per `reference/design/Orat.dc.html`: dark page head with an
+ * One service page, composed per `reference/design/Orat.dc.html`: pastel page head with an
  * engagement-shape aside, who-it's-for 3-up on 2px ink rules, a deliverables
- * intro column beside the hairline grid, the phase timeline, a navy why-us
+ * intro column beside the hairline grid, the phase timeline, a pastel why-us
  * band with the related panel, related work, the FAQ, and the CTA band.
  *
  * Shared by `/services/[slug]` and `/tools/aero-opt`.
@@ -139,7 +139,7 @@ export function ServicePage({
                     className="flex items-baseline justify-between gap-4 text-sm"
                   >
                     <dt className="text-band-muted">{row.label}</dt>
-                    <dd className="font-mono text-white">{row.value}</dd>
+                    <dd className="font-mono text-band-ink">{row.value}</dd>
                   </div>
                 ))}
               </dl>
@@ -223,7 +223,7 @@ export function ServicePage({
             <p className="eyebrow-accent">Why us on this</p>
             <h2
               id="why-us"
-              className="mt-3 max-w-[24ch] font-display text-[1.75rem] leading-[1.16] font-semibold text-white lg:text-[2.125rem]"
+              className="mt-3 max-w-[24ch] font-display text-[1.75rem] leading-[1.16] font-semibold text-band-ink lg:text-[2.125rem]"
             >
               The person who scopes it is the person who runs it
             </h2>
@@ -251,14 +251,10 @@ export function ServicePage({
             <div className="rounded-lg border border-band-line bg-band-deep px-6 py-6 lg:px-8.5 lg:py-8">
               {/*
                 This card sits on `bg-band-deep`, not inside a `.band`
-                ancestor, so the default `.eyebrow` (`text-subtle`) never
-                gets the on-band override — it was rendering the light-mode
-                colour on a navy background (a pre-existing contrast miss,
-                worse once `text-subtle` darkened for the paper/surface AA
-                fix). `text-band-muted` is the correct on-band eyebrow
-                colour, same as `.band .eyebrow`.
+                ancestor. Its deeper pastel ground needs `text-ink-soft`;
+                the muted band token does not clear the small-text AA floor.
               */}
-              <p className="eyebrow text-band-muted">Related</p>
+              <p className="eyebrow text-ink-soft">Related</p>
               <ul className="mt-3">
                 {relatedLinks.map((related) => (
                   <li
@@ -267,11 +263,11 @@ export function ServicePage({
                   >
                     <Link
                       href={related.href}
-                      className={`-my-2.5 inline-flex min-h-11 items-center gap-1.5 py-2.5 font-display text-[1.0625rem] font-semibold text-white transition-colors duration-150 hover:text-orange-500 ${focusRing}`}
+                      className={`-my-2.5 inline-flex min-h-11 items-center gap-1.5 py-2.5 font-display text-[1.0625rem] font-semibold text-aqua-700 transition-colors duration-150 hover:text-ink ${focusRing}`}
                     >
                       {related.title}
                     </Link>
-                    <p className="mt-1 text-sm leading-[1.5] text-band-muted">
+                    <p className="mt-1 text-sm leading-[1.5] text-ink-soft">
                       {renderText(related.body)}
                     </p>
                   </li>

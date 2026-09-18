@@ -127,7 +127,7 @@ export default function AboutPage() {
                 <p className="font-display text-xl font-semibold text-ink">
                   {principal.name}
                 </p>
-                <p className="mt-1.5 font-mono text-xs tracking-[0.07em] text-orange-500 uppercase">
+                <p className="mt-1.5 font-mono text-xs tracking-[0.07em] text-aqua-700 uppercase">
                   {principal.role}
                 </p>
                 <p className="mt-3 text-sm leading-[1.55]">
@@ -136,7 +136,7 @@ export default function AboutPage() {
                 </p>
                 <Link
                   href={`/about/${principal.slug}`}
-                  className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-orange-600 hover:text-orange-500"
+                  className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-aqua-700 hover:text-aqua-600"
                 >
                   Full profile →
                 </Link>
@@ -196,7 +196,7 @@ export default function AboutPage() {
                       key={cert.code}
                       className={`rounded-lg border bg-surface px-5 py-4.5 ${
                         cert.wide
-                          ? "border-orange-500 sm:col-span-2"
+                          ? "border-aqua-500 sm:col-span-2"
                           : "border-line"
                       }`}
                     >
@@ -268,7 +268,7 @@ export default function AboutPage() {
                       : "border-t border-line py-5.5"
                   }
                 >
-                  <p className="font-mono text-eyebrow font-medium tracking-[0.08em] text-orange-500 uppercase">
+                  <p className="eyebrow-accent">
                     {project.client}
                   </p>
                   <p className="mt-2 text-base leading-[1.55] text-ink">

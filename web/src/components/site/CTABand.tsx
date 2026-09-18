@@ -6,12 +6,13 @@ import { cn } from "@/lib/utils";
 
 import { LeadForm } from "./LeadForm";
 import { renderText } from "./Placeholder";
-import { btnGhost, btnPrimary, focusRing } from "./styles";
+import { type Tone, toneClass } from "./Section";
+import { btnGhost, btnPrimary, focusRing, sectionPad, slide as slideClass } from "./styles";
 import { leadTopics } from "./topics";
 
 /**
- * Dark contact band. With `form`, the lead panel sits on the right and the
- * NAP rows on the left (home); without it, a single orange CTA (page ends).
+ * Pastel contact band. With `form`, the lead panel sits on the right and the
+ * NAP rows on the left (home); without it, a single teal CTA (page ends).
  */
 export function CTABand({
   title,
@@ -21,6 +22,8 @@ export function CTABand({
   primary = { label: "Book a consultation", href: "/contact#book" },
   secondary,
   id,
+  tone = "band",
+  slide = false,
 }: {
   title: string;
   body?: string;
@@ -29,6 +32,10 @@ export function CTABand({
   primary?: { label: string; href: string };
   secondary?: { label: string; href: string };
   id?: string;
+  /** Ground is set by the page, not baked in here. */
+  tone?: Tone;
+  /** Claim a screen and become a scroll-snap point. */
+  slide?: boolean;
 }) {
   const headingId = id ? `${id}-title` : "cta-title";
 
@@ -36,20 +43,29 @@ export function CTABand({
     <section
       id={id}
       aria-labelledby={headingId}
-      className={cn("bg-band", form ? "py-12 lg:py-21" : "py-12 lg:py-18")}
+      className={cn(toneClass(tone), slide && slideClass, sectionPad)}
     >
       <div
         className={cn(
           "container-site",
           form
-            ? "grid gap-10 lg:grid-cols-[1fr_420px] lg:items-start lg:gap-20"
+            ? "grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,30rem)] lg:items-start lg:gap-16"
             : "flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12",
         )}
       >
-        <div>
+        {/* With the form, this column is much shorter than the panel beside
+            it, which left a screen of empty band next to a form the visitor
+            was still filling in. Sticking it below the header keeps the ask
+            and the phone number in view for the whole scroll of the form
+            instead of splitting them onto a slide of their own. */}
+        <div
+          className={cn(
+            form && "lg:sticky lg:top-[calc(var(--header-h)+2rem)] lg:self-start",
+          )}
+        >
           <h2
             id={headingId}
-            className="max-w-[24ch] font-display text-[1.75rem] leading-[1.14] font-semibold text-white lg:text-[2.25rem]"
+            className="max-w-[24ch] font-display text-h2 font-semibold text-band-ink"
           >
             {renderText(title)}
           </h2>
@@ -66,9 +82,9 @@ export function CTABand({
                   size={19}
                   strokeWidth={1.6}
                   aria-hidden="true"
-                  className="mt-1 shrink-0 text-orange-500"
+                  className="mt-1 shrink-0 text-aqua-500"
                 />
-                <span className="text-[0.9375rem] leading-[1.5] text-navy-300 lg:text-base">
+                <span className="text-[0.9375rem] leading-[1.5] text-band-muted lg:text-base">
                   {site.nap.addressLines.join(", ")}
                   <br />
                   {site.nap.locality} {site.nap.postalCode} — adjacent to Delhi IGI
@@ -77,13 +93,13 @@ export function CTABand({
               <li>
                 <a
                   href={`tel:${site.nap.phoneE164}`}
-                  className={`flex min-h-11 items-center gap-3.5 font-mono text-base text-white transition-colors duration-150 hover:text-orange-500 ${focusRing}`}
+                  className={`flex min-h-11 items-center gap-3.5 font-mono text-base text-aqua-700 transition-colors duration-150 hover:text-ink ${focusRing}`}
                 >
                   <Phone
                     size={19}
                     strokeWidth={1.6}
                     aria-hidden="true"
-                    className="shrink-0 text-orange-500"
+                    className="shrink-0 text-aqua-500"
                   />
                   {site.nap.phoneDisplay}
                 </a>
@@ -91,13 +107,13 @@ export function CTABand({
               <li>
                 <a
                   href={`mailto:${site.nap.email}`}
-                  className={`flex min-h-11 items-center gap-3.5 font-mono text-base text-white transition-colors duration-150 hover:text-orange-500 ${focusRing}`}
+                  className={`flex min-h-11 items-center gap-3.5 font-mono text-base text-aqua-700 transition-colors duration-150 hover:text-ink ${focusRing}`}
                 >
                   <Mail
                     size={19}
                     strokeWidth={1.6}
                     aria-hidden="true"
-                    className="shrink-0 text-orange-500"
+                    className="shrink-0 text-aqua-500"
                   />
                   {site.nap.email}
                 </a>

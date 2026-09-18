@@ -9,46 +9,63 @@
 /* ------------------------------------------------------------------ */
 
 :root {
-  /* brand */
-  --navy-900: #16203a;
-  --navy-800: #1e2846;
-  --navy-700: #343c5c;
-  --navy-600: #4b5570;
-  --navy-500: #6e7896;
-  /* Darker than --navy-500 specifically for small text on light grounds:
-     #6e7896 on --paper/--surface lands at 4.13-4.38:1, under the 4.5:1 AA
-     floor for text below 24px. #5c6683 clears it (5.4:1 / 5.7:1) while
-     reading as the same muted grey. Do not use --navy-500 directly for
-     text on paper/surface — use this token (via `.eyebrow`/`text-subtle`). */
-  --subtle-ink: #5c6683;
-  --navy-400: #9aa4c0;
-  --navy-300: #c3cadd;
-  --navy-200: #dde2ec;
-  --navy-100: #eef1f6;
-  --navy-50: #f7f8fa;
-  --ink-950: #0f1729;
+  /* Neutral scale — cool blue-grey ("mist"). Carries every text colour and
+     every rule; the pastel grounds are the light end of this same ramp, so
+     tints and text stay in one hue family. */
+  --mist-900: #232e49;
+  --mist-800: #2e3a58;
+  --mist-700: #3f4c6d;
+  --mist-600: #55628a;
+  --mist-500: #77839f;
+  /* Darker than --mist-500 specifically for small text on light grounds:
+     #77839f on --paper/--surface lands under the 4.5:1 AA floor for text
+     below 24px. #5a6584 clears it while reading as the same muted grey — and
+     is set dark enough to also clear it on --band (4.6:1), since `.eyebrow`
+     appears inside bands. It does *not* clear --band-deep (4.1:1) — the
+     unlayered guard at the end of this file bumps it to --ink-soft inside
+     any `bg-band-deep` ground so the footer can't inherit the failure.
+     Do not use --mist-500 directly for text on any light ground — use this
+     token (via `.eyebrow`/`text-subtle`). */
+  --subtle-ink: #5a6584;
+  --mist-400: #9ba6bf;
+  --mist-300: #c2cbdd;
+  --mist-200: #dbe2ef;
+  --mist-100: #ebeff7;
+  --mist-50: #f6f8fc;
+  --ink-950: #161e33;
 
-  --orange-600: #c4470d;
-  --orange-500: #fb722e;
-  --orange-100: #fff3ec;
+  /* Accent — deep teal ("aqua"). Pastel grounds can't carry a pastel accent:
+     a pale teal on a pale sky band has nothing to push against. So the
+     grounds went pastel and the accent went the other way. Each stop is
+     picked to clear its own contrast floor on paper, band *and* band-deep:
+       -400  decorative only, never load-bearing
+       -500  icon strokes, rules, numerals ≥24px        (≥3:1)
+       -600  button fill under white text, 19px numerals (≥4.5:1)
+       -700  link text, eyebrows, small mono labels      (≥4.5:1, wide margin) */
+  --aqua-700: #085853;
+  --aqua-600: #0a736c;
+  --aqua-500: #0c8a80;
+  --aqua-400: #17a79b;
+  --aqua-100: #e2f2f0;
 
   /* semantic (light only — single-theme brand site) */
-  --paper: var(--navy-50);
+  --paper: var(--mist-50);
   --surface: #ffffff;
-  --surface-2: var(--navy-100);
-  --line: var(--navy-200);
-  --line-soft: #e8ebf2;
-  --ink: var(--navy-900);
-  --ink-soft: var(--navy-700);
-  --body: var(--navy-600);
-  --muted: var(--navy-500);
-  --accent: var(--orange-500);
-  --accent-ink: var(--orange-600);
-  --band: var(--navy-900);
-  --band-deep: var(--ink-950);
-  --band-ink: #e9ecf4;
-  --band-muted: var(--navy-400);
-  --band-line: #2c365a;
+  --surface-2: var(--mist-100);
+  --line: var(--mist-200);
+  --line-soft: #e7ecf6;
+  --ink: var(--mist-900);
+  --ink-soft: var(--mist-700);
+  --body: var(--mist-600);
+
+  /* Pastel bands. Unlike the previous navy bands these are *light* grounds:
+     text on them is the same ink/body ramp used on paper, not white. Keeping
+     the `band-*` names means every band component stays theme-swappable. */
+  --band: #dde7f6;
+  --band-deep: #cbd9ee;
+  --band-ink: var(--mist-900);
+  --band-muted: var(--mist-600);
+  --band-line: #b3c6e2;
 
   /* shadcn mapping */
   --background: var(--paper);
@@ -57,22 +74,29 @@
   --card-foreground: var(--ink);
   --popover: var(--surface);
   --popover-foreground: var(--ink);
-  --primary: var(--orange-500);
+  --primary: var(--aqua-600);
   --primary-foreground: #ffffff;
-  --secondary: var(--navy-100);
+  --secondary: var(--mist-100);
   --secondary-foreground: var(--ink);
-  --muted: var(--navy-100);
-  --muted-foreground: var(--navy-500);
-  --accent: var(--navy-100);
+  --muted: var(--mist-100);
+  --muted-foreground: var(--mist-500);
+  --accent: var(--mist-100);
   --accent-foreground: var(--ink);
-  --destructive: #c0392b;
-  --border: var(--navy-200);
-  --input: var(--navy-200);
-  --ring: var(--orange-500);
+  --destructive: #b23a48;
+  --border: var(--mist-200);
+  --input: var(--mist-200);
+  --ring: var(--aqua-500);
   --radius: 0.5rem;
+  --header-h: 67px; /* SiteHeader 66px + 1px border-b */
 
   /* motifs */
-  --runway: repeating-linear-gradient(90deg, var(--orange-500) 0 28px, transparent 28px 52px);
+  --runway: repeating-linear-gradient(90deg, var(--aqua-500) 0 28px, transparent 28px 52px);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 85px; /* SiteHeader h-21 (84px) + 1px border-b */
+  }
 }
 
 @theme inline {
@@ -95,21 +119,24 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-navy-50: var(--navy-50);
-  --color-navy-100: var(--navy-100);
-  --color-navy-200: var(--navy-200);
-  --color-navy-300: var(--navy-300);
-  --color-navy-400: var(--navy-400);
-  --color-navy-500: var(--navy-500);
+  --color-mist-50: var(--mist-50);
+  --color-mist-100: var(--mist-100);
+  --color-mist-200: var(--mist-200);
+  --color-mist-300: var(--mist-300);
+  --color-mist-400: var(--mist-400);
+  --color-mist-500: var(--mist-500);
   --color-subtle-ink: var(--subtle-ink);
-  --color-navy-600: var(--navy-600);
-  --color-navy-700: var(--navy-700);
-  --color-navy-800: var(--navy-800);
-  --color-navy-900: var(--navy-900);
+  --color-mist-600: var(--mist-600);
+  --color-mist-700: var(--mist-700);
+  --color-mist-800: var(--mist-800);
+  --color-mist-900: var(--mist-900);
   --color-ink-950: var(--ink-950);
-  --color-orange-100: var(--orange-100);
-  --color-orange-500: var(--orange-500);
-  --color-orange-600: var(--orange-600);
+
+  --color-aqua-100: var(--aqua-100);
+  --color-aqua-400: var(--aqua-400);
+  --color-aqua-500: var(--aqua-500);
+  --color-aqua-600: var(--aqua-600);
+  --color-aqua-700: var(--aqua-700);
 
   --color-paper: var(--paper);
   --color-surface: var(--surface);
@@ -135,9 +162,24 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --text-eyebrow: 0.6875rem;
-  --text-eyebrow--line-height: 1.2;
-  --text-eyebrow--letter-spacing: 0.11em;
+  /* Section labels. Previously 11px mono, uppercase, 0.11em tracking — a
+     specimen-label look that is genuinely hard to read for anyone who is not
+     a designer with young eyes, and these labels carry real information
+     ("Case study · KSU Aviation · 2019–2024"). Now 13px, sentence case, only
+     a hair of tracking: still clearly subordinate to the h2 below it, but
+     readable at a glance at any age. */
+  --text-eyebrow: 0.8125rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.01em;
+
+  /* Heading scale. `.h1-hero` covers the h1; these two cover every h2 and h3
+     on the site so section headings can't drift apart per component (they
+     previously rendered at 36/38/40px for the same nominal level). Fluid, in
+     the same clamp idiom as `.h1-hero`, so there are no breakpoint jumps. */
+  --text-h2: clamp(1.75rem, 2.6vw, 2.375rem);
+  --text-h2--line-height: 1.14;
+  --text-h3: clamp(1.125rem, 1.4vw, 1.375rem);
+  --text-h3--line-height: 1.3;
 }
 
 @layer base {
@@ -145,7 +187,29 @@
     @apply border-border outline-ring/50;
   }
   html {
-    scroll-behavior: smooth;
+    /* Every anchor jump and every snap landing has to clear the sticky
+       header, otherwise the target heading renders underneath it. */
+    scroll-padding-top: var(--header-h);
+  }
+  /* Smooth scrolling is motion: it belongs behind the media query rather
+     than being switched off again further down. */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  /* Slide-paced scrolling. Only pages that lay their sections out as slides
+     (`.section-slide`) turn the viewport into a snap container, so long-form
+     pages — the DGCA guide, privacy, insight posts — keep a plain document
+     scroll. `proximity`, never `mandatory`: a section whose content is
+     taller than the viewport must stay freely scrollable. */
+  html:has(.section-slide) {
+    scroll-snap-type: y proximity;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html:has(.section-slide) {
+      scroll-snap-type: none;
+    }
   }
   body {
     @apply bg-paper text-body font-sans antialiased;
@@ -158,7 +222,7 @@
     text-wrap: balance;
   }
   ::selection {
-    background: var(--orange-100);
+    background: var(--aqua-100);
     color: var(--ink);
   }
   @media (prefers-reduced-motion: reduce) {
@@ -175,11 +239,49 @@
   .container-site {
     @apply mx-auto w-full max-w-[1200px] px-6;
   }
-  .eyebrow {
-    @apply font-mono text-eyebrow font-medium uppercase text-subtle;
+  /* The one section rhythm. DESIGN.md §"Spacing" specifies
+     clamp(4rem, 8vw, 7.5rem); before this every section hand-rolled its own
+     `py-NN` and ten different desktop values were in play. Nothing should
+     set section-level vertical padding by hand — use this, via
+     `sectionPad` in `components/site/styles.ts`. */
+  .section-pad {
+    padding-block: clamp(4rem, 8vw, 7.5rem);
   }
+  /* A slide: one section, one screen. Sized against the *visible* viewport —
+     `dvh` so a mobile URL bar doesn't push the bottom off-screen, minus the
+     sticky header. `min-height`, not `height`: a section whose content is
+     genuinely taller (the services grid, the contact form) grows past the
+     screen rather than clipping, and `proximity` snapping lets the visitor
+     scroll through it normally. */
+  .section-slide {
+    min-height: calc(100dvh - var(--header-h));
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  /* A rail is the opposite: a thin proof strip (client logos) that sits
+     between slides deliberately and never claims a screen of its own. */
+  .section-rail {
+    scroll-snap-align: none;
+  }
+  /* A slide already reserves a screen and centres its content, so the full
+     section rhythm on top of that is padding the visitor never sees as
+     breathing room — it just pushes the section past one screen. On a slide
+     the same rhythm runs at roughly two-thirds. */
+  .section-slide.section-pad {
+    padding-block: clamp(2.5rem, 5vw, 5rem);
+  }
+  /* Sans, not mono, and sentence case: see `--text-eyebrow`. Weight carries
+     the label's separation from body copy now that case and tracking don't. */
+  .eyebrow {
+    @apply font-sans text-eyebrow font-semibold text-subtle;
+  }
+  /* `aqua-700` rather than the -500 stroke stop: a 13px eyebrow is still
+     small text, and -700 is the only accent stop that clears 4.5:1 on *both*
+     the paper and the pastel band grounds. */
   .eyebrow-accent {
-    @apply font-mono text-eyebrow font-medium uppercase text-orange-500;
+    @apply font-sans text-eyebrow font-semibold text-aqua-700;
   }
   .runway {
     height: 4px;
@@ -191,16 +293,16 @@
     line-height: 1.05;
   }
   .band {
-    @apply bg-band text-band-ink;
+    @apply bg-band text-band-muted;
   }
   .band .eyebrow {
-    @apply text-band-muted;
+    @apply text-subtle;
   }
   .measure {
     max-width: 68ch;
   }
   .prose-site {
-    @apply prose prose-neutral max-w-none prose-headings:font-display prose-headings:text-ink prose-headings:tracking-tight prose-p:text-body prose-a:text-orange-600 prose-a:no-underline hover:prose-a:text-orange-500 prose-strong:text-ink prose-li:text-body prose-blockquote:border-orange-500 prose-blockquote:font-display prose-blockquote:not-italic prose-blockquote:text-ink;
+    @apply prose prose-neutral max-w-none prose-headings:font-display prose-headings:text-ink prose-headings:tracking-tight prose-p:text-body prose-a:text-aqua-700 prose-a:no-underline hover:prose-a:text-aqua-600 prose-strong:text-ink prose-li:text-body prose-blockquote:border-aqua-500 prose-blockquote:font-display prose-blockquote:not-italic prose-blockquote:text-ink;
   }
   .prose-site p, .prose-site li {
     font-size: 1.0625rem;
@@ -222,4 +324,31 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
+}
+
+/* ------------------------------------------------------------------ */
+/*  band-deep contrast guard — deliberately outside every @layer        */
+/* ------------------------------------------------------------------ */
+/*
+  `--band-deep` (#cbd9ee) is a stop darker than `--band`, and four tokens
+  that clear AA on `--band` fall under it there:
+
+    --subtle-ink  (`.eyebrow`, `text-subtle`)   4.05:1   needs 4.5
+    --band-muted  (`text-band-muted`)           4.20:1   needs 4.5
+    --aqua-600    (`text-aqua-600`)             3.99:1   needs 4.5
+    --aqua-500    (`text-aqua-500`)             2.96:1   needs 3.0
+
+  This used to be documented in comments in two files and enforced by
+  nothing, so any new component dropped inside `bg-band-deep` could
+  reintroduce the failure. These rules bump each token to the next stop that
+  does clear its floor on that ground, automatically. Unlayered so they win
+  over Tailwind's utility layer; a component that genuinely wants a
+  different colour on band-deep should set `--ink`-family tokens directly.
+*/
+.bg-band-deep :is(.eyebrow, .text-subtle, .text-band-muted) {
+  color: var(--ink-soft);
+}
+.bg-band-deep .text-aqua-600,
+.bg-band-deep .text-aqua-500 {
+  color: var(--aqua-700);
 }

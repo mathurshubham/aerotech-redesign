@@ -56,7 +56,7 @@ export function PersonProfile({ person }: { person: Person }) {
                       : "border-t border-line py-5.5 last:border-b"
                   }
                 >
-                  <p className="font-mono text-eyebrow font-medium tracking-[0.08em] text-orange-500 uppercase">
+                  <p className="eyebrow-accent">
                     {project.client}
                   </p>
                   <p className="mt-2 text-base leading-[1.55] text-ink">
@@ -141,7 +141,7 @@ export function PersonProfile({ person }: { person: Person }) {
           </section>
 
           {person.linkedin && (
-            <p className="font-mono text-eyebrow text-subtle">
+            <p className="eyebrow font-normal">
               LinkedIn:{" "}
               {isPlaceholder(person.linkedin) ? (
                 <Placeholder>{person.linkedin}</Placeholder>
@@ -150,7 +150,7 @@ export function PersonProfile({ person }: { person: Person }) {
                   href={person.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-orange-600 hover:text-orange-500"
+                  className="text-aqua-700 hover:text-aqua-600"
                 >
                   {person.linkedin}
                 </a>

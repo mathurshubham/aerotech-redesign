@@ -14,9 +14,8 @@ type WordmarkSize = "header" | "footer" | "mobile";
  * Default glyph heights (px) per legacy `size` — the nav/mobile lockup
  * targets the 36–40px glyph height called out in DESIGN.md §9a; the
  * footer runs a touch larger since it has more room. `SiteHeader` and
- * `SiteFooter` pass an explicit `height` and don't rely on this map, but it
- * is what `MobileNav.tsx` (`size="mobile"`) and `app/gate/page.tsx`
- * (no `size`/`height` at all) fall back to.
+ * `SiteFooter` pass an explicit `height` and don't rely on this map; it is
+ * what `app/gate/page.tsx` (no `size`/`height`) falls back to.
  */
 const DEFAULT_HEIGHTS: Record<WordmarkSize, number> = {
   header: 38,
@@ -41,19 +40,20 @@ const STACK_GAP = 2;
  * name, sized from `public/images/manifest.json` intrinsic dimensions.
  * Server component.
  *
- * - `variant="dark"` (default) → navy glyph + ink name, for paper/white
- *   grounds.
- * - `variant="light"` → `logo-glyph-light` + white name, for navy bands
- *   (footer, and any dark page head that reuses this).
+ * - `variant="dark"` (default) → navy glyph + ink name. Every ground in the
+ *   page chrome is now light — paper, white and the pastel bands — so this is
+ *   the only variant the site itself uses, including in the footer.
+ * - `variant="light"` → `logo-glyph-light` + white name. Only correct on a
+ *   genuinely dark ground; the raster is recoloured near-white and vanishes on
+ *   pastel. Retained for the dark social card, unused by the page chrome.
  * - `withTagline` → swaps in the full raster `logo-lockup` (mark + tagline
  *   image, dark palette only) for large marketing use — unchanged from
  *   before, do not combine with `variant="light"`.
  * - `height` sets the glyph height in px and scales the type/gaps around
  *   it (tuned at `REFERENCE_HEIGHT` = 38px, the nav size).
  *
- * `onBand`/`size` are the original props, kept because `MobileNav.tsx` and
- * `app/gate/page.tsx` call this component and are out of scope for this
- * change; `variant`/`height`, when passed, take precedence over them.
+ * `onBand`/`size` are the original props, kept for `app/gate/page.tsx`;
+ * `variant`/`height`, when passed, take precedence over them.
  */
 export function Wordmark({
   href = "/",
@@ -100,7 +100,12 @@ export function Wordmark({
   const glyphWidth = Math.round((resolvedHeight * glyph.width) / glyph.height);
 
   const nameColor = resolvedVariant === "light" ? "text-white" : "text-ink";
-  const taglineColor = resolvedVariant === "light" ? "text-navy-300" : "text-subtle";
+  // `--subtle-ink` clears 4.5:1 on paper, surface and `--band`, but only
+  // reaches 4.05:1 on `--band-deep` — and the footer renders this lockup on
+  // exactly that ground. At 9px there is no large-text allowance, so the
+  // tagline uses the next stop down the ramp, which clears every ground the
+  // wordmark can land on.
+  const taglineColor = resolvedVariant === "light" ? "text-mist-300" : "text-ink-soft";
 
   const row = (
     <>

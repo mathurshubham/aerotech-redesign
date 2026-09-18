@@ -3,11 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import type { Person } from "@/content";
+import { cn } from "@/lib/utils";
 
 import { resolveImage } from "./image-size";
 import { PhotoCaption } from "./PhotoCaption";
 import { isPlaceholder, Placeholder, renderText } from "./Placeholder";
-import { linkArrow } from "./styles";
+import { type Tone, toneClass } from "./Section";
+import { linkArrow, sectionPad, slide as slideClass } from "./styles";
 
 const FACTS = [
   { label: "Lead auditor", value: "ISO 9001 · ISO 45001 · ISO 14064" },
@@ -24,10 +26,16 @@ export function PersonCard({
   person,
   eyebrow = "Who you actually work with",
   caption = "Lead auditor briefing · New Delhi",
+  tone = "surface",
+  slide = false,
 }: {
   person: Person;
   eyebrow?: string;
   caption?: string;
+  /** Ground is set by the page, not baked in here. */
+  tone?: Tone;
+  /** Claim a screen and become a scroll-snap point. */
+  slide?: boolean;
 }) {
   const img = resolveImage(person.photo.src, person.photo);
   const headingId = `person-${person.slug}`;
@@ -35,7 +43,12 @@ export function PersonCard({
   return (
     <section
       aria-labelledby={headingId}
-      className="border-y border-line bg-surface py-12 lg:py-23"
+      className={cn(
+        "border-y border-line",
+        toneClass(tone),
+        slide && slideClass,
+        sectionPad,
+      )}
     >
       <div className="container-site grid gap-8 lg:grid-cols-[440px_1fr] lg:items-start lg:gap-16">
         <figure className="max-w-[280px] lg:max-w-none">
@@ -56,11 +69,11 @@ export function PersonCard({
           <p className="eyebrow">{eyebrow}</p>
           <h2
             id={headingId}
-            className="mt-3 font-display text-[1.75rem] leading-[1.14] font-semibold lg:text-[2.375rem]"
+            className="mt-3 font-display text-h2 font-semibold"
           >
             {person.name}
           </h2>
-          <p className="mt-2 font-mono text-[0.8125rem] tracking-[0.06em] text-orange-500 uppercase">
+          <p className="eyebrow-accent mt-2">
             {person.role}
           </p>
           <p className="mt-5 max-w-[58ch] text-[1.0625rem] leading-[1.56] text-ink-soft lg:text-[1.1875rem]">
@@ -70,7 +83,7 @@ export function PersonCard({
           <dl className="mt-8 grid gap-x-10 sm:grid-cols-2 lg:mt-8.5">
             {FACTS.map((fact) => (
               <div key={fact.label} className="border-t border-line py-4">
-                <dt className="font-mono text-eyebrow font-medium tracking-[0.09em] text-subtle uppercase">
+                <dt className="eyebrow">
                   {fact.label}
                 </dt>
                 <dd className="mt-1.5 text-[0.9375rem] font-medium text-ink">

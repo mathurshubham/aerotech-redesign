@@ -5,6 +5,13 @@ import type { ReactNode } from "react";
 
 /**
  * Fade + 8px rise, 200ms ease-out, once on scroll-in.
+ *
+ * `amount` is deliberately near-zero rather than the 15% it used to be: on a
+ * snap-paced page a section can arrive in one jump, and an entry threshold
+ * measured as a fraction of an element that is taller than the viewport can
+ * then never be crossed, leaving the content stuck at `opacity: 0`. One
+ * visible pixel is enough of a trigger.
+ *
  * Under `prefers-reduced-motion: reduce` the children render at rest with no
  * initial `opacity: 0` — nothing is ever hidden waiting for an animation.
  */
@@ -26,7 +33,7 @@ export function Reveal({
       className={className}
       initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.01 }}
       transition={{ duration: 0.2, ease: "easeOut", delay }}
     >
       {children}
