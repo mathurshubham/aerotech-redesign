@@ -1,6 +1,6 @@
 # Session handoff — aerotechss.com rebuild
 
-Written 2026-09-11. Everything below reflects the repository and the live deployment at the end of the first working session. Read this first if you are picking the project up.
+Written 2026-09-11, with §19 appended 2026-09-18. Sections 1–18 reflect the first working session; **§19 supersedes them wherever they disagree**. Read §19 first if you are picking the project up now.
 
 ---
 
@@ -15,8 +15,8 @@ A complete redesigned marketing site for **Aerotech Support Services** (aviation
 | **Cloudflare account** | `mathurshubham@gmail.com`, account id `d8121063c5cc4b0e073b34b3280a2c1d` |
 | **Worker** | `aerotech-web` |
 | **Zone** | `shubhammathur.in` (free plan). `aerotechss.com` is **not** on Cloudflare yet |
-| **Repo** | Local git only at `/Users/shubhammathur/Documents/projects/mathurshubham/aerotechss`. No remote |
-| **Latest commit** | `75f4aed` — 16 commits, all 2026-09-11 |
+| **Repo** | `git@github-personal:mathurshubham/aerotech-redesign.git` (SSH alias `github-personal`). Local at `/Users/shubhammathur/Documents/projects/mathurshubham/aerotechss` |
+| **Latest commit** | `bd92bcd` on `v2-institutional-register` — see §19 for the two sessions since |
 | **Content status** | Real copy where it existed; **sample values elsewhere** — see §14 |
 | **CMS** | None yet. Content is typed files in the repo. Phase 2 — see §17 |
 
@@ -435,3 +435,127 @@ Everything currently runs at **$0/month**. The relevant limits and the honest ri
 | Turnstile | ~1M verifications/month | Ample |
 
 The only paid decision on the horizon is the $5/month for Workers Paid, and only if Payload-in-the-Worker is chosen over Keystatic or the Pi.
+
+---
+
+## 19. Sessions two and three — 2026-09-17/18
+
+Two sessions since the original handoff. Section 19 supersedes sections 1–18
+wherever they disagree.
+
+### Branch state
+
+| Branch | Commits | Status |
+|---|---|---|
+| `main` | `7c77c5e` | Base. Untouched this session |
+| `pastel-retheme` | `5cf9e20`, `e5f8406` | **PR #1, open.** The pastel retheme plus the slide-pacing work |
+| `v2-institutional-register` | `045a2a8`, `bd92bcd` | Branched off `pastel-retheme`. Pushed, **no PR opened yet** |
+
+`v2-institutional-register` is what is deployed. It has never been merged, so
+`main` and `pastel-retheme` are both behind production.
+
+### What is deployed
+
+Version `fbe7678d-e7ae-41a9-b65a-e2f5e581e733`, deployed 2026-09-17 from
+`v2-institutional-register` with `pnpm run deploy` (note: `pnpm deploy` without
+`run` is a pnpm builtin and fails with `ERR_PNPM_INVALID_DEPLOY_TARGET`).
+
+The PIN gate is **still on in production** — `/` returns 302 to `/gate`. To take
+it public, `wrangler secret delete GATE_PIN` from `web/`; the middleware
+disables the gate whenever either secret is absent.
+
+### Session two — slide pacing and the section rhythm (`e5f8406`)
+
+A design audit of the pastel retheme found the homepage scrolled as eight
+sections of wildly unequal height (0.21vh to 1.61vh), ten different desktop
+padding values, three sizes for the same heading level, and a canonical rhythm
+token exported but used nowhere.
+
+- **`.section-slide`** — `100dvh` minus the sticky header, content centred, a
+  scroll-snap point at the top. Snapping is on the viewport via
+  `html:has(.section-slide)`, so long-form pages keep a plain document scroll.
+  `proximity`, **never `mandatory`**: a section taller than one screen has to
+  stay freely scrollable, and several still are.
+- The hero absorbed the credential strip (a 0.21vh orphan between two full
+  screens). `LogoRow` stays a deliberate rail between slides — forcing it to
+  `100dvh` buys a screen of empty white.
+- `scroll-padding-top: var(--header-h)`, so anchors and snap landings stop
+  rendering the target heading under the sticky header.
+- `Reveal`'s in-view threshold dropped from 15% to ~0: a snap jump can deliver a
+  taller-than-viewport section in one step and never cross 15%, leaving content
+  stuck at `opacity: 0`. This is subtle and will look like a rendering bug if
+  anyone raises the threshold back.
+- **`.section-pad`** implements the `clamp(4rem, 8vw, 7.5rem)` that DESIGN.md had
+  always specified; `sectionPad` in `styles.ts` now points at it and every
+  section uses it. A slide runs it at `clamp(2.5rem, 5vw, 5rem)`.
+- **`Section`** primitive with a `tone` prop: a section's ground is set by its
+  position in the page, not baked into the component. This fixed two adjacent
+  `band` grounds at the top of the homepage.
+- `--text-h2`/`--text-h3` tokens; service card variants stopped restyling the
+  container (a teal border and a grey fill read as *selected* and *disabled*);
+  the lead form's two optional fields folded behind a `<details>`.
+- An unlayered **band-deep contrast guard** at the end of `globals.css` promotes
+  `subtle-ink`, `band-muted`, `aqua-600` and `aqua-500` inside any
+  `bg-band-deep`. That rule had been documented in comments in two files and
+  enforced by nothing; the footer wordmark was failing AA at 4.05:1.
+
+### Session three — institutional register (`045a2a8`, `bd92bcd`)
+
+The copy read like a startup marketing page. The buyers are institutions:
+airport operators, airlines, foreign aerospace OEMs entering India, and
+DGCA-facing compliance teams. **DESIGN.md now has a Register section** that
+codifies the voice — read it before writing any copy for this site.
+
+- Copy rewritten across the content files and the hard-coded page and component
+  strings. Tagline is now "Operational readiness, certification and ORAT for
+  Indian aviation."
+- **`MandateGrid`** — a new "Scope of engagement" homepage slide naming the four
+  mandates clients arrive with. This is the stakeholder-specific entry path a
+  service taxonomy does not give a buyer, and it is the densest slide on the
+  page (~1.65vh at a short viewport). That is deliberate: trimming it means
+  cutting the CISF/immigration/customs stakeholder list, which is the part that
+  demonstrates domestic experience.
+- **`SectionRail`** — right-edge slide progress nav. One `IntersectionObserver`,
+  `rootMargin` shrunk by the live `--header-h`, desktop only, renders nothing
+  under `prefers-reduced-motion`. The homepage declares its slides in a `SLIDES`
+  const; every id there must stay in sync with the `id` props on the sections.
+- **`SectionMarker`** — a 52×3 `aqua-500` rule plus the label, replacing the bare
+  eyebrow in every section-heading slot.
+- **`proof` prop** on `Hero` and `CTABand`, rendered in the same eyeline as the
+  primary button. Every primary button on this site carries one.
+- **`postNominal` and `headlineFacts`** added to the person schema (`bd92bcd`).
+  The principal's Ph.D., the KSU Aviation directorship and the IATA Aircraft
+  Recovery Task Force seat were all in `people.ts` and none reached the
+  homepage. `postNominal` is deliberately separate from `role`, which feeds
+  schema.org `jobTitle` and has to stay a plain job title.
+
+### Verification standard used
+
+Every commit: `npx tsc --noEmit`, `npx eslint`, `pnpm test` (12/12), `pnpm build`,
+plus a computed WCAG sweep in the browser over every text/background pair
+rendered on the homepage and footer. The sweep is worth repeating after any
+palette or copy change — it caught a real AA failure the eye did not.
+
+### Known-unverified
+
+- **The deployed page has not been looked at.** The browser session was closed
+  before production was checked; only HTTP status was verified (`/` → 302,
+  `/gate` → 200). The same build passed everything locally.
+- **Mobile was never visually verified** in either session. macOS refuses to
+  size a Chrome window below roughly 500 CSS px, so the mobile work is
+  measurement- and code-level only. Check on a real device before launch.
+
+### Open threads
+
+1. **No PR for `v2-institutional-register`.** PR #1 covers `pastel-retheme`
+   only. Decide whether to stack a second PR or fold both together.
+2. **The PIN gate is still on** in production.
+3. **Credentials worth adding** that are in `reference/capture/` and still not on
+   the site: the UK CAA Aerodrome Operations training, the papers presented at
+   Cambridge, and the ACI "Most Improved Airport" award. `people.ts` carries
+   them in `longBio`/`honours`; only the homepage card was updated.
+4. **A v2 direction set was explored and discarded.** Two alternate visual
+   directions — a dense data-first dossier and a dark institutional treatment —
+   were mocked up and rejected in favour of the editorial direction that
+   shipped. Do not re-litigate without reading §19 first.
+5. Everything in §14 (sample content) and §17 (roadmap) still stands.
